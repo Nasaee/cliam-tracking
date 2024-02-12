@@ -1,3 +1,8 @@
+import { nanoid } from 'nanoid';
+import { LiaToolboxSolid, LiaToolsSolid } from 'react-icons/lia';
+import { SlHome } from 'react-icons/sl';
+import { TbUsers } from 'react-icons/tb';
+
 export const data = [
   {
     dmNumber: 'DM62/027',
@@ -5733,39 +5738,146 @@ export const data = [
   },
 ];
 
-export type SingleData = (typeof data)[number];
+type SingleItem = (typeof data)[number];
 
-type SendOutItem = {
-  year: string;
-  '544965': number;
-  '544990': number;
-  '544995': number;
-};
+enum ITEM_CODE {
+  green = '544965',
+  gold = '544990',
+  violet = '544995',
+}
 
-export const sendOutItem = data.reduce((result, item: SingleData) => {
-  const { dmNumber, itemCode } = item;
-  let key = dmNumber.slice(0, 4);
-  const year = Number('25' + key.slice(2, 4)) - 543;
+type ResultObj = { [key: string]: { year: number; [key: string]: number } };
 
-  enum ItemCode {
-    green = '544965',
-    gold = '544990',
-    violet = '544995',
+function groupSendOutByYear(data: SingleItem[]) {
+  const sendOutObj = data.reduce((result, item) => {
+    const { dmNumber, itemCode } = item;
+    const key = dmNumber.slice(0, 4);
+    const year = Number('25' + key.slice(2, 4)) - 543;
+
+    if (!result[key]) {
+      result[key] = {
+        year,
+        [544965]: 0,
+        [544990]: 0,
+        [544995]: 0,
+      };
+    }
+
+    if (itemCode.indexOf(ITEM_CODE.green) !== -1)
+      result[key][ITEM_CODE.green] += 1;
+    if (itemCode.indexOf(ITEM_CODE.gold) !== -1)
+      result[key][ITEM_CODE.gold] += 1;
+    if (itemCode.indexOf(ITEM_CODE.violet) !== -1)
+      result[key][ITEM_CODE.violet] += 1;
+
+    return result;
+  }, {} as ResultObj);
+
+  return sendOutObj;
+}
+
+const sendOutItemsAmount = Object.values(groupSendOutByYear(data));
+
+function compaireReceiveStatus(data: SingleItem[]) {
+  const dataCompare = {
+    unreceiveable: {
+      name: 'unreceive',
+      totalAmont: 0,
+      [ITEM_CODE.green]: 0,
+      [ITEM_CODE.gold]: 0,
+      [ITEM_CODE.violet]: 0,
+    },
+    receiveableAndRepaired: {
+      name: 'receive & repaired',
+      totalAmont: 0,
+      [ITEM_CODE.green]: 0,
+      [ITEM_CODE.gold]: 0,
+      [ITEM_CODE.violet]: 0,
+    },
+    receiveableAndBroken: {
+      name: 'receive & broken',
+      totalAmont: 0,
+      [ITEM_CODE.green]: 0,
+      [ITEM_CODE.gold]: 0,
+      [ITEM_CODE.violet]: 0,
+    },
+  };
+
+  type ItemCode = string;
+  type ObjectToUpdate = keyof typeof dataCompare;
+
+  function increaseItemAmount(itemCode: ItemCode, objToUpdate: ObjectToUpdate) {
+    itemCode.indexOf(ITEM_CODE.green) !== -1 &&
+      dataCompare[objToUpdate][ITEM_CODE.green]++;
+
+    itemCode.indexOf(ITEM_CODE.gold) !== -1 &&
+      dataCompare[objToUpdate][ITEM_CODE.gold]++;
+
+    itemCode.indexOf(ITEM_CODE.violet) !== -1 &&
+      dataCompare[objToUpdate][ITEM_CODE.violet]++;
   }
 
-  if (!result[key]) {
-    result[key] = {
-      year,
-      [544965]: 0,
-      [544990]: 0,
-      [544995]: 0,
-    };
-  }
+  data.forEach((item: SingleItem) => {
+    const { itemCode, receiveDocs, repairable } = item;
 
-  if (itemCode.indexOf(ItemCode.green) !== -1) result[key][ItemCode.green] += 1;
-  if (itemCode.indexOf(ItemCode.gold) !== -1) result[key][ItemCode.gold] += 1;
-  if (itemCode.indexOf(ItemCode.violet) !== -1)
-    result[key][ItemCode.violet] += 1;
+    if (!receiveDocs) {
+      dataCompare.unreceiveable.totalAmont += 1;
+      increaseItemAmount(itemCode, 'unreceiveable');
+    }
 
-  return result;
-}, {});
+    if (receiveDocs && repairable) {
+      dataCompare.receiveableAndRepaired.totalAmont += 1;
+      increaseItemAmount(itemCode, 'receiveableAndRepaired');
+    }
+
+    if (receiveDocs && !repairable) {
+      dataCompare.receiveableAndBroken.totalAmont += 1;
+      increaseItemAmount(itemCode, 'receiveableAndBroken');
+    }
+  });
+
+  return Object.values(dataCompare);
+}
+
+const receiveStatus = compaireReceiveStatus(data);
+
+const menu = [
+  {
+    id: nanoid(),
+    title: 'Admin',
+    listItems: [
+      {
+        id: nanoid(),
+        title: 'Homepage',
+        url: '/',
+        icon: SlHome,
+      },
+      {
+        id: nanoid(),
+        title: 'Profile',
+        url: 'users/1',
+        icon: TbUsers,
+      },
+    ],
+  },
+  {
+    id: nanoid(),
+    title: 'List',
+    listItems: [
+      {
+        id: nanoid(),
+        title: 'Applier',
+        url: '/claim-hemolok-applier',
+        icon: LiaToolsSolid,
+      },
+      {
+        id: nanoid(),
+        title: 'Other Products',
+        url: '/claim-other-products',
+        icon: LiaToolboxSolid,
+      },
+    ],
+  },
+];
+
+export { sendOutItemsAmount, receiveStatus, menu };
