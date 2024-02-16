@@ -1,6 +1,6 @@
 import BarChartBox from '../commponents/BarChart';
 import PieChart from '../commponents/PieChart';
-import UnreceivePieChart from '../commponents/UnreceivePieChart';
+// import UnreceivePieChart from '../commponents/UnreceivePieChart';
 import { receiveStatus } from '../data';
 import groupDataByItem from '../utils/groupDatabyItem';
 
@@ -25,9 +25,10 @@ const Home = () => {
             data={receiveStatus}
           />
         </div>
-        <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
+        {/* uncomment if need to show */}
+        {/* <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
           <UnreceivePieChart />
-        </div>
+        </div> */}
         <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
           <PieChart
             titel='544965'

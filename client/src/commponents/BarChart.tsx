@@ -50,9 +50,9 @@ const BarChartBox = () => {
           />
         </BarChart>
       </ResponsiveContainer>
-      <div className='options | flex justify-between gap-2 text-sm mt-4'>
+      <div className='options | flex justify-between flex-wrap gap-4 text-sm mt-4'>
         {sendOutItemsAmount.map((item) => (
-          <div className='option | flex flex-col  gap-2' key={nanoid()}>
+          <div className='option | flex flex-col gap-2' key={nanoid()}>
             <div className='title | flex items-center gap-2'>
               <span>{item.year}</span>
             </div>

@@ -38,13 +38,6 @@ export default function DataTable({ columns, rows }: TableProps) {
           className='bg-white p-4'
           rows={rows}
           columns={[...columns, actionColumn]}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 20,
-              },
-            },
-          }}
           slots={{ toolbar: GridToolbar }}
           slotProps={{
             toolbar: {

@@ -9,22 +9,26 @@ import AdminPermission from './pages/AdminPermission';
 import PrivateRoute from './pages/PrivateRoute';
 import AddClaimApplier from './pages/AddClaimApplier';
 import AddClaimOtherProducts from './pages/AddClaimOtherProducts';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const Layout = () => {
     return (
-      <main className='font-inter'>
-        <Navbar />
-        <div className='flex'>
-          <div className='menu-container | p-5 border-r-2 border-[#384256]'>
-            <Menu />
+      <>
+        <main className='font-inter'>
+          <Navbar />
+          <div className='flex'>
+            <div className='menu-container | p-5 border-r-2 border-[#384256]'>
+              <Menu />
+            </div>
+            <div className='content-container | w-full min-h-screen px-5 pb-5 overflow-hidden'>
+              <Outlet />
+            </div>
           </div>
-          <div className='content-container | w-full min-h-screen p-5 overflow-hidden'>
-            <Outlet />
-          </div>
-        </div>
-        <Footer />
-      </main>
+          <Footer />
+        </main>
+        <Toaster />
+      </>
     );
   };
 

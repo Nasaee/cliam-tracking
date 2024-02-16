@@ -68,7 +68,6 @@ const groupDataByItem = (data: ReceiveStatus[]): GroupedResult => {
       result[key][name].totalAmount += itemValue;
     }
   });
-  console.log(result);
 
   return result;
 };

@@ -1,6 +1,5 @@
 import { PieChart, Pie, ResponsiveContainer, Cell } from 'recharts';
 import calculatePercentage from '../utils/calculatePercentage';
-import { ReceiveStatus } from '../data';
 
 type PieChartBoxProps = {
   titel: string;

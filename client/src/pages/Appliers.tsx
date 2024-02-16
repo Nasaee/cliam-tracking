@@ -10,8 +10,7 @@ const Appliers = () => {
       headerName: 'No.',
       width: 90,
       valueFormatter(params) {
-        console.log(params);
-
+        // TODO: fix this to sequence number or remove column
         return params.value;
       },
     },
@@ -75,7 +74,7 @@ const Appliers = () => {
         <h1>Appliers</h1>
         {/* // TODO: Add path to add page */}
         <Link
-          to='/add-claim-appliers'
+          to='/add-appliers'
           className='bg-white text-black py-1 px-2 text-xs rounded-[8px]'
         >
           Add Items
