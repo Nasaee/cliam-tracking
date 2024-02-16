@@ -13,7 +13,6 @@ import { sendOutItemsAmount } from '../data';
 
 const BarChartBox = () => {
   const COLORS = ['#94d82d', '#9775fa', '#fcc419'];
-  console.log(sendOutItemsAmount);
 
   return (
     <div className='p-5'>
@@ -52,33 +51,31 @@ const BarChartBox = () => {
         </BarChart>
       </ResponsiveContainer>
       <div className='options | flex justify-between gap-2 text-sm mt-4'>
-        {sendOutItemsAmount.map((item, i) => (
-          <div className='option | flex flex-col gap-2' key={nanoid()}>
+        {sendOutItemsAmount.map((item) => (
+          <div className='option | flex flex-col  gap-2' key={nanoid()}>
             <div className='title | flex items-center gap-2'>
               <span>{item.year}</span>
             </div>
             <span className='flex items-center justify-between gap-3'>
               <span
-              // className='dot | block rounded-full w-[10px] h-[10px] text-center'
-              // style={{ background: COLORS[0] }}
-              >
-                965 :
-              </span>
-              <span className='text-right'>{item[544965]}</span>
+                className='dot | block w-[10px] h-[10px] text-center'
+                style={{ background: COLORS[0] }}
+              ></span>
+              <span className='text-right'>{`${item[544965]} EA`}</span>
             </span>
             <span className='flex items-center justify-between gap-3'>
               <span
-                className='dot | block rounded-full w-[10px] h-[10px] text-center'
+                className='dot | block w-[10px] h-[10px] text-center'
                 style={{ background: COLORS[1] }}
               ></span>
-              <span className='text-right'>{item[544995]}</span>
+              <span className='text-right'>{`${item[544995]} EA`}</span>
             </span>
             <span className='flex items-center justify-between gap-3'>
               <span
-                className='dot | block rounded-full  w-[10px] h-[10px] text-center'
+                className='dot | block w-[10px] h-[10px] text-center'
                 style={{ background: COLORS[2] }}
               ></span>
-              <span className='text-right'>{item[544990]}</span>
+              <span className='text-right'>{`${item[544990]} EA`}</span>
             </span>
           </div>
         ))}

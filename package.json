@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "frontend": "cd client && yarn run dev"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "nasaee <nasaee.dev@gmail.com>",
+  "license": "ISC",
+  "repository": "https://github.com/Nasaee/cliam-tracking.git"
 }

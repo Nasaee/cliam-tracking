@@ -4,21 +4,22 @@ import Navbar from './commponents/Navbar';
 import Footer from './commponents/Footer';
 import Home from './pages/Home';
 import Appliers from './pages/Appliers';
-import User from './pages/User';
 import ClaimOtherProducts from './pages/ClaimOtherProducts';
 import AdminPermission from './pages/AdminPermission';
 import PrivateRoute from './pages/PrivateRoute';
+import AddClaimApplier from './pages/AddClaimApplier';
+import AddClaimOtherProducts from './pages/AddClaimOtherProducts';
 
 function App() {
   const Layout = () => {
     return (
       <main className='font-inter'>
         <Navbar />
-        <div className='container | flex'>
-          <div className='menu-container | lg:w-[250px] p-5 border-r-2 border-[#384256]'>
+        <div className='flex'>
+          <div className='menu-container | p-5 border-r-2 border-[#384256]'>
             <Menu />
           </div>
-          <div className='content-container | w-full min-h-screen p-5'>
+          <div className='content-container | w-full min-h-screen p-5 overflow-hidden'>
             <Outlet />
           </div>
         </div>
@@ -43,20 +44,20 @@ function App() {
           ),
         },
         {
-          path: '/users/:id',
-          element: (
-            <PrivateRoute redirectPath='/login' passCondition={true}>
-              <User />
-            </PrivateRoute>
-          ),
-        },
-        {
           path: '/claim-hemolok-applier',
           element: <Appliers />,
         },
         {
           path: '/claim-other-products',
           element: <ClaimOtherProducts />,
+        },
+        {
+          path: '/add-appliers',
+          element: <AddClaimApplier />,
+        },
+        {
+          path: '/add-other-products',
+          element: <AddClaimOtherProducts />,
         },
       ],
     },
