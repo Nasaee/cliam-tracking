@@ -4,7 +4,7 @@ import PieChart from '../commponents/PieChart';
 import { receiveStatus } from '../data';
 import groupDataByItem from '../utils/groupDatabyItem';
 
-const colorsForReceiveStatus = ['#FFBB28', '#00C49F', '#FF8042'];
+const colorsForReceiveStatus = ['#e64980', '#3bc9db', '#0b7285'];
 const colorsGreen = ['#2b8a3e', '#a9e34b', '#5c940d'];
 const colorsGold = ['#fff3bf', '#e67700', '#fcc419'];
 const colorsViolet = ['#b197fc', '#9c36b5', '#845ef7'];

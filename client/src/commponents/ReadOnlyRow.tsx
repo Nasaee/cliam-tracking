@@ -1,16 +1,17 @@
-import { Contact } from '../pages/AddClaimApplier';
+import { Items } from '../pages/AddClaimApplier';
 
 interface Props {
-  row: Contact;
+  row: Items;
   handleEditClick: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    row: Contact
+    row: Items
   ) => void;
+  handleDeleteClick: (id: string) => void;
 }
-const ReadOnlyRow = ({ row, handleEditClick }: Props) => {
+const ReadOnlyRow = ({ row, handleEditClick, handleDeleteClick }: Props) => {
   const { serialNumber, dmNumber, itemCode, proformaInv, additionInfo } = row;
   return (
-    <tr>
+    <>
       <td>{dmNumber}</td>
       <td>{itemCode}</td>
       <td>{serialNumber}</td>
@@ -18,10 +19,13 @@ const ReadOnlyRow = ({ row, handleEditClick }: Props) => {
       <td>{additionInfo}</td>
       <td>
         <button type='button' onClick={(e) => handleEditClick(e, row)}>
-          edit
+          Edit
+        </button>
+        <button type='button' onClick={() => handleDeleteClick(serialNumber)}>
+          Delete
         </button>
       </td>
-    </tr>
+    </>
   );
 };
 export default ReadOnlyRow;
