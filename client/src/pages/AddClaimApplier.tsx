@@ -1,41 +1,26 @@
-import styled from 'styled-components';
 import { useState } from 'react';
-import toast from 'react-hot-toast';
-import ReadOnlyRow from '../commponents/ReadOnlyRow';
-import EditableRow from '../commponents/EditableRow';
-
-// !temporary
-import mockData from '../mock-data';
 import Input from '../commponents/Input';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/rootReducer';
 
-export interface Items {
-  dmNumber: string;
-  itemCode: string;
-  serialNumber: string;
-  proformaInv: string;
-  additionInfo: string;
-}
 const AddClaimApplier = () => {
-  // const [items, setItems] = useState<Items[]>([]);
-  // !temporary
-  const [items, setItems] = useState<Items[]>(mockData);
-  const [addFormData, setAddFormData] = useState({
+  const defaultItemState = {
     dmNumber: '',
     itemCode: '',
     serialNumber: '',
     proformaInv: '',
     additionInfo: '',
-  });
+  };
+  const [dmNumber, setDmNumber] = useState('');
+  const [addFormData, setAddFormData] = useState({ ...defaultItemState });
+  const applierToAddDB = useSelector(
+    (state: RootState) => state.applierToAddDB
+  );
 
-  const [editFromData, setEditFormData] = useState({
-    dmNumber: '',
-    itemCode: '',
-    serialNumber: '',
-    proformaInv: '',
-    additionInfo: '',
-  });
-
-  const [editItemsId, setEditItemsId] = useState<string | number | null>(null);
+  const handleDmNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value.toUpperCase();
+    setDmNumber(value);
+  };
 
   const handleAddFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -43,213 +28,26 @@ const AddClaimApplier = () => {
     const fieldValue = e.target.value;
     setAddFormData({ ...addFormData, [fieldName]: fieldValue });
   };
-
-  const handleEditFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const fieldName = e.target.getAttribute('name') as string;
-    const fieldValue = e.target.value;
-    setEditFormData({ ...editFromData, [fieldName]: fieldValue });
-  };
-
-  const handleAddFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (
-      !addFormData.dmNumber ||
-      !addFormData.itemCode ||
-      !addFormData.serialNumber
-    )
-      return toast.error('DM, Item, Serial Number cannot be empty');
-    const newItems = {
-      dmNumber: addFormData.dmNumber,
-      itemCode: addFormData.itemCode,
-      serialNumber: addFormData.serialNumber,
-      proformaInv: addFormData.proformaInv,
-      additionInfo: addFormData.additionInfo,
-    };
-    setItems([...items, newItems]);
-    setAddFormData({
-      dmNumber: '',
-      itemCode: '',
-      serialNumber: '',
-      proformaInv: '',
-      additionInfo: '',
-    });
-  };
-
-  const handleEditFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const editedItems = {
-      dmNumber: editFromData.dmNumber,
-      itemCode: editFromData.itemCode,
-      serialNumber: editFromData.serialNumber,
-      proformaInv: editFromData.proformaInv,
-      additionInfo: editFromData.additionInfo,
-    };
-
-    const index = items.findIndex((item) => item.serialNumber === editItemsId);
-
-    items[index] = editedItems;
-    setEditItemsId(null);
-  };
-
-  const handleEditClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    row: Items
-  ) => {
-    e.preventDefault();
-    if (!row) return;
-    setEditItemsId(row.serialNumber);
-    setEditFormData({
-      dmNumber: row.dmNumber,
-      itemCode: row.itemCode,
-      serialNumber: row.serialNumber,
-      proformaInv: row.proformaInv,
-      additionInfo: row.additionInfo,
-    });
-  };
-
-  const handleCancelClick = () => {
-    setEditItemsId(null);
-  };
-
-  const handleDeleteClick = (id: string) => {
-    const newItems = [...items];
-    const index = items.findIndex((item) => item.serialNumber === id);
-    newItems.splice(index, 1);
-    setItems(newItems);
-  };
-
   return (
-    <div className='flex flex-col gap-10 bg-white w-full h-full text-black'>
-      <h1>Add Item</h1>
-      <form onSubmit={handleAddFormSubmit}>
-        <Input
-          type='text'
-          name='dmNumber'
-          value={addFormData.dmNumber}
-          onChange={handleAddFormChange}
-        />
-        <input
-          type='text'
-          name='dmNumber'
-          value={addFormData.dmNumber}
-          onChange={handleAddFormChange}
-        />
-        <input
-          type='text'
-          name='itemCode'
-          value={addFormData.itemCode}
-          onChange={handleAddFormChange}
-        />
-        <input
-          type='text'
-          name='serialNumber'
-          value={addFormData.serialNumber}
-          onChange={handleAddFormChange}
-        />
-        <input
-          type='text'
-          name='proformaInv'
-          value={addFormData.proformaInv}
-          onChange={handleAddFormChange}
-        />
-        <input
-          type='text'
-          name='additionInfo'
-          value={addFormData.additionInfo}
-          onChange={handleAddFormChange}
-        />
-        <button type='submit' className='bg-[#51cf66]'>
-          Add
-        </button>
-      </form>
-      <form onSubmit={handleEditFormSubmit}>
-        <table>
-          <thead>
-            <tr>
-              <th>DM</th>
-              <th>Item</th>
-              <th>Serial Number</th>
-              <th>Proforma Invoice</th>
-              <th>More Details</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((row) => {
-              return (
-                <tr key={row.serialNumber}>
-                  {editItemsId === row.serialNumber ? (
-                    <EditableRow
-                      key={row.serialNumber}
-                      editFromData={editFromData}
-                      handleEditFormChange={handleEditFormChange}
-                      handleCancelClick={handleCancelClick}
-                    />
-                  ) : (
-                    <ReadOnlyRow
-                      key={row.serialNumber}
-                      row={row}
-                      handleEditClick={handleEditClick}
-                      handleDeleteClick={handleDeleteClick}
-                    />
-                  )}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </form>
-    </div>
+    <section className='bg-white flex flex-col gap-6 text-black py-8'>
+      <h1 className='px-8'>Add Claim</h1>
+      <div className='grid grid-cols-[1fr_2fr] min-h-screen'>
+        <div className='add-items | min-w-[300px] max-w-[400px] border-r px-5'>
+          <label className='flex flex-col gap-2'>
+            <span className='font-bold text-xs tracking-wider text-gray-500 pl-2'>
+              Dm Number
+            </span>
+            <input
+              type='text'
+              value={dmNumber}
+              className='border border-black rounded-lg px-3 py-2 min-w-[200px] text-sm'
+              onChange={handleDmNumberChange}
+            />
+          </label>
+        </div>
+        <div className='table'></div>
+      </div>
+    </section>
   );
 };
 export default AddClaimApplier;
-
-// const Wrapper = styled.div`
-//   & {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 10px;
-//     padding: 1rem;
-//     font-size: 12px;
-//   }
-
-//   input {
-//     border: 1px solid black;
-//     width: 200px;
-//   }
-
-//   table {
-//     border-collapse: collapse;
-//     width: 100%;
-//   }
-
-//   th,
-//   td {
-//     border: 1px solid #ffffff;
-//     text-align: left;
-//     padding: 8px;
-//   }
-
-//   th {
-//     background-color: rgb(117, 201, 250);
-//   }
-
-//   td {
-//     background-color: rgb(205, 235, 253);
-//   }
-
-//   form {
-//     display: flex;
-//     gap: 5px;
-//   }
-
-//   form td:last-child {
-//     display: flex;
-//     justify-content: space-evenly;
-//   }
-
-//   form * {
-//     font-size: 28px;
-//   }
-// `;
