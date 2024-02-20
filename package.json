@@ -9,8 +9,5 @@
   "keywords": [],
   "author": "nasaee <nasaee.dev@gmail.com>",
   "license": "ISC",
-  "repository": "https://github.com/Nasaee/cliam-tracking.git",
-  "devDependencies": {
-    "daisyui": "^4.7.2"
-  }
+  "repository": "https://github.com/Nasaee/cliam-tracking.git"
 }
