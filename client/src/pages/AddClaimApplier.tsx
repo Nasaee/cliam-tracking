@@ -32,19 +32,43 @@ const AddClaimApplier = () => {
     <section className='bg-white flex flex-col gap-6 text-black py-8'>
       <h1 className='px-8'>Add Claim</h1>
       <div className='grid grid-cols-[1fr_2fr] min-h-screen'>
-        <div className='add-items | min-w-[300px] max-w-[400px] border-r px-5'>
-          <label className='flex flex-col gap-2'>
-            <span className='font-bold text-xs tracking-wider text-gray-500 pl-2'>
+        <form className='add-items | min-w-[300px] max-w-[400px] border-r px-5'>
+          <div>
+            <label
+              htmlFor='first_name'
+              className='block mb-2 text-sm font-medium text-gray-900 '
+            >
               Dm Number
-            </span>
+            </label>
             <input
               type='text'
-              value={dmNumber}
-              className='border border-black rounded-lg px-3 py-2 min-w-[200px] text-sm'
+              name='dmNumber'
               onChange={handleDmNumberChange}
+              value={dmNumber}
+              id='first_name'
+              className='bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 '
+              placeholder='DM...'
+              required
             />
-          </label>
-        </div>
+          </div>
+          <div className='grid gap-6 mb-6 md:grid-cols-2'>
+            <div>
+              <label
+                htmlFor='first_name'
+                className='block mb-2 text-sm font-medium text-gray-900 '
+              >
+                Item Code
+              </label>
+              <input
+                type='text'
+                id='itemCode'
+                className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 '
+                placeholder='John'
+                required
+              />
+            </div>
+          </div>
+        </form>
         <div className='table'></div>
       </div>
     </section>
