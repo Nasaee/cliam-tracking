@@ -2,29 +2,27 @@ import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/rootReducer';
 import { TextField } from '@mui/material';
+import ReadOnlyRow from '../commponents/ReadOnlyRow';
+import { useState } from 'react';
+import { addItem } from '../store/addApplier/addApplierSlice';
 
 export type AddItemData = {
   dmNumber: '';
-  itemCode:
-    | ''
-    | '544965'
-    | '544965A'
-    | '544965AF'
-    | '544965D'
-    | '544990'
-    | '544990A'
-    | '544990AF'
-    | '544990D'
-    | '544995'
-    | '544995A'
-    | '544995AF'
-    | '544995D';
+  itemCode: '';
   serialNumber: '';
   proformaInv: '';
   additionInfo: '';
 };
 
 const AddClaimApplier = () => {
+  const itemsToAddDB = useSelector(
+    (state: RootState) => state.applierToAddDB as AddItemData[]
+  );
+
+  const dispatch = useDispatch();
+
+  const [rowToEdit, setRowToEdit] = useState<AddItemData | null>(null);
+
   const {
     register,
     handleSubmit,
@@ -34,6 +32,7 @@ const AddClaimApplier = () => {
 
   const onSubmit = handleSubmit((data: AddItemData) => {
     console.log(data);
+    dispatch(addItem(data));
     reset({
       dmNumber: data.dmNumber, // Keep dmNumber unchanged
       itemCode: '',
@@ -45,15 +44,15 @@ const AddClaimApplier = () => {
   return (
     <section className='bg-white flex flex-col gap-6 text-black py-8'>
       <h1 className='mb-5 tracking-wider uppercase px-7'>Add Claim Applier</h1>
-      <div className='grid grid-cols-[1fr_2fr] min-h-screen'>
+      <div className='flex min-h-screen'>
         <form
-          className='add-items | flex flex-col gap-6 min-w-[300px] max-w-[400px] border-r px-5'
+          className='add-items | flex flex-col gap-6 w-[300px]   border-r px-5'
           onSubmit={onSubmit}
         >
           <div>
             <label
               htmlFor='first_name'
-              className='block mb-2 text-sm font-medium text-gray-500 '
+              className='block mb-2 text-sm font-medium text-gray-500'
             >
               Dm Number
             </label>
@@ -61,13 +60,16 @@ const AddClaimApplier = () => {
               type='text'
               id='itemCode'
               autoComplete='off'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
+              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 uppercase'
               placeholder='DM...'
               {...register('dmNumber', {
                 required: 'This field is required',
                 validate: (value) =>
                   value.startsWith('DM') || 'DM must start with "DM"',
               })}
+              onInput={(e) =>
+                (e.currentTarget.value = e.currentTarget.value.toUpperCase())
+              }
             />
             {errors.dmNumber && (
               <span className='text-red-500'>{errors.dmNumber.message}</span>
@@ -173,12 +175,53 @@ const AddClaimApplier = () => {
 
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
           >
             Add
           </button>
         </form>
-        <div className='table'></div>
+
+        <div className='flex-1 px-6 shadow-md sm:rounded-lg overflow-auto'>
+          <table className='w-full text-sm text-left rtl:text-right text-gray-500 as AddItemData[]'>
+            <thead className='text-xs text-black uppercase bg-[#74c0fc]'>
+              <tr>
+                <th scope='col' className='px-4 py-4'>
+                  #
+                </th>
+                <th scope='col' className='px-4 py-4'>
+                  DM
+                </th>
+                <th scope='col' className='px-4 py-4'>
+                  Items
+                </th>
+                <th scope='col' className='px-4 py-4'>
+                  Serial
+                </th>
+                <th scope='col' className='px-4 py-4'>
+                  Proforma Inv.
+                </th>
+                <th scope='col' className='px-4 py-4'>
+                  More Details
+                </th>
+                <th scope='col' className='px-4 py-4'>
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {itemsToAddDB.map((item: AddItemData, index) => {
+                return (
+                  <tr
+                    key={item.serialNumber}
+                    className='odd:bg-white even:bg-gray-200  border-b'
+                  >
+                    <ReadOnlyRow {...item} index={index} />
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );

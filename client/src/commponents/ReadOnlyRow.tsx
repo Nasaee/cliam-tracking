@@ -1,28 +1,36 @@
-import { Items } from '../pages/AddClaimApplier';
+import { FaRegEdit } from 'react-icons/fa';
+import { RiDeleteBin5Line } from 'react-icons/ri';
+import { AddItemData } from '../pages/AddClaimApplier';
 
-interface Props {
-  row: Items;
-  handleEditClick: (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    row: Items
-  ) => void;
-  handleDeleteClick: (id: string) => void;
-}
-const ReadOnlyRow = ({ row, handleEditClick, handleDeleteClick }: Props) => {
-  const { serialNumber, dmNumber, itemCode, proformaInv, additionInfo } = row;
+type Props = AddItemData & { index: number };
+
+const ReadOnlyRow = ({
+  index,
+  dmNumber,
+  itemCode,
+  serialNumber,
+  proformaInv,
+  additionInfo,
+}: Props) => {
   return (
     <>
-      <td>{dmNumber}</td>
-      <td>{itemCode}</td>
-      <td>{serialNumber}</td>
-      <td>{proformaInv}</td>
-      <td>{additionInfo}</td>
-      <td>
-        <button type='button' onClick={(e) => handleEditClick(e, row)}>
-          Edit
+      <td className='px-4 py-3'>{index + 1}</td>
+      <th
+        scope='row'
+        className='px-4 py-3 font-medium text-gray-900 whitespace-nowrap'
+      >
+        {dmNumber}
+      </th>
+      <td className='px-4 py-3'>{itemCode}</td>
+      <td className='px-4 py-3'>{serialNumber}</td>
+      <td className='px-4 py-3'>{proformaInv}</td>
+      <td className='px-4 py-3'>{additionInfo}</td>
+      <td className='flex justify-center gap-2 px-4 py-3'>
+        <button type='button'>
+          <FaRegEdit className='text-[#51cf66]' />
         </button>
-        <button type='button' onClick={() => handleDeleteClick(serialNumber)}>
-          Delete
+        <button type='button'>
+          <RiDeleteBin5Line className='text-[#fa5252] cursor-pointer' />
         </button>
       </td>
     </>
