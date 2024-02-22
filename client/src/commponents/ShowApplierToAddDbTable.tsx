@@ -30,11 +30,23 @@ const ShowApplierToAddDbTable = () => {
     setRowIdToEdit(null);
     toast.success('Add item succeeded');
   };
+
+  const handleUpdateDataToDb = (itemsDataArray: ItemData[]) => {
+    console.log(itemsDataArray);
+
+    // use react query mutation to handle async function
+    // show toast when succeed or failier
+    // clear item to add DB in store
+  };
+
   return (
     <>
       {itemsToAddDB.length > 0 && (
         <div className='flex items-center justify-end mb-2'>
-          <button className='text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'>
+          <button
+            className='text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
+            onClick={() => handleUpdateDataToDb(itemsToAddDB)}
+          >
             Update Cliam
           </button>
         </div>

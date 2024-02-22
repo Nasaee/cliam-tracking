@@ -80,7 +80,7 @@ const Appliers = () => {
           Add Items
         </Link>
       </div>
-      <DataTable columns={columns} rows={data} />
+      <DataTable columns={columns} rows={[...data].reverse()} />
     </section>
   );
 };
