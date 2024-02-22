@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import mockData from '../../mock-data';
 import toast from 'react-hot-toast';
 
 // type ApplierGreen = '544965' | '544965A' | '544965AF' | '544965D';
@@ -14,7 +13,7 @@ export type ItemData = {
   additionInfo: string;
 };
 
-const initialState: ItemData[] = [...mockData];
+const initialState: ItemData[] = [];
 
 const addAppllierSlice = createSlice({
   name: 'addApplier',

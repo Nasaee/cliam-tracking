@@ -7442,24 +7442,24 @@ const menu = [
         url: '/claim-hemolok-applier',
         icon: LiaToolsSolid,
       },
-      {
-        id: nanoid(),
-        title: 'Others Products',
-        url: '/claim-other-products',
-        icon: LiaToolboxSolid,
-      },
+      // {
+      //   id: nanoid(),
+      //   title: 'Others Products',
+      //   url: '/claim-other-products',
+      //   icon: LiaToolboxSolid,
+      // },
       {
         id: nanoid(),
         title: 'Add applier',
         url: '/add-appliers',
         icon: TfiDropboxAlt,
       },
-      {
-        id: nanoid(),
-        title: 'Add other products',
-        url: '/add-other-products',
-        icon: TfiDropbox,
-      },
+      // {
+      //   id: nanoid(),
+      //   title: 'Add other products',
+      //   url: '/add-other-products',
+      //   icon: TfiDropbox,
+      // },
     ],
   },
 ];
