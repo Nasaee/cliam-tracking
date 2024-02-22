@@ -3,36 +3,35 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/rootReducer';
 import { TextField } from '@mui/material';
 import ReadOnlyRow from '../commponents/ReadOnlyRow';
+import {
+  ItemData,
+  addApplierItem,
+  deleteApplierItem,
+  editApplierItem,
+} from '../store/addApplier/addApplierSlice';
+import EditableRow from '../commponents/EditableRow';
+import toast from 'react-hot-toast';
 import { useState } from 'react';
-import { addItem } from '../store/addApplier/addApplierSlice';
-
-export type AddItemData = {
-  dmNumber: '';
-  itemCode: '';
-  serialNumber: '';
-  proformaInv: '';
-  additionInfo: '';
-};
 
 const AddClaimApplier = () => {
   const itemsToAddDB = useSelector(
-    (state: RootState) => state.applierToAddDB as AddItemData[]
+    (state: RootState) => state.applierToAddDB as ItemData[]
   );
 
   const dispatch = useDispatch();
 
-  const [rowToEdit, setRowToEdit] = useState<AddItemData | null>(null);
+  const [rowIdToEdit, setRowIdToEdit] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<AddItemData>();
+  } = useForm<ItemData>();
 
-  const onSubmit = handleSubmit((data: AddItemData) => {
+  const onSubmit = handleSubmit((data: ItemData) => {
     console.log(data);
-    dispatch(addItem(data));
+    dispatch(addApplierItem(data));
     reset({
       dmNumber: data.dmNumber, // Keep dmNumber unchanged
       itemCode: '',
@@ -41,6 +40,18 @@ const AddClaimApplier = () => {
       additionInfo: '',
     });
   });
+
+  const handleDeleteItem = (id: string) => {
+    dispatch(deleteApplierItem({ id }));
+    toast.success('Remove succeeded');
+  };
+
+  const handleSaveEditedData = (formData: ItemData) => {
+    dispatch(editApplierItem(formData));
+    setRowIdToEdit(null);
+    toast.success('Add item succeeded');
+  };
+
   return (
     <section className='bg-white flex flex-col gap-6 text-black py-8'>
       <h1 className='mb-5 tracking-wider uppercase px-7'>Add Claim Applier</h1>
@@ -51,7 +62,7 @@ const AddClaimApplier = () => {
         >
           <div>
             <label
-              htmlFor='first_name'
+              htmlFor='itemCode'
               className='block mb-2 text-sm font-medium text-gray-500'
             >
               Dm Number
@@ -89,6 +100,7 @@ const AddClaimApplier = () => {
                 <input
                   type='text'
                   id='itemCode'
+                  autoComplete='off'
                   className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
                   placeholder='Enter item code...'
                   {...register('itemCode', {
@@ -183,7 +195,7 @@ const AddClaimApplier = () => {
 
         <div className='flex-1 px-6 shadow-md sm:rounded-lg overflow-auto'>
           <table className='w-full text-sm text-left rtl:text-right text-gray-500 as AddItemData[]'>
-            <thead className='text-xs text-black uppercase bg-[#74c0fc]'>
+            <thead className='text-xs text-white uppercase bg-[#2a3447a6]'>
               <tr>
                 <th scope='col' className='px-4 py-4'>
                   #
@@ -209,13 +221,27 @@ const AddClaimApplier = () => {
               </tr>
             </thead>
             <tbody>
-              {itemsToAddDB.map((item: AddItemData, index) => {
+              {itemsToAddDB.map((item: ItemData, index) => {
                 return (
                   <tr
                     key={item.serialNumber}
-                    className='odd:bg-white even:bg-gray-200  border-b'
+                    className=' odd:bg-white even:bg-gray-200 border-b w-full'
                   >
-                    <ReadOnlyRow {...item} index={index} />
+                    {rowIdToEdit === item.serialNumber ? (
+                      <EditableRow
+                        dataToEdit={item}
+                        index={index}
+                        handleCancel={() => setRowIdToEdit(null)}
+                        handleSaveEditedData={handleSaveEditedData}
+                      />
+                    ) : (
+                      <ReadOnlyRow
+                        {...item}
+                        index={index}
+                        handleDelete={handleDeleteItem}
+                        handleEditRow={setRowIdToEdit}
+                      />
+                    )}
                   </tr>
                 );
               })}

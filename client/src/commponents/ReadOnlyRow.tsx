@@ -1,8 +1,14 @@
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBin5Line } from 'react-icons/ri';
-import { AddItemData } from '../pages/AddClaimApplier';
+import { ItemData } from '../store/addApplier/addApplierSlice';
 
-type Props = AddItemData & { index: number };
+type AdditionalProps = {
+  index: number;
+  handleDelete: (id: string) => void;
+  handleEditRow: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+type Props = ItemData & AdditionalProps;
 
 const ReadOnlyRow = ({
   index,
@@ -11,6 +17,8 @@ const ReadOnlyRow = ({
   serialNumber,
   proformaInv,
   additionInfo,
+  handleDelete,
+  handleEditRow,
 }: Props) => {
   return (
     <>
@@ -27,10 +35,16 @@ const ReadOnlyRow = ({
       <td className='px-4 py-3'>{additionInfo}</td>
       <td className='flex justify-center gap-2 px-4 py-3'>
         <button type='button'>
-          <FaRegEdit className='text-[#51cf66]' />
+          <FaRegEdit
+            className='text-[#51cf66]'
+            onClick={() => handleEditRow(serialNumber)}
+          />
         </button>
         <button type='button'>
-          <RiDeleteBin5Line className='text-[#fa5252] cursor-pointer' />
+          <RiDeleteBin5Line
+            className='text-[#fa5252] cursor-pointer'
+            onClick={() => handleDelete(serialNumber)}
+          />
         </button>
       </td>
     </>

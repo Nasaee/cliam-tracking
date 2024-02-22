@@ -1,61 +1,94 @@
-import { Items } from '../pages/AddClaimApplier';
+import { useState } from 'react';
+import { ImCancelCircle } from 'react-icons/im';
+import { IoIosSave } from 'react-icons/io';
+import { ItemData } from '../store/addApplier/addApplierSlice';
 
-interface Props {
-  editFromData: Items;
-  handleEditFormChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleCancelClick: () => void;
-}
+type Props = {
+  dataToEdit: ItemData;
+  index: number;
+  handleCancel: () => void;
+  handleSaveEditedData: (formData: ItemData) => void;
+};
+
 const EditableRow = ({
-  editFromData,
-  handleEditFormChange,
-  handleCancelClick,
+  dataToEdit,
+  index,
+  handleCancel,
+  handleSaveEditedData,
 }: Props) => {
+  const [editFormData, setEditFormData] = useState<ItemData>(dataToEdit);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const key = e.target.getAttribute('name') as string;
+    const value = e.target.value;
+    setEditFormData({ ...editFormData, [key]: value });
+  };
   return (
     <>
-      <td>
+      <td className='px-4 py-3'>{index + 1}</td>
+      <th scope='row' className=' font-medium text-gray-900 whitespace-nowrap'>
         <input
           type='text'
           name='dmNumber'
-          onChange={handleEditFormChange}
-          value={editFromData.dmNumber}
+          value={editFormData.dmNumber}
+          onChange={handleInputChange}
+          className='px-2 py-1.5 border w-full'
+          autoComplete='off'
         />
-      </td>
-      <td>
+      </th>
+      <td className='px-2 py-1.5'>
         <input
           type='text'
           name='itemCode'
-          onChange={handleEditFormChange}
-          value={editFromData.itemCode}
+          value={editFormData.itemCode}
+          onChange={handleInputChange}
+          className='px-2 py-1.5 border w-full'
+          autoComplete='off'
         />
       </td>
-      <td>
+      <td className='px-2 py-1.5'>
         <input
           type='text'
           name='serialNumber'
-          onChange={handleEditFormChange}
-          value={editFromData.serialNumber}
+          value={editFormData.serialNumber}
+          onChange={handleInputChange}
+          className='px-2 py-1.5 border w-full'
+          autoComplete='off'
         />
       </td>
-      <td>
+      <td className='px-2 py-1.5'>
         <input
           type='text'
           name='proformaInv'
-          onChange={handleEditFormChange}
-          value={editFromData.proformaInv}
+          value={editFormData.proformaInv}
+          onChange={handleInputChange}
+          className='px-2 py-1.5 border w-full'
+          autoComplete='off'
         />
       </td>
-      <td>
+      <td className='px-2 py-1.5'>
         <input
           type='text'
           name='additionInfo'
-          onChange={handleEditFormChange}
-          value={editFromData.additionInfo}
+          value={editFormData.additionInfo}
+          onChange={handleInputChange}
+          className='px-2 py-1.5 border w-full'
+          autoComplete='off'
         />
       </td>
-      <td>
-        <button type='submit'>Save</button>
-        <button type='button' onClick={handleCancelClick}>
-          Cancel
+      <td className='flex justify-center items-center gap-2 px-4 py-3 w-full'>
+        <button
+          type='button'
+          onClick={() => handleSaveEditedData(editFormData)}
+        >
+          <IoIosSave className='text-blue-500 text-lg' />
+        </button>
+        <button type='button'>
+          <ImCancelCircle
+            className='text-[#fa5252] cursor-pointer'
+            onClick={handleCancel}
+          />
         </button>
       </td>
     </>
