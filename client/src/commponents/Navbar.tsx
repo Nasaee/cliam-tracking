@@ -1,28 +1,19 @@
-import { useState } from 'react';
 import { CiGrid41 } from 'react-icons/ci';
-import { CiLogin } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
 
 const Navbar = () => {
-  const [isLogin, setIsLogin] = useState(false);
   return (
     <nav className='w-full flex justify-between items-center px-[20px] py-[10px]'>
       <div className='logo | '>
         <p>ICON</p>
       </div>
       <div className='menu | flex items-center justify-center gap-4'>
-        <button className='bg-transparent border-none p-0 outline-none'>
+        <button className='md:hidden bg-transparent border-none p-0 outline-none'>
           <CiGrid41 className='text-xl' />
         </button>
-        <button
-          className='bg-transparent border-none p-0 outline-none'
-          onClick={() => setIsLogin(!isLogin)}
-        >
-          {isLogin ? (
-            <CiLogout className='text-xl' />
-          ) : (
-            <CiLogin className='text-xl' />
-          )}
+        {/* // TODO: create handle logout */}
+        <button className='flex items-center gap-2 bg-transparent border-none p-0 outline-none hover:text-indigo-300'>
+          <CiLogout className='text-xl ' /> Logout
         </button>
 
         <div className='user | flex items-center gap-2'>

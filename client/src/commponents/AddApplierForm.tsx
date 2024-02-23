@@ -135,6 +135,9 @@ const AddApplierForm = () => {
               placeholder='Proforma invoice...'
               autoComplete='off'
               {...register('proformaInv')}
+              onInput={(e) =>
+                (e.currentTarget.value = e.currentTarget.value.toUpperCase())
+              }
             />
           </div>
         </div>
@@ -159,7 +162,7 @@ const AddApplierForm = () => {
 
       <button
         type='submit'
-        className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
+        className='text-white bg-indigo-600 hover:bg-indigo-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
       >
         Add
       </button>
