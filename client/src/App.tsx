@@ -21,7 +21,7 @@ import Register from './pages/Register';
 function App() {
   const Layout = () => {
     // TODO: check from cookie
-    const isLogin = true;
+    const isLogin = false;
 
     if (!isLogin) {
       return <Navigate to='/login' replace />;

@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "frontend": "npm run dev --prefix client"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "nasaee <nasaee.dev@gmail.com>",
   "license": "ISC",
