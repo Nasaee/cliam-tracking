@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-import { createNewUser, getUser } from '../models/user/user.model';
+import { createNewUser, getUser } from '../../models/user/user.model';
 import jwt from 'jsonwebtoken';
+import generateJwtToken from '../../utils/generateJwtToken';
 
 export const registerUser = async (req: Request, res: Response) => {
   const errors = validationResult(req);
@@ -20,11 +21,7 @@ export const registerUser = async (req: Request, res: Response) => {
 
     user = await createNewUser(req.body);
 
-    const token = jwt.sign(
-      { userId: user.id, role: user.role },
-      process.env.JWT_SECRET_KEY as string,
-      { expiresIn: '7d' }
-    );
+    const token = generateJwtToken(user);
 
     res.cookie('auth_token', token, {
       httpOnly: true,

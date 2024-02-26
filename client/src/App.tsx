@@ -27,21 +27,18 @@ function App() {
       return <Navigate to='/login' replace />;
     }
     return (
-      <>
-        <main className='font-inter'>
-          <Navbar />
-          <div className='flex'>
-            <div className='menu-container | hidden md:block p-5 border-r-2 border-[#384256]'>
-              <Menu />
-            </div>
-            <div className='content-container | w-full min-h-screen px-5 pb-5 overflow-hidden'>
-              <Outlet />
-            </div>
+      <main className='font-inter'>
+        <Navbar />
+        <div className='flex'>
+          <div className='menu-container | hidden md:block p-5 border-r-2 border-[#384256]'>
+            <Menu />
           </div>
-          <Footer />
-        </main>
-        <Toaster />
-      </>
+          <div className='content-container | w-full min-h-screen px-5 pb-5 overflow-hidden'>
+            <Outlet />
+          </div>
+        </div>
+        <Footer />
+      </main>
     );
   };
 
@@ -82,7 +79,12 @@ function App() {
     { path: '/register', element: <Register /> },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />;
+      <Toaster />
+    </>
+  );
 }
 
 export default App;

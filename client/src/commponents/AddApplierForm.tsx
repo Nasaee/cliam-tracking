@@ -13,7 +13,6 @@ const AddApplierForm = () => {
   } = useForm<ItemData>();
 
   const onSubmit = handleSubmit((data: ItemData) => {
-    console.log(data);
     dispatch(addApplierItem(data));
     reset({
       dmNumber: data.dmNumber, // Keep dmNumber unchanged

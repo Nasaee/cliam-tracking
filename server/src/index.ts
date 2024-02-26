@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
-import { mongoConnect } from './services/mongo';
+import { mongoConnect } from './utils/mongoConnect';
 import cookieParser from 'cookie-parser';
 import v1 from './v1';
 
