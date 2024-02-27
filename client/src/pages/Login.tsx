@@ -1,10 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { useMutation } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { ZodType, z } from 'zod';
 import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
+import { useMutation } from '@tanstack/react-query';
 
 export type LoginFormData = {
   email: string;
@@ -26,7 +26,8 @@ const Login = () => {
     formState: { errors },
   } = useForm<LoginFormData>({ resolver: zodResolver(schema) });
 
-  const mutation = useMutation(apiClient.login, {
+  const mutation = useMutation({
+    mutationFn: apiClient.login,
     onSuccess: async (params) => {
       console.log(params);
       toast.success('Logged in successfuly');
@@ -105,7 +106,7 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              disabled={mutation.isLoading}
+              disabled={mutation.isPending}
               className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
             >
               Sign in

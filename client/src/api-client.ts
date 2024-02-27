@@ -35,3 +35,18 @@ export const login = async (formData: LoginFormData) => {
     }
   }
 };
+
+export const validateToken = async () => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/api/v1/auth/validate-token`,
+      { withCredentials: true }
+    );
+
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'Unauthorized');
+    }
+  }
+};

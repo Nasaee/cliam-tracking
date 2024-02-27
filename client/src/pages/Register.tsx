@@ -1,10 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ZodType, z } from 'zod';
 import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 
 export type RegisterFormData = {
   username: string;
@@ -13,8 +13,6 @@ export type RegisterFormData = {
   confirmPassword: string;
 };
 const Register = () => {
-  const navigate = useNavigate();
-
   const schema: ZodType<RegisterFormData> = z
     .object({
       username: z.string().min(2).max(30),
@@ -34,14 +32,14 @@ const Register = () => {
     formState: { errors },
   } = useForm<RegisterFormData>({ resolver: zodResolver(schema) });
 
-  const mutation = useMutation(apiClient.register, {
+  const mutation = useMutation({
+    mutationFn: apiClient.register,
     onSuccess: async () => {
       // 1. toast success
       toast.success('Register succeeded!');
       reset();
       // 2. recall query client to refetch user
       // 3. redirect to panding
-      navigate('/');
     },
     onError: (error: Error) => {
       toast.error(error.message);
@@ -150,7 +148,7 @@ const Register = () => {
               <div>
                 <button
                   type='submit'
-                  disabled={mutation.isLoading}
+                  disabled={mutation.isPending}
                   className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                 >
                   Create an account

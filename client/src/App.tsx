@@ -17,10 +17,12 @@ import AddClaimOtherProducts from './pages/AddClaimOtherProducts';
 import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import * as apiClient from './api-client';
 
 function App() {
   const Layout = () => {
     // TODO: check from cookie
+
     const isLogin = false;
 
     if (!isLogin) {
