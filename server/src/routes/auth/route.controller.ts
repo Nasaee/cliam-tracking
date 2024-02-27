@@ -35,7 +35,7 @@ const loginUser = async (req: Request, res: Response) => {
     secure: process.env.NODE_ENV === 'production',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
-  res.status(200).json({ user: { userId: user._id, role: user.role } });
+  res.status(200).send({ message: 'Loged in successfuly' });
 };
 
 const logOutUser = async (req: Request, res: Response) => {

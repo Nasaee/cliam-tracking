@@ -20,7 +20,7 @@ const Register = () => {
       // 1. toast success
       toast.success('Register succeeded!');
       // 2. recall query client to refetch user
-      // 3. redirect to home page
+      // 3. redirect to panding
       navigate('/');
     },
     onError: (error: Error) => {
