@@ -15,18 +15,6 @@ export type RegisterFormData = {
 const Register = () => {
   const navigate = useNavigate();
 
-  const mutation = useMutation(apiClient.register, {
-    onSuccess: async () => {
-      // 1. toast success
-      toast.success('Register succeeded!');
-      // 2. recall query client to refetch user
-      // 3. redirect to panding
-      navigate('/');
-    },
-    onError: (error: Error) => {
-      toast.error(error.message);
-    },
-  });
   const schema: ZodType<RegisterFormData> = z
     .object({
       username: z.string().min(2).max(30),
@@ -46,9 +34,22 @@ const Register = () => {
     formState: { errors },
   } = useForm<RegisterFormData>({ resolver: zodResolver(schema) });
 
+  const mutation = useMutation(apiClient.register, {
+    onSuccess: async () => {
+      // 1. toast success
+      toast.success('Register succeeded!');
+      reset();
+      // 2. recall query client to refetch user
+      // 3. redirect to panding
+      navigate('/');
+    },
+    onError: (error: Error) => {
+      toast.error(error.message);
+    },
+  });
+
   const onSubmit = handleSubmit((formData: RegisterFormData) => {
     mutation.mutate(formData);
-    reset();
   });
 
   return (

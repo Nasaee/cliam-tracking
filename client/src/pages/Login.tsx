@@ -13,16 +13,6 @@ export type LoginFormData = {
 
 const Login = () => {
   const navigate = useNavigate();
-  const mutation = useMutation(apiClient.login, {
-    onSuccess: async (params) => {
-      console.log(params);
-      toast.success('Logged in successfuly');
-      navigate('/');
-    },
-    onError: (error: Error) => {
-      toast.error(error.message);
-    },
-  });
 
   const schema: ZodType<LoginFormData> = z.object({
     email: z.string().email(),
@@ -35,6 +25,18 @@ const Login = () => {
     reset,
     formState: { errors },
   } = useForm<LoginFormData>({ resolver: zodResolver(schema) });
+
+  const mutation = useMutation(apiClient.login, {
+    onSuccess: async (params) => {
+      console.log(params);
+      toast.success('Logged in successfuly');
+      reset();
+      navigate('/');
+    },
+    onError: (error: Error) => {
+      toast.error(error.message);
+    },
+  });
 
   const onSubmit = handleSubmit((formData: LoginFormData) => {
     mutation.mutate(formData);
