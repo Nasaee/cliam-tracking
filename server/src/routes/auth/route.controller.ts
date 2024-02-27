@@ -3,6 +3,7 @@ import { validationResult } from 'express-validator';
 import generateJwtToken from '../../utils/generateJwtToken';
 import { getUser } from '../../models/user/user.model';
 import bcrypt from 'bcryptjs';
+import { log } from 'console';
 
 const loginUser = async (req: Request, res: Response) => {
   const errors = validationResult(req);
@@ -14,13 +15,14 @@ const loginUser = async (req: Request, res: Response) => {
 
   const { email, password } = req.body;
 
-  const user = await getUser(req.body.email);
+  const user = await getUser(email);
 
   if (!user) {
     return res.status(400).json({ message: 'Invalid Credentials' });
   }
 
-  const isMatchPwd = bcrypt.compare(password, user.password);
+  const isMatchPwd = await bcrypt.compare(password, user.password);
+  console.log(isMatchPwd);
 
   if (!isMatchPwd) {
     return res.status(400).json({ message: 'Invalid Credentials' });
@@ -33,6 +35,7 @@ const loginUser = async (req: Request, res: Response) => {
     secure: process.env.NODE_ENV === 'production',
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
+  res.status(200).json({ user: { userId: user._id, role: user.role } });
 };
 
 const logOutUser = async (req: Request, res: Response) => {

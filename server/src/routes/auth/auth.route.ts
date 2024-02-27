@@ -5,7 +5,7 @@ import verifyToken from '../../middlewares/verifyToken.middleware';
 
 const authRouter = express.Router();
 
-// /api/v1/auth/register
+// /api/v1/auth/...
 authRouter.post('/login', [
   check('email', 'Email is required').isEmail(),
   check('password', 'Password with 6 or more characters required').isLength({
@@ -14,7 +14,7 @@ authRouter.post('/login', [
   loginUser,
 ]);
 
-authRouter.post('/register', logOutUser);
+authRouter.post('/logout', logOutUser);
 
 authRouter.get(
   '/validate-token',
