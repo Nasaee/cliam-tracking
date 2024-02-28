@@ -17,6 +17,7 @@ const Navbar = () => {
     onSuccess: async () => {
       await queryClient.invalidateQueries('validateToken');
       dispatch(resetUser());
+
       toast.success('Logged out successfully');
     },
     onError: (error: Error) => {
@@ -30,7 +31,7 @@ const Navbar = () => {
   return (
     <nav className='w-full flex justify-between items-center px-[20px] py-[10px]'>
       <div className='logo | '>
-        <p>ICON</p>
+        <img src='../../public/logo.png' alt='' className='w-16' />
       </div>
       <div className='menu | flex items-center justify-center gap-4'>
         <button className='md:hidden bg-transparent border-none p-0 outline-none'>

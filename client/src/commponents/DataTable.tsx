@@ -45,7 +45,7 @@ export default function DataTable({ columns, rows }: TableProps) {
               quickFilterProps: { debounceMs: 500 },
             },
           }}
-          pageSizeOptions={[5]}
+          pageSizeOptions={[100]}
           checkboxSelection
           disableRowSelectionOnClick
         />

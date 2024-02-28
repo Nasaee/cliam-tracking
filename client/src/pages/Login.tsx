@@ -36,6 +36,7 @@ const Login = () => {
       toast.success('Logged in successfuly');
       reset();
       await queryClient.invalidateQueries('validateToken');
+      reset();
       navigate('/');
     },
     onError: (error: Error) => {
@@ -45,7 +46,6 @@ const Login = () => {
 
   const onSubmit = handleSubmit((formData: LoginFormData) => {
     mutation.mutate(formData);
-    reset();
   });
 
   if (userId) {
