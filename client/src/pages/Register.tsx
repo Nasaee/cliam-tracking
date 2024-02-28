@@ -1,10 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { ZodType, z } from 'zod';
 import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from 'react-query';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/rootReducer';
 
 export type RegisterFormData = {
   username: string;
@@ -13,6 +15,9 @@ export type RegisterFormData = {
   confirmPassword: string;
 };
 const Register = () => {
+  const userId = useSelector((state: RootState) => state.user.userId);
+  const queryClient = useQueryClient();
+
   const schema: ZodType<RegisterFormData> = z
     .object({
       username: z.string().min(2).max(30),
@@ -38,8 +43,7 @@ const Register = () => {
       // 1. toast success
       toast.success('Register succeeded!');
       reset();
-      // 2. recall query client to refetch user
-      // 3. redirect to panding
+      await queryClient.invalidateQueries('validateToken');
     },
     onError: (error: Error) => {
       toast.error(error.message);
@@ -49,6 +53,10 @@ const Register = () => {
   const onSubmit = handleSubmit((formData: RegisterFormData) => {
     mutation.mutate(formData);
   });
+
+  if (userId) {
+    return <Navigate to='/' replace />;
+  }
 
   return (
     <section className='bg-gray-50'>
@@ -148,7 +156,7 @@ const Register = () => {
               <div>
                 <button
                   type='submit'
-                  disabled={mutation.isPending}
+                  disabled={mutation.isLoading}
                   className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                 >
                   Create an account

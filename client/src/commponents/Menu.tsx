@@ -2,9 +2,14 @@ import { NavLink } from 'react-router-dom';
 import { menu } from '../data';
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/rootReducer';
+import { MdOutlineAdminPanelSettings } from 'react-icons/md';
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const userRole = useSelector((state: RootState) => state.user.role);
+
   return (
     <aside
       className={`menu | flex flex-col gap-2 ${
@@ -19,6 +24,27 @@ const Menu = () => {
           {isMenuOpen ? <FaArrowLeft /> : <FaArrowRight />}
         </button>
       </div>
+      {userRole === 'admin' && (
+        <div className='item | flex flex-col gap-3 mb-5'>
+          <span className='uppercase text-[#ddd] text-[0.6rem] font-[400]'>
+            admin
+          </span>
+
+          <NavLink
+            to='/admin'
+            className={({ isActive, isPending }) =>
+              isPending
+                ? 'flex items-center text-[0.8rem] tracking-wider p-2 hover:bg-[#384256] rounded-md'
+                : isActive
+                ? 'flex items-center text-[0.8rem] tracking-wider p-2 bg-[#384256] rounded-md'
+                : 'flex items-center text-[0.8rem] tracking-wider p-2 hover:bg-[#384256] rounded-md'
+            }
+          >
+            <MdOutlineAdminPanelSettings className='text-[1.05rem]' />
+            {isMenuOpen && <span className='ml-2'>Permission</span>}
+          </NavLink>
+        </div>
+      )}
       {menu.map((item) => {
         const { id, title, listItems } = item;
         return (

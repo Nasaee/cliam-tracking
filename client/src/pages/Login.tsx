@@ -1,10 +1,12 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { ZodType, z } from 'zod';
 import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from 'react-query';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/rootReducer';
 
 export type LoginFormData = {
   email: string;
@@ -12,7 +14,9 @@ export type LoginFormData = {
 };
 
 const Login = () => {
+  const userId = useSelector((state: RootState) => state.user.userId);
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
   const schema: ZodType<LoginFormData> = z.object({
     email: z.string().email(),
@@ -28,10 +32,10 @@ const Login = () => {
 
   const mutation = useMutation({
     mutationFn: apiClient.login,
-    onSuccess: async (params) => {
-      console.log(params);
+    onSuccess: async () => {
       toast.success('Logged in successfuly');
       reset();
+      await queryClient.invalidateQueries('validateToken');
       navigate('/');
     },
     onError: (error: Error) => {
@@ -43,6 +47,10 @@ const Login = () => {
     mutation.mutate(formData);
     reset();
   });
+
+  if (userId) {
+    return <Navigate to='/' replace />;
+  }
 
   return (
     <div className='flex flex-col justify-center bg-white min-h-screen px-6 py-12 lg:px-8'>
@@ -106,7 +114,7 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              disabled={mutation.isPending}
+              disabled={mutation.isLoading}
               className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
             >
               Sign in

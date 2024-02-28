@@ -46,7 +46,21 @@ export const validateToken = async () => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data.message || 'Unauthorized');
+      throw new Error(error.response?.data.message);
     }
+  }
+};
+
+export const logout = async () => {
+  try {
+    await axios.post(
+      `${API_BASE_URL}/api/v1/auth/logout`,
+      {},
+      {
+        withCredentials: true,
+      }
+    );
+  } catch (error) {
+    throw new Error('Logout failed');
   }
 };

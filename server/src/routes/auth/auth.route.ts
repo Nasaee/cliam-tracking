@@ -14,8 +14,6 @@ authRouter.post('/login', [
   loginUser,
 ]);
 
-authRouter.post('/logout', logOutUser);
-
 authRouter.get(
   '/validate-token',
   verifyToken,
@@ -23,5 +21,7 @@ authRouter.get(
     return res.status(200).send({ user: req.user });
   }
 );
+
+authRouter.post('/logout', logOutUser);
 
 export default authRouter;

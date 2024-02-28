@@ -6,6 +6,7 @@ declare global {
     interface Request {
       user: {
         userId: string;
+        username: string;
         role: string;
       };
     }
@@ -18,10 +19,20 @@ const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     return res.status(401).send({ message: 'Unauthorized' });
   }
   try {
-    const decodeCoockie = jwt.verify(token, process.env.TOKEN_SECRET as string);
-    const { userId, role } = decodeCoockie as JwtPayload;
-    req.user = { userId, role };
-  } catch (error) {}
+    const decodeCoockie = jwt.verify(
+      token,
+      process.env.JWT_SECRET_KEY as string
+    );
+
+    if (!decodeCoockie) {
+      return res.status(401).send({ message: 'Unauthorized' });
+    }
+
+    const { userId, username, role } = decodeCoockie as JwtPayload;
+    req.user = { userId, username, role };
+  } catch (error) {
+    return res.status(401).send({ message: 'Unauthorized' });
+  }
   next();
 };
 

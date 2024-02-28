@@ -3,9 +3,8 @@ import { validationResult } from 'express-validator';
 import generateJwtToken from '../../utils/generateJwtToken';
 import { getUser } from '../../models/user/user.model';
 import bcrypt from 'bcryptjs';
-import { log } from 'console';
 
-const loginUser = async (req: Request, res: Response) => {
+export const loginUser = async (req: Request, res: Response) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).json({
@@ -22,7 +21,6 @@ const loginUser = async (req: Request, res: Response) => {
   }
 
   const isMatchPwd = await bcrypt.compare(password, user.password);
-  console.log(isMatchPwd);
 
   if (!isMatchPwd) {
     return res.status(400).json({ message: 'Invalid Credentials' });
@@ -37,10 +35,7 @@ const loginUser = async (req: Request, res: Response) => {
   });
   res.status(200).send({ message: 'Loged in successfuly' });
 };
-
-const logOutUser = async (req: Request, res: Response) => {
+export const logOutUser = (req: Request, res: Response) => {
   res.cookie('auth_token', '', { expires: new Date(0) });
-  res.end();
+  res.send();
 };
-
-export { loginUser, logOutUser };
