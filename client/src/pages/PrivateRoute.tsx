@@ -2,13 +2,13 @@ import { redirect } from 'react-router-dom';
 
 type Props = {
   children: JSX.Element;
-  redirectPath: string;
+  redirectPath?: string;
   passCondition: boolean;
 };
 const PrivateRoute = ({ children, redirectPath, passCondition }: Props) => {
   // TODO: handle authentication if user is admin
 
-  if (!passCondition) {
+  if (redirectPath && !passCondition) {
     redirect(redirectPath);
   }
 

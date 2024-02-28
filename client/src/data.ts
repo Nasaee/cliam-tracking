@@ -1,8 +1,7 @@
 import { nanoid } from 'nanoid';
-import { LiaToolboxSolid, LiaToolsSolid } from 'react-icons/lia';
-import { MdOutlineAdminPanelSettings } from 'react-icons/md';
+import { LiaToolsSolid } from 'react-icons/lia';
 import { SlHome } from 'react-icons/sl';
-import { TfiDropbox, TfiDropboxAlt } from 'react-icons/tfi';
+import { TfiDropboxAlt } from 'react-icons/tfi';
 
 export const data = [
   {
@@ -7408,18 +7407,6 @@ const receiveStatus = compaireReceiveStatus(data);
 export type ReceiveStatus = (typeof receiveStatus)[number];
 
 const menu = [
-  {
-    id: nanoid(),
-    title: 'admin',
-    listItems: [
-      {
-        id: nanoid(),
-        title: 'Permission',
-        url: '/admin',
-        icon: MdOutlineAdminPanelSettings,
-      },
-    ],
-  },
   {
     id: nanoid(),
     title: 'main',

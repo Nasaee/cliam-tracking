@@ -1,7 +1,32 @@
 import { CiGrid41 } from 'react-icons/ci';
 import { CiLogout } from 'react-icons/ci';
+import { FaUserCircle } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/rootReducer';
+import { useMutation, useQueryClient } from 'react-query';
+import * as apiClient from '../api-client';
+import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { resetUser } from '../store/user/userSlice';
 
 const Navbar = () => {
+  const queryClient = useQueryClient();
+  const dispatch = useDispatch();
+  const mutation = useMutation({
+    mutationFn: apiClient.logout,
+    onSuccess: async () => {
+      await queryClient.invalidateQueries('validateToken');
+      dispatch(resetUser());
+      toast.success('Logged out successfully');
+    },
+    onError: (error: Error) => {
+      toast.error(error.message);
+    },
+  });
+  const username = useSelector((state: RootState) => state.user.username);
+  const handleLogout = () => {
+    mutation.mutate();
+  };
   return (
     <nav className='w-full flex justify-between items-center px-[20px] py-[10px]'>
       <div className='logo | '>
@@ -11,18 +36,16 @@ const Navbar = () => {
         <button className='md:hidden bg-transparent border-none p-0 outline-none'>
           <CiGrid41 className='text-xl' />
         </button>
-        {/* // TODO: create handle logout */}
-        <button className='flex items-center gap-2 bg-transparent border-none p-0 outline-none hover:text-indigo-300'>
+        <button
+          onClick={handleLogout}
+          className='flex items-center gap-2 bg-transparent border-none p-0 outline-none hover:text-indigo-300'
+        >
           <CiLogout className='text-xl ' /> Logout
         </button>
 
         <div className='user | flex items-center gap-2'>
-          <img
-            src='https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-            alt='image profile'
-            className='w-5 h-5 rounded-full '
-          />
-          <span className='text-xs'>John Doe</span>
+          <FaUserCircle className='text-xl' />
+          <span className='capitalize text-md'>{username ? username : ''}</span>
         </div>
       </div>
     </nav>

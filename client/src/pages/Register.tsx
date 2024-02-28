@@ -1,6 +1,63 @@
-import { Link } from 'react-router-dom';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Link, Navigate } from 'react-router-dom';
+import { ZodType, z } from 'zod';
+import * as apiClient from '../api-client';
+import toast from 'react-hot-toast';
+import { useMutation, useQueryClient } from 'react-query';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/rootReducer';
 
+export type RegisterFormData = {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
 const Register = () => {
+  const userId = useSelector((state: RootState) => state.user.userId);
+  const queryClient = useQueryClient();
+
+  const schema: ZodType<RegisterFormData> = z
+    .object({
+      username: z.string().min(2).max(30),
+      email: z.string().email(),
+      password: z.string().min(6).max(20),
+      confirmPassword: z.string().min(6).max(20),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+      message: 'Passwords do not match',
+      path: ['confirmPassword'],
+    });
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<RegisterFormData>({ resolver: zodResolver(schema) });
+
+  const mutation = useMutation({
+    mutationFn: apiClient.register,
+    onSuccess: async () => {
+      // 1. toast success
+      toast.success('Register succeeded!');
+      reset();
+      await queryClient.invalidateQueries('validateToken');
+    },
+    onError: (error: Error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const onSubmit = handleSubmit((formData: RegisterFormData) => {
+    mutation.mutate(formData);
+  });
+
+  if (userId) {
+    return <Navigate to='/' replace />;
+  }
+
   return (
     <section className='bg-gray-50'>
       <div className='flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0'>
@@ -13,7 +70,11 @@ const Register = () => {
             <h2 className='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
               Create an account
             </h2>
-            <form className='space-y-4 md:space-y-6' action='#'>
+            <form
+              onSubmit={onSubmit}
+              className='space-y-4 md:space-y-6'
+              action='#'
+            >
               <div>
                 <label
                   htmlFor='email'
@@ -23,26 +84,34 @@ const Register = () => {
                 </label>
                 <input
                   type='text'
-                  name='username'
                   id='username'
                   className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 '
                   placeholder='Your name'
+                  {...register('username')}
                 />
+                {errors.username && (
+                  <span className='text-red-500'>
+                    {errors.username.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
-                  htmlFor='username'
+                  htmlFor='email'
                   className='block mb-2 text-sm font-medium text-gray-900'
                 >
                   Your email
                 </label>
                 <input
                   type='email'
-                  name='email'
                   id='email'
                   className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 '
                   placeholder='name@mail.com'
+                  {...register('email')}
                 />
+                {errors.email && (
+                  <span className='text-red-500'>{errors.email.message}</span>
+                )}
               </div>
               <div>
                 <label
@@ -53,11 +122,16 @@ const Register = () => {
                 </label>
                 <input
                   type='password'
-                  name='password'
                   id='password'
                   placeholder='••••••••'
                   className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5'
+                  {...register('password')}
                 />
+                {errors.password && (
+                  <span className='text-red-500'>
+                    {errors.password.message}
+                  </span>
+                )}
               </div>
               <div>
                 <label
@@ -67,16 +141,22 @@ const Register = () => {
                   Confirm password
                 </label>
                 <input
-                  type='confirm-password'
-                  name='confirm-password'
+                  type='password'
                   id='confirm-password'
                   placeholder='••••••••'
                   className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5'
+                  {...register('confirmPassword')}
                 />
+                {errors.confirmPassword && (
+                  <span className='text-red-500'>
+                    {errors.confirmPassword.message}
+                  </span>
+                )}
               </div>
               <div>
                 <button
                   type='submit'
+                  disabled={mutation.isLoading}
                   className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                 >
                   Create an account

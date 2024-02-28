@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema<UserType>({
   role: {
     type: String,
     enum: ['admin', 'editor', 'user', 'pending'],
-    default: 'user',
+    default: 'pending',
   },
 });
 

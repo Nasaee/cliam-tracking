@@ -17,31 +17,56 @@ import AddClaimOtherProducts from './pages/AddClaimOtherProducts';
 import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import * as apiClient from './api-client';
+import { useQuery } from 'react-query';
+import Loading from './pages/Loading';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/rootReducer';
+import { setCurrentUser } from './store/user/userSlice';
+import PendingApproval from './pages/PendingApproval ';
 
 function App() {
-  const Layout = () => {
-    // TODO: check from cookie
-    const isLogin = false;
+  const dispatch = useDispatch();
+  const { data, isLoading, isSuccess } = useQuery({
+    queryKey: ['validateToken'],
+    queryFn: apiClient.validateToken,
+    retry: false,
+  });
 
-    if (!isLogin) {
+  if (isSuccess && data.user) {
+    dispatch(setCurrentUser(data.user));
+  }
+
+  const { userId, role } = useSelector((state: RootState) => state.user);
+
+  const Layout = () => {
+    if (role === 'pending') {
+      return <Navigate to='/pending-approve' replace />;
+    }
+
+    if (!userId) {
       return <Navigate to='/login' replace />;
     }
     return (
-      <>
-        <main className='font-inter'>
-          <Navbar />
-          <div className='flex'>
-            <div className='menu-container | hidden md:block p-5 border-r-2 border-[#384256]'>
-              <Menu />
+      <main className='font-inter'>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <Navbar />
+            <div className='flex'>
+              <div className='menu-container | hidden md:block p-5 border-r-2 border-[#384256]'>
+                <Menu />
+              </div>
+              <div className='content-container | w-full min-h-screen px-5 pb-5 overflow-hidden'>
+                <Outlet />
+              </div>
             </div>
-            <div className='content-container | w-full min-h-screen px-5 pb-5 overflow-hidden'>
-              <Outlet />
-            </div>
-          </div>
-          <Footer />
-        </main>
-        <Toaster />
-      </>
+            <Footer />
+          </>
+        )}
+      </main>
     );
   };
 
@@ -55,7 +80,7 @@ function App() {
           path: '/admin',
           element: (
             // TODO: check passCondition leter
-            <PrivateRoute redirectPath='/' passCondition={true}>
+            <PrivateRoute redirectPath='/' passCondition={role === 'admin'}>
               <AdminPermission />
             </PrivateRoute>
           ),
@@ -80,9 +105,22 @@ function App() {
     },
     { path: '/login', element: <Login /> },
     { path: '/register', element: <Register /> },
+    {
+      path: '/pending-approve',
+      element: (
+        <PrivateRoute redirectPath='/' passCondition={role === 'pending'}>
+          <PendingApproval />
+        </PrivateRoute>
+      ),
+    },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Toaster />
+    </>
+  );
 }
 
 export default App;
