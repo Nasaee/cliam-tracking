@@ -15,16 +15,28 @@ const actionColumn: GridColDef = {
   headerName: 'Action',
   width: 200,
   sortable: false,
-  renderCell: () => {
-    // TODO: add action
+  renderCell: ({ id }) => {
+    // TODO: add action pass id to database
     return (
       <div className='flex gap-2 text-lg'>
-        <Link to={'/'}>
+        {/* // TODO: add action pass id to database to edit */}
+        <button
+          type='button'
+          onClick={() => {
+            console.log(id);
+          }}
+        >
           <FaRegEdit className='text-[#51cf66]' />
-        </Link>
-        <div className='delete' onClick={() => {}}>
+        </button>
+        {/* // TODO: add action pass id to database to remove item from database */}
+        <button
+          type='button'
+          onClick={() => {
+            console.log(id);
+          }}
+        >
           <RiDeleteBin5Line className='text-[#fa5252] cursor-pointer' />
-        </div>
+        </button>
       </div>
     );
   },
@@ -37,6 +49,7 @@ export default function DataTable({ columns, rows }: TableProps) {
         <DataGrid
           className='bg-white p-4'
           rows={rows}
+          getRowId={(row) => row._id}
           columns={[...columns, actionColumn]}
           slots={{ toolbar: GridToolbar }}
           slotProps={{

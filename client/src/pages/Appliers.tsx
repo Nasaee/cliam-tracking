@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
 const Appliers = () => {
   const columns: GridColDef[] = [
     {
-      field: 'id',
+      field: '_id',
       headerName: 'No.',
       width: 90,
       valueFormatter(params) {
         // TODO: fix this to sequence number or remove column
+
         return params.value;
       },
     },

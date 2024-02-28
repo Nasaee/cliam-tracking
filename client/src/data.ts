@@ -5,7 +5,7 @@ import { TfiDropboxAlt } from 'react-icons/tfi';
 
 export const data = [
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/027',
     itemCode: '37544965A',
     serialNumber: '06B1629320-019',
@@ -19,7 +19,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/039',
     itemCode: '544965A',
     serialNumber: '06C1749070-041',
@@ -33,7 +33,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/039',
     itemCode: '544965A',
     serialNumber: '06F1871317-046',
@@ -47,7 +47,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/041',
     itemCode: '544965',
     serialNumber: '08C1383517-023',
@@ -61,7 +61,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/042',
     itemCode: '544965A',
     serialNumber: '06F1520340-007',
@@ -75,7 +75,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/042',
     itemCode: '544965A',
     serialNumber: '06K1758648-010',
@@ -89,7 +89,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/044',
     itemCode: '544965',
     serialNumber: '06G1630663-025',
@@ -103,7 +103,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/044',
     itemCode: '544965AF',
     serialNumber: '06F1388059-013',
@@ -117,7 +117,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/044',
     itemCode: '544965AF',
     serialNumber: '06F1520340-011',
@@ -131,7 +131,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06F1871317-021',
@@ -145,7 +145,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06K1758647-031',
@@ -159,7 +159,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06A1863101-048',
@@ -173,7 +173,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06F1871317-016',
@@ -187,7 +187,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06M1279277-050',
@@ -201,7 +201,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06M1279277-034',
@@ -215,7 +215,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965AF',
     serialNumber: '06F1871317-015',
@@ -229,7 +229,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/048',
     itemCode: '544965A',
     serialNumber: '06B1629323-024',
@@ -243,7 +243,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/051',
     itemCode: '544965AF',
     serialNumber: '06K1758645-017',
@@ -257,7 +257,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/002',
     itemCode: '544965AF',
     serialNumber: '06M1526937-019',
@@ -271,7 +271,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/002',
     itemCode: '544965',
     serialNumber: '06A1863099-028',
@@ -285,7 +285,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/002',
     itemCode: '544965',
     serialNumber: '06F1871317-028',
@@ -299,7 +299,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/002',
     itemCode: '544995AF',
     serialNumber: '04K0800046-002',
@@ -313,7 +313,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/004',
     itemCode: '544965AF',
     serialNumber: '06A1863106-016',
@@ -327,7 +327,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/004',
     itemCode: '544995AF',
     serialNumber: '06K1758647-021',
@@ -341,7 +341,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/004',
     itemCode: '544965A',
     serialNumber: '06A1883104-003',
@@ -355,7 +355,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/004',
     itemCode: '544965',
     serialNumber: '06A1863101-043',
@@ -369,7 +369,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/006',
     itemCode: '544965AF',
     serialNumber: '06A1863104-049',
@@ -383,7 +383,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/006',
     itemCode: '544965A',
     serialNumber: '06F1871335-040',
@@ -397,7 +397,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/006',
     itemCode: '544965A',
     serialNumber: '06C1749074-018',
@@ -411,7 +411,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/007',
     itemCode: '544965AF',
     serialNumber: '06K1758645-010',
@@ -425,7 +425,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/007',
     itemCode: '544965AF',
     serialNumber: '06K1156118-050',
@@ -439,7 +439,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/007',
     itemCode: '544965AF',
     serialNumber: '06K1758647-005',
@@ -453,7 +453,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/007',
     itemCode: '544965A',
     serialNumber: '06F1871317-018',
@@ -467,7 +467,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/024',
     itemCode: '544965A',
     serialNumber: '06B1629322-019',
@@ -481,7 +481,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/025',
     itemCode: '544965',
     serialNumber: '06K1758647-020',
@@ -495,7 +495,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM62/030',
     itemCode: '544965',
     serialNumber: '06G1630663-022',
@@ -509,7 +509,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/011',
     itemCode: '544965AF',
     serialNumber: '06F1871317-023',
@@ -523,7 +523,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/011',
     itemCode: '544965A',
     serialNumber: '06K1758647-045',
@@ -537,7 +537,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/012',
     itemCode: '544995A',
     serialNumber: '06J0913633-048',
@@ -551,7 +551,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/013',
     itemCode: '544995AF',
     serialNumber: '06G0910738-033',
@@ -565,7 +565,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/014',
     itemCode: '544965A',
     serialNumber: '04J0800072-010',
@@ -579,7 +579,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/014',
     itemCode: '544965A',
     serialNumber: '06C1383517-019',
@@ -593,7 +593,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/014',
     itemCode: '544965A',
     serialNumber: '06C1383531-021',
@@ -607,7 +607,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/014',
     itemCode: '544995A',
     serialNumber: '03F1388087-010',
@@ -621,7 +621,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/015',
     itemCode: '544965AF',
     serialNumber: '06G16306630-008',
@@ -635,7 +635,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/015',
     itemCode: '544965A',
     serialNumber: '06C1383518-029',
@@ -649,7 +649,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/015',
     itemCode: '544965A',
     serialNumber: '06F1871317-003',
@@ -663,7 +663,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/016',
     itemCode: '544965',
     serialNumber: '06F1520340-014',
@@ -677,7 +677,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/017',
     itemCode: '544965',
     serialNumber: '06K1156853-031',
@@ -691,7 +691,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/018',
     itemCode: '544965A',
     serialNumber: '1995273-002',
@@ -705,7 +705,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/024',
     itemCode: '544965AF',
     serialNumber: '06A1863104-040',
@@ -719,7 +719,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/024',
     itemCode: '544965AF',
     serialNumber: '06F1871333-047',
@@ -733,7 +733,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/025',
     itemCode: '544965AF',
     serialNumber: '06C1985908-006',
@@ -747,7 +747,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/025',
     itemCode: '544965AF',
     serialNumber: '06F1871334-047',
@@ -761,7 +761,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/026',
     itemCode: '544965AF',
     serialNumber: '06D1750174-044',
@@ -775,7 +775,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/026',
     itemCode: '544965A',
     serialNumber: '06F1388055-042',
@@ -789,7 +789,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/026',
     itemCode: '544965A',
     serialNumber: '06C1749070-044',
@@ -803,7 +803,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/026',
     itemCode: '544965AF',
     serialNumber: '06F1871334-039',
@@ -817,7 +817,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/027',
     itemCode: '544965AF',
     serialNumber: '06F1871333-007',
@@ -831,7 +831,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/027',
     itemCode: '544965AF',
     serialNumber: '06F1871317-033',
@@ -845,7 +845,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/027',
     itemCode: '544965A',
     serialNumber: '06D1750174-012',
@@ -859,7 +859,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/027',
     itemCode: '544965',
     serialNumber: '06F1871317-004',
@@ -873,7 +873,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/028',
     itemCode: '544965AF',
     serialNumber: '06M1279279-001',
@@ -887,7 +887,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/030',
     itemCode: '544965AF',
     serialNumber: '06F1871317-012',
@@ -901,7 +901,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/030',
     itemCode: '544965AF',
     serialNumber: '06F1871334-001',
@@ -915,7 +915,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/030',
     itemCode: '544965AF',
     serialNumber: '06F1871331-011',
@@ -929,7 +929,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/030',
     itemCode: '544965AF',
     serialNumber: '06F1871334-027',
@@ -943,7 +943,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/030',
     itemCode: '544965',
     serialNumber: '06F1871334-042',
@@ -957,7 +957,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/031',
     itemCode: '544965AF',
     serialNumber: 'NO SN.',
@@ -971,7 +971,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/032',
     itemCode: '544965',
     serialNumber: '06A1863102-022',
@@ -985,7 +985,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/032',
     itemCode: '544965A',
     serialNumber: '06B1629322-030',
@@ -999,7 +999,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/032',
     itemCode: '544965AF',
     serialNumber: '06F1871331-020',
@@ -1013,7 +1013,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/032',
     itemCode: '544965AF',
     serialNumber: '06F1871335-042',
@@ -1027,7 +1027,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/032',
     itemCode: '544965AF',
     serialNumber: '06F1871317-022',
@@ -1041,7 +1041,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/033',
     itemCode: '544995A',
     serialNumber: '06F0908532-005',
@@ -1055,7 +1055,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/033',
     itemCode: '544965AF',
     serialNumber: '06C1749074-041',
@@ -1069,7 +1069,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/033',
     itemCode: '544965AF',
     serialNumber: '06K1758647-038',
@@ -1083,7 +1083,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/033',
     itemCode: '544965AF',
     serialNumber: '06C1985908-032',
@@ -1097,7 +1097,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/034',
     itemCode: '544965AF',
     serialNumber: '06C1985908-001',
@@ -1111,7 +1111,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/034',
     itemCode: '544965A',
     serialNumber: '06F1871331-028',
@@ -1125,7 +1125,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/034',
     itemCode: '544965A',
     serialNumber: '06D1750174-019',
@@ -1139,7 +1139,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/034',
     itemCode: '544965AF',
     serialNumber: '06F1871334-006',
@@ -1153,7 +1153,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/036',
     itemCode: '544965A',
     serialNumber: '06F1388059-013',
@@ -1167,7 +1167,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/036',
     itemCode: '544965AF',
     serialNumber: '06B1629322-032',
@@ -1181,7 +1181,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/037',
     itemCode: '544965A',
     serialNumber: '06C1383517-021',
@@ -1195,7 +1195,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/037',
     itemCode: '544965A',
     serialNumber: '06F1871334-044',
@@ -1209,7 +1209,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/037',
     itemCode: '544965A',
     serialNumber: '06F1871331-026',
@@ -1223,7 +1223,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/039',
     itemCode: '544965AF',
     serialNumber: '06F1871317-041',
@@ -1237,7 +1237,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/039',
     itemCode: '544965AF',
     serialNumber: '06F1388059-040',
@@ -1251,7 +1251,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/039',
     itemCode: '544965A',
     serialNumber: '06F1871317-025',
@@ -1265,7 +1265,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/039',
     itemCode: '544965AF',
     serialNumber: '06M1526937-007',
@@ -1279,7 +1279,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/040',
     itemCode: '544965AF',
     serialNumber: '06F1871332-005',
@@ -1293,7 +1293,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/040',
     itemCode: '544965A',
     serialNumber: '06F1871331-012',
@@ -1307,7 +1307,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/040',
     itemCode: '544965AF',
     serialNumber: '06A1863101-042',
@@ -1321,7 +1321,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/040',
     itemCode: '544965A',
     serialNumber: '06C1749070-049',
@@ -1335,7 +1335,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/041',
     itemCode: '544965',
     serialNumber: '06B1629320-040',
@@ -1349,7 +1349,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/041',
     itemCode: '544965A',
     serialNumber: '06C1749074-017',
@@ -1363,7 +1363,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/041',
     itemCode: '544965AF',
     serialNumber: '06F1989604-004',
@@ -1377,7 +1377,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/041',
     itemCode: '544965AF',
     serialNumber: '06F1871317-011',
@@ -1391,7 +1391,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/042',
     itemCode: '544990A',
     serialNumber: '06K1525307-028',
@@ -1405,7 +1405,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/044',
     itemCode: '544965A',
     serialNumber: '06F1871334-040',
@@ -1419,7 +1419,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/045',
     itemCode: '544965A',
     serialNumber: '06F1871334-018',
@@ -1433,7 +1433,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/045',
     itemCode: '544965A',
     serialNumber: '06F1871335-008',
@@ -1447,7 +1447,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/045',
     itemCode: '544965A',
     serialNumber: '06F1871335-034',
@@ -1461,7 +1461,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/045',
     itemCode: '544965A',
     serialNumber: '06F1871335-010',
@@ -1475,7 +1475,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/045',
     itemCode: '544965A',
     serialNumber: '06C1383519-011',
@@ -1489,7 +1489,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/045',
     itemCode: '544965A',
     serialNumber: '06F1871334-048',
@@ -1503,7 +1503,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/046',
     itemCode: '544965AF',
     serialNumber: '06F1871334-022',
@@ -1517,7 +1517,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/046',
     itemCode: '544965AF',
     serialNumber: '06A1863104-008',
@@ -1531,7 +1531,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/046',
     itemCode: '544965A',
     serialNumber: '06D1750174-018',
@@ -1545,7 +1545,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/047',
     itemCode: '544965A',
     serialNumber: '06F1989624-001',
@@ -1559,7 +1559,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/047',
     itemCode: '544965A',
     serialNumber: '06F1871331-010',
@@ -1573,7 +1573,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/047',
     itemCode: '544965A',
     serialNumber: '06F1989623-042',
@@ -1587,7 +1587,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/047',
     itemCode: '544965A',
     serialNumber: 'NO SN.',
@@ -1601,7 +1601,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/047',
     itemCode: '544965A',
     serialNumber: '06F1989623-019',
@@ -1615,7 +1615,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/048',
     itemCode: '544965AF',
     serialNumber: '06F1989621-020',
@@ -1629,7 +1629,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/048',
     itemCode: '544965A',
     serialNumber: '06C1749070-017',
@@ -1643,7 +1643,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/048',
     itemCode: '544965A',
     serialNumber: '06F1989623-012',
@@ -1657,7 +1657,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/048',
     itemCode: '544965AF',
     serialNumber: '06F1871334-043',
@@ -1671,7 +1671,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/049',
     itemCode: '544965A',
     serialNumber: '06A1863104-003',
@@ -1685,7 +1685,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/049',
     itemCode: '544965',
     serialNumber: '06B1629324-033',
@@ -1699,7 +1699,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/049',
     itemCode: '544965',
     serialNumber: '06C1383517-004',
@@ -1713,7 +1713,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/049',
     itemCode: '544965A',
     serialNumber: '06G1630663-025',
@@ -1727,7 +1727,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/050',
     itemCode: '544965A',
     serialNumber: '06C1985915-008',
@@ -1741,7 +1741,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/050',
     itemCode: '544965',
     serialNumber: '06L1036881-033',
@@ -1755,7 +1755,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/050',
     itemCode: '544965A',
     serialNumber: '06A1863104-008',
@@ -1769,7 +1769,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM63/050',
     itemCode: '544965A',
     serialNumber: '06C1985934-014',
@@ -1783,7 +1783,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/001',
     itemCode: '544965A',
     serialNumber: '06F1989604-014',
@@ -1797,7 +1797,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/002',
     itemCode: '544965AF',
     serialNumber: '06F1989593-030',
@@ -1811,7 +1811,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/002',
     itemCode: '544965A',
     serialNumber: '06F1989604-031',
@@ -1825,7 +1825,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/003',
     itemCode: '544965',
     serialNumber: '06F1871332-023',
@@ -1839,7 +1839,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/003',
     itemCode: '544965A',
     serialNumber: '06F1520340-011',
@@ -1853,7 +1853,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/003',
     itemCode: '544965A',
     serialNumber: '06G1990523-017',
@@ -1867,7 +1867,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/004',
     itemCode: '544965A',
     serialNumber: '06C1749070-023',
@@ -1881,7 +1881,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/004',
     itemCode: '544965A',
     serialNumber: '1995279-019',
@@ -1895,7 +1895,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/005',
     itemCode: '544965',
     serialNumber: '06C1383517-025',
@@ -1909,7 +1909,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/005',
     itemCode: '544965',
     serialNumber: '06F1671334-034',
@@ -1923,7 +1923,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/005',
     itemCode: '544965AF',
     serialNumber: '06K1758645-030',
@@ -1937,7 +1937,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/006',
     itemCode: '544990AF',
     serialNumber: '06A1261346-047',
@@ -1951,7 +1951,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/006',
     itemCode: '544965A',
     serialNumber: '06F1989624-017',
@@ -1965,7 +1965,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/006',
     itemCode: '544965A',
     serialNumber: '06A1863105-004',
@@ -1979,7 +1979,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/007',
     itemCode: '544965A',
     serialNumber: '06A1863108-014',
@@ -1993,7 +1993,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/007',
     itemCode: '544965AF',
     serialNumber: '06K1768648-011',
@@ -2007,7 +2007,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/007',
     itemCode: '544965AF',
     serialNumber: '06F1871331-031',
@@ -2021,7 +2021,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/007',
     itemCode: '544965A',
     serialNumber: '06K1758647-045',
@@ -2035,7 +2035,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/008',
     itemCode: '544965A',
     serialNumber: '06M1526937-008',
@@ -2049,7 +2049,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/008',
     itemCode: '544965AF',
     serialNumber: '06B2098676-050',
@@ -2063,7 +2063,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/008',
     itemCode: '544965A',
     serialNumber: '06C1383517-023',
@@ -2077,7 +2077,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/008',
     itemCode: '544965A',
     serialNumber: '06C1985915-028',
@@ -2091,7 +2091,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/009',
     itemCode: '544965AF',
     serialNumber: '06F1871334-026',
@@ -2105,7 +2105,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/009',
     itemCode: '544965AF',
     serialNumber: '06G1990523-003',
@@ -2119,7 +2119,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/009',
     itemCode: '544965AF',
     serialNumber: '06C1498880-002',
@@ -2133,7 +2133,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/009',
     itemCode: '544965A',
     serialNumber: '06F1989620-022',
@@ -2147,7 +2147,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/010',
     itemCode: '544965AF',
     serialNumber: 'NO SN.',
@@ -2161,7 +2161,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/010',
     itemCode: '544965AF',
     serialNumber: '06B1498880-005',
@@ -2175,7 +2175,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/010',
     itemCode: '544965AF',
     serialNumber: '06K1758648-020',
@@ -2189,7 +2189,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/011',
     itemCode: '544965A',
     serialNumber: '06F1989604-040',
@@ -2203,7 +2203,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/011',
     itemCode: '544965A',
     serialNumber: '06F1989604-006',
@@ -2217,7 +2217,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/011',
     itemCode: '544965',
     serialNumber: '06K1758645-012',
@@ -2232,7 +2232,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/012',
     itemCode: '544965A',
     serialNumber: '06B1629323-017',
@@ -2246,7 +2246,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/012',
     itemCode: '544965AF',
     serialNumber: '06G1990523-022',
@@ -2260,7 +2260,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/013',
     itemCode: '544965',
     serialNumber: '06F1989618-008',
@@ -2274,7 +2274,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/015',
     itemCode: '544965A',
     serialNumber: '06F1871334-016',
@@ -2288,7 +2288,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/015',
     itemCode: '544965A',
     serialNumber: '06L1036878-028',
@@ -2302,7 +2302,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/015',
     itemCode: '544965AF',
     serialNumber: '06L1036878-050',
@@ -2316,7 +2316,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/015',
     itemCode: '544965AF',
     serialNumber: '06C1383531-024',
@@ -2330,7 +2330,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/017',
     itemCode: '544965A',
     serialNumber: '06B1498880-008',
@@ -2344,7 +2344,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/017',
     itemCode: '544965A',
     serialNumber: '06A1863109-016',
@@ -2358,7 +2358,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/018',
     itemCode: '544965A',
     serialNumber: '06F1871335-047',
@@ -2372,7 +2372,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/018',
     itemCode: '544965A',
     serialNumber: '06F1989593-003',
@@ -2386,7 +2386,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/018',
     itemCode: '544965A',
     serialNumber: '06F1988593-036',
@@ -2400,7 +2400,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/018',
     itemCode: '544965A',
     serialNumber: '06F1989623-036',
@@ -2414,7 +2414,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/019',
     itemCode: '544965A',
     serialNumber: '06K1758647-039',
@@ -2428,7 +2428,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/019',
     itemCode: '544965A',
     serialNumber: '06B1020199-043',
@@ -2442,7 +2442,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/019',
     itemCode: '544965A',
     serialNumber: '06F1989593-002',
@@ -2456,7 +2456,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/019',
     itemCode: '544995A',
     serialNumber: '06F1388087-009',
@@ -2470,7 +2470,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/020',
     itemCode: '544965',
     serialNumber: '06C1264964-022',
@@ -2484,7 +2484,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/020',
     itemCode: '544965A',
     serialNumber: '06B2098718-035',
@@ -2498,7 +2498,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/021',
     itemCode: '544965A',
     serialNumber: '06F1989593-013',
@@ -2512,7 +2512,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/021',
     itemCode: '544965AF',
     serialNumber: '06K1756647-023',
@@ -2526,7 +2526,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/021',
     itemCode: '544965AF',
     serialNumber: '06M0917169-005',
@@ -2540,7 +2540,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/022',
     itemCode: '544965A',
     serialNumber: '06B2098676-011',
@@ -2554,7 +2554,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/022',
     itemCode: '544965A',
     serialNumber: '06K1156853-003',
@@ -2568,7 +2568,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/022',
     itemCode: '544995AF',
     serialNumber: '06C1749123-032',
@@ -2582,7 +2582,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/023',
     itemCode: '544965A',
     serialNumber: '06B2098675-011',
@@ -2596,7 +2596,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/023',
     itemCode: '544965A',
     serialNumber: '06B2098732-012',
@@ -2610,7 +2610,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/023',
     itemCode: '544965A',
     serialNumber: '06F1989604-005',
@@ -2624,7 +2624,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/025',
     itemCode: '544965A',
     serialNumber: '06F1871331-039',
@@ -2638,7 +2638,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/025',
     itemCode: '544965AF',
     serialNumber: '06F1989623-017',
@@ -2652,7 +2652,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/027',
     itemCode: '544965A',
     serialNumber: '06F1871317-041',
@@ -2666,7 +2666,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/027',
     itemCode: '544965AF',
     serialNumber: '06C1264964-027',
@@ -2680,7 +2680,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/027',
     itemCode: '544965A',
     serialNumber: '06A1863104-004',
@@ -2694,7 +2694,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/027',
     itemCode: '544965AF',
     serialNumber: '06F1989623-039',
@@ -2708,7 +2708,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/027',
     itemCode: '544995A',
     serialNumber: '06E1268213-018',
@@ -2722,7 +2722,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/028',
     itemCode: '544965AF',
     serialNumber: '06F1989620-041',
@@ -2736,7 +2736,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/028',
     itemCode: '544965A',
     serialNumber: '06F1989623-016',
@@ -2750,7 +2750,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/028',
     itemCode: '544965A',
     serialNumber: '06A1863105-006',
@@ -2764,7 +2764,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/028',
     itemCode: '544965A',
     serialNumber: '06M1279277-046',
@@ -2778,7 +2778,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/029',
     itemCode: '544965A',
     serialNumber: '06B1629324-030',
@@ -2792,7 +2792,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/029',
     itemCode: '544965A',
     serialNumber: '06K1156853-026',
@@ -2806,7 +2806,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/029',
     itemCode: '544965A',
     serialNumber: '06F1871325-023',
@@ -2820,7 +2820,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/029',
     itemCode: '544965A',
     serialNumber: '06C1383518-042',
@@ -2834,7 +2834,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/029',
     itemCode: '544995A',
     serialNumber: '1995305-044',
@@ -2848,7 +2848,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/030',
     itemCode: '544965A',
     serialNumber: '06F1871331-033',
@@ -2862,7 +2862,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/030',
     itemCode: '544990A',
     serialNumber: '06J1274433-045',
@@ -2876,7 +2876,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/030',
     itemCode: '544995A',
     serialNumber: '3375711-024',
@@ -2890,7 +2890,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/030',
     itemCode: '544965A',
     serialNumber: '06D1750174-040',
@@ -2904,7 +2904,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/031',
     itemCode: '544965A',
     serialNumber: '06F1871317-022',
@@ -2918,7 +2918,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/031',
     itemCode: '544965A',
     serialNumber: '06F1989604-026',
@@ -2932,7 +2932,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/031',
     itemCode: '544965A',
     serialNumber: '06F1989604-047',
@@ -2946,7 +2946,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/031',
     itemCode: '544965A',
     serialNumber: '06M0917162-010',
@@ -2960,7 +2960,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/032',
     itemCode: '544995A',
     serialNumber: '06C1749126-038',
@@ -2974,7 +2974,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/032',
     itemCode: '544965A',
     serialNumber: '06C1383531-022',
@@ -2988,7 +2988,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/032',
     itemCode: '544965A',
     serialNumber: '06F1989588-039',
@@ -3002,7 +3002,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/032',
     itemCode: '544965A',
     serialNumber: '06A1863104-014',
@@ -3016,7 +3016,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/032',
     itemCode: '544965A',
     serialNumber: '06F1989624-012',
@@ -3030,7 +3030,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/033',
     itemCode: '544965A',
     serialNumber: '06C1749070-008',
@@ -3044,7 +3044,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/034',
     itemCode: '544965AF',
     serialNumber: '06A1863104-008',
@@ -3058,7 +3058,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/034',
     itemCode: '544965A',
     serialNumber: '06F1989623-049',
@@ -3072,7 +3072,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/034',
     itemCode: '544965A',
     serialNumber: '06C1264963-030',
@@ -3086,7 +3086,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/034',
     itemCode: '544965A',
     serialNumber: '06M0917162-012',
@@ -3100,7 +3100,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/034',
     itemCode: '544965AF',
     serialNumber: '06F1989621-019',
@@ -3114,7 +3114,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/036',
     itemCode: '544965AF',
     serialNumber: '06F1388059-008',
@@ -3128,7 +3128,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/036',
     itemCode: '544965A',
     serialNumber: '06A1863104-001',
@@ -3142,7 +3142,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/036',
     itemCode: '544965AF',
     serialNumber: '06B2098676-010',
@@ -3156,7 +3156,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/037',
     itemCode: '544965A',
     serialNumber: '06F1871334-050',
@@ -3170,7 +3170,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/037',
     itemCode: '544965AF',
     serialNumber: '06F1989623-044',
@@ -3184,7 +3184,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/037',
     itemCode: '544965AF',
     serialNumber: '06F1871317-034',
@@ -3198,7 +3198,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/037',
     itemCode: '544965AF',
     serialNumber: '06C1264964-009',
@@ -3212,7 +3212,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/038',
     itemCode: '37544965A',
     serialNumber: '06F1871333-050',
@@ -3226,7 +3226,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/038',
     itemCode: '37544965A',
     serialNumber: '06F1989618-035',
@@ -3240,7 +3240,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/038',
     itemCode: '37544995AF',
     serialNumber: '06B1865379-005',
@@ -3254,7 +3254,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/039',
     itemCode: '37544965A',
     serialNumber: '06B2098717-012',
@@ -3268,7 +3268,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/039',
     itemCode: '37544965A',
     serialNumber: '06K1758647-038',
@@ -3282,7 +3282,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/040',
     itemCode: '37544965A',
     serialNumber: '06F1871317-008',
@@ -3296,7 +3296,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/040',
     itemCode: '37544965AF',
     serialNumber: '06F1989620-034',
@@ -3310,7 +3310,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/040',
     itemCode: '37544965A',
     serialNumber: '06F1989623-013',
@@ -3324,7 +3324,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/040',
     itemCode: '37544965A',
     serialNumber: '06K1758645-011',
@@ -3338,7 +3338,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/041',
     itemCode: '37544995A',
     serialNumber: '06G0910738-023',
@@ -3352,7 +3352,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/041',
     itemCode: '37544965A',
     serialNumber: '06G1990523-010',
@@ -3366,7 +3366,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/041',
     itemCode: '37544965A',
     serialNumber: '06G1990523-021',
@@ -3380,7 +3380,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/041',
     itemCode: '37544965A',
     serialNumber: '06B2098675-047',
@@ -3394,7 +3394,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM64/042',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-026',
@@ -3408,7 +3408,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/001',
     itemCode: '37544965A',
     serialNumber: '06B2098717-002',
@@ -3422,7 +3422,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/001',
     itemCode: '37544965A',
     serialNumber: '06B2098722-019',
@@ -3436,7 +3436,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/001',
     itemCode: '37544965AF',
     serialNumber: '04J0800072-014',
@@ -3450,7 +3450,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/001',
     itemCode: '37544965A',
     serialNumber: '06C1749070-048',
@@ -3464,7 +3464,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/002',
     itemCode: '37544965A',
     serialNumber: '06H1031907-028',
@@ -3478,7 +3478,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/003',
     itemCode: '37544965AF',
     serialNumber: '06F1871334-021',
@@ -3492,7 +3492,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/003',
     itemCode: '37544965A',
     serialNumber: '06F1989624-017',
@@ -3506,7 +3506,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/003',
     itemCode: '37544965AF',
     serialNumber: '06B1498880-004',
@@ -3520,7 +3520,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/003',
     itemCode: '37544965AF',
     serialNumber: '06C1383519-010',
@@ -3534,7 +3534,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/004',
     itemCode: '37544965AF',
     serialNumber: '06F1871334-027',
@@ -3548,7 +3548,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/004',
     itemCode: '37544965A',
     serialNumber: '06F1989624-028',
@@ -3562,7 +3562,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/004',
     itemCode: '37544965A',
     serialNumber: '06B2098718-004',
@@ -3576,7 +3576,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/004',
     itemCode: '37544965A',
     serialNumber: '06B2098675-009',
@@ -3590,7 +3590,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/005',
     itemCode: '37544995A',
     serialNumber: '06G0910733-037',
@@ -3604,7 +3604,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/005',
     itemCode: '37544965A',
     serialNumber: '06F1871317-025',
@@ -3618,7 +3618,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/005',
     itemCode: '37544965A',
     serialNumber: '06F1989618-006',
@@ -3632,7 +3632,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/005',
     itemCode: '37544965A',
     serialNumber: '06F1871325-001',
@@ -3646,7 +3646,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/005',
     itemCode: '37544965A',
     serialNumber: '06F1989624-042',
@@ -3660,7 +3660,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/006',
     itemCode: '37544965AF',
     serialNumber: '06F1871331-021',
@@ -3674,7 +3674,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/006',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-037',
@@ -3688,7 +3688,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/006',
     itemCode: '37544965A',
     serialNumber: '06F1871317-012',
@@ -3702,7 +3702,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/007',
     itemCode: '37544965A',
     serialNumber: '06F1989624-036',
@@ -3716,7 +3716,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/007',
     itemCode: '37544965A',
     serialNumber: '06F1989604-033',
@@ -3730,7 +3730,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/007',
     itemCode: '37544965A',
     serialNumber: '06F1989624-048',
@@ -3744,7 +3744,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/007',
     itemCode: '37544965A',
     serialNumber: '06B2098722-013',
@@ -3758,7 +3758,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/007',
     itemCode: '37544965D',
     serialNumber: '06K1758647-032',
@@ -3772,7 +3772,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/008',
     itemCode: '37544965A',
     serialNumber: '06F1871332-023',
@@ -3786,7 +3786,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/008',
     itemCode: '37544965A',
     serialNumber: '06M1279277-041',
@@ -3800,7 +3800,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/008',
     itemCode: '37544965A',
     serialNumber: '06F1989604-031',
@@ -3814,7 +3814,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/009',
     itemCode: '37544965A',
     serialNumber: '06F1989624-026',
@@ -3828,7 +3828,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/009',
     itemCode: '37544965A',
     serialNumber: '06B2098727-045',
@@ -3842,7 +3842,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/009',
     itemCode: '37544965A',
     serialNumber: '06B2098727-044',
@@ -3856,7 +3856,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/009',
     itemCode: '37544965AF',
     serialNumber: '06F1871335-015',
@@ -3870,7 +3870,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/010',
     itemCode: '37544965A',
     serialNumber: '06B2098675-033',
@@ -3884,7 +3884,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/010',
     itemCode: '37544965A',
     serialNumber: '06G1630663-003',
@@ -3898,7 +3898,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/010',
     itemCode: '37544965A',
     serialNumber: '06C1264964-034',
@@ -3912,7 +3912,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/010',
     itemCode: '37544965A',
     serialNumber: '06B2098718-008',
@@ -3926,7 +3926,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/011',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-017',
@@ -3940,7 +3940,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/011',
     itemCode: '37544965AF',
     serialNumber: '06B2098732-036',
@@ -3954,7 +3954,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/011',
     itemCode: '37544965AF',
     serialNumber: '06F1989603-018',
@@ -3968,7 +3968,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/011',
     itemCode: '37544965A',
     serialNumber: '06F1989603-019',
@@ -3982,7 +3982,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/011',
     itemCode: '37544965A',
     serialNumber: '06F1989623-022',
@@ -3996,7 +3996,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/012',
     itemCode: '37544965A',
     serialNumber: '06B2098731-050',
@@ -4010,7 +4010,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/012',
     itemCode: '37544965A',
     serialNumber: '06F1871334-049',
@@ -4024,7 +4024,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/012',
     itemCode: '37544965A',
     serialNumber: '06B2098718-007',
@@ -4038,7 +4038,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/012',
     itemCode: '37544965A',
     serialNumber: '06F1871325-039',
@@ -4052,7 +4052,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/013',
     itemCode: '37544995A',
     serialNumber: '06F1388093-017',
@@ -4066,7 +4066,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/013',
     itemCode: '37544995A',
     serialNumber: '06C1749126-050',
@@ -4080,7 +4080,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/014',
     itemCode: '37544965A',
     serialNumber: '06C1383518-041',
@@ -4094,7 +4094,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/014',
     itemCode: '37544965A',
     serialNumber: '06B2098717-041',
@@ -4108,7 +4108,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/015',
     itemCode: '37544965AF',
     serialNumber: '06K1758647-005',
@@ -4122,7 +4122,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/015',
     itemCode: '37544965A',
     serialNumber: '06B2098722-024',
@@ -4136,7 +4136,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/015',
     itemCode: '37544965A',
     serialNumber: '06B2098708-026',
@@ -4150,7 +4150,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/015',
     itemCode: '37544965A',
     serialNumber: '06F1989604-006',
@@ -4164,7 +4164,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/015',
     itemCode: '37544965A',
     serialNumber: '06M1279277-025',
@@ -4178,7 +4178,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/016',
     itemCode: '37544965AF',
     serialNumber: '06F1871331-040',
@@ -4192,7 +4192,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/016',
     itemCode: '37544965AF',
     serialNumber: '06K1758648-040',
@@ -4206,7 +4206,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/016',
     itemCode: '37544965A',
     serialNumber: '06B2098716-041',
@@ -4220,7 +4220,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/016',
     itemCode: '37544965A',
     serialNumber: '06B2098732-008',
@@ -4234,7 +4234,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/016',
     itemCode: '37544965A',
     serialNumber: '06F1989618-022',
@@ -4248,7 +4248,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/017',
     itemCode: '37544965A',
     serialNumber: '06B2098717-030',
@@ -4262,7 +4262,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/017',
     itemCode: '37544965A',
     serialNumber: '06B2098716-010',
@@ -4276,7 +4276,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/017',
     itemCode: '37544965A',
     serialNumber: '06B2098717-038',
@@ -4290,7 +4290,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/017',
     itemCode: '37544965A',
     serialNumber: '06A1496899-007',
@@ -4304,7 +4304,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/018',
     itemCode: '37544995AF',
     serialNumber: '06E1268204-045',
@@ -4318,7 +4318,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/018',
     itemCode: '37544965A',
     serialNumber: '06B2098708-010',
@@ -4332,7 +4332,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/018',
     itemCode: '37544965A',
     serialNumber: '06B2098717-032',
@@ -4346,7 +4346,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/019',
     itemCode: '37544965A',
     serialNumber: '06B2098717-042',
@@ -4360,7 +4360,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/019',
     itemCode: '37544965A',
     serialNumber: '06F1989623-004',
@@ -4374,7 +4374,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/019',
     itemCode: '37544965A',
     serialNumber: '06A1018199-018',
@@ -4388,7 +4388,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/020',
     itemCode: '37544965A',
     serialNumber: '06C1383518-048',
@@ -4402,7 +4402,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/020',
     itemCode: '37544965A',
     serialNumber: '06C1264963-024',
@@ -4416,7 +4416,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/020',
     itemCode: '37544965A',
     serialNumber: '06G1990523-005',
@@ -4430,7 +4430,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/025',
     itemCode: '37544965A',
     serialNumber: '06B2098708-018',
@@ -4444,7 +4444,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/025',
     itemCode: '37544965A',
     serialNumber: '06F1871332-030',
@@ -4458,7 +4458,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/025',
     itemCode: '37544965A',
     serialNumber: '06C1985915-009',
@@ -4472,7 +4472,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/025',
     itemCode: '37544965A',
     serialNumber: '04J0800072-011',
@@ -4486,7 +4486,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/026',
     itemCode: '37544990A',
     serialNumber: '06M1644567-009',
@@ -4500,7 +4500,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/026',
     itemCode: '37544990A',
     serialNumber: '06C1383743-004',
@@ -4514,7 +4514,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/026',
     itemCode: '37544965A',
     serialNumber: '06B2098732-012',
@@ -4528,7 +4528,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/027',
     itemCode: '37544965A',
     serialNumber: '06F1871334-032',
@@ -4542,7 +4542,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/027',
     itemCode: '37544965A',
     serialNumber: '06F1871335-038',
@@ -4556,7 +4556,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/027',
     itemCode: '37544965A',
     serialNumber: '06K1758645-020',
@@ -4570,7 +4570,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/027',
     itemCode: '37544965A',
     serialNumber: '06A1863105-024',
@@ -4584,7 +4584,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/027',
     itemCode: '37544965A',
     serialNumber: '06B2098676-022',
@@ -4598,7 +4598,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/028',
     itemCode: '37544965A',
     serialNumber: '06B1629322-033',
@@ -4612,7 +4612,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/028',
     itemCode: '37544965A',
     serialNumber: '06G1630664-045',
@@ -4626,7 +4626,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/028',
     itemCode: '37544965A',
     serialNumber: '06K1758645-032',
@@ -4640,7 +4640,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/028',
     itemCode: '37544965A',
     serialNumber: '06M1525937-016',
@@ -4654,7 +4654,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/030',
     itemCode: '37544965A',
     serialNumber: '06K1758647-030',
@@ -4668,7 +4668,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/030',
     itemCode: '37544965A',
     serialNumber: '06F1520340-009',
@@ -4682,7 +4682,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/030',
     itemCode: '37544965A',
     serialNumber: '06F1989623-007',
@@ -4696,7 +4696,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/030',
     itemCode: '37544965A',
     serialNumber: '06F1989623-021',
@@ -4710,7 +4710,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/030',
     itemCode: '37544965A',
     serialNumber: '06F1871333-007',
@@ -4724,7 +4724,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/033',
     itemCode: '37544965A',
     serialNumber: '06G1990523-009',
@@ -4738,7 +4738,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/033',
     itemCode: '37544965A',
     serialNumber: '06F1989604-009',
@@ -4752,7 +4752,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/033',
     itemCode: '37544965A',
     serialNumber: '04J0800157-019',
@@ -4766,7 +4766,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/034',
     itemCode: '37544965AF',
     serialNumber: '06F1871335-049',
@@ -4780,7 +4780,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/034',
     itemCode: '37544965A',
     serialNumber: '06F1989618-012',
@@ -4794,7 +4794,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/034',
     itemCode: '37544965A',
     serialNumber: '06B2098675-013',
@@ -4808,7 +4808,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/034',
     itemCode: '37544965A',
     serialNumber: '06K1758647-021',
@@ -4822,7 +4822,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/034',
     itemCode: '37544965A',
     serialNumber: '06B2098676-027',
@@ -4836,7 +4836,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/035',
     itemCode: '37544995A',
     serialNumber: '04K0800046-001',
@@ -4850,7 +4850,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/035',
     itemCode: '37544965AF',
     serialNumber: '06F1989623-005',
@@ -4864,7 +4864,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/035',
     itemCode: '37544965AF',
     serialNumber: '06C1749074-044',
@@ -4878,7 +4878,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/035',
     itemCode: '37544965A',
     serialNumber: '06C1261964-049',
@@ -4892,7 +4892,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/035',
     itemCode: '37544965A',
     serialNumber: '06A1863105-045',
@@ -4906,7 +4906,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/036',
     itemCode: '37544965A',
     serialNumber: '06F1871335-017',
@@ -4920,7 +4920,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/036',
     itemCode: '37544965A',
     serialNumber: '06C1985915-048',
@@ -4934,7 +4934,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/036',
     itemCode: '37544965A',
     serialNumber: '06F1871333-029',
@@ -4948,7 +4948,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/036',
     itemCode: '37544965A',
     serialNumber: '06A1863104-004',
@@ -4962,7 +4962,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/037',
     itemCode: '37544965A',
     serialNumber: '06K1758647-029',
@@ -4976,7 +4976,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/037',
     itemCode: '37544965AF',
     serialNumber: '06B2098676-034',
@@ -4990,7 +4990,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/037',
     itemCode: '37544965A',
     serialNumber: '06F1989624-021',
@@ -5004,7 +5004,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/037',
     itemCode: '37544965A',
     serialNumber: '06F1871317-049',
@@ -5018,7 +5018,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/037',
     itemCode: '37544965AF',
     serialNumber: '06A1863104-008',
@@ -5032,7 +5032,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/038',
     itemCode: '37544965A',
     serialNumber: '06M1279277-012',
@@ -5046,7 +5046,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/038',
     itemCode: '37544965A',
     serialNumber: '06C0910000-047',
@@ -5060,7 +5060,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/038',
     itemCode: '37544965A',
     serialNumber: '06B1629322-010',
@@ -5074,7 +5074,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/038',
     itemCode: '37544965A',
     serialNumber: '06C1264964-031',
@@ -5088,7 +5088,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/038',
     itemCode: '37544965AF',
     serialNumber: '966540-030',
@@ -5102,7 +5102,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/038',
     itemCode: '37544965A',
     serialNumber: '06F1989624-011',
@@ -5116,7 +5116,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/039',
     itemCode: '37544965A',
     serialNumber: '06G1630663-024',
@@ -5130,7 +5130,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/039',
     itemCode: '37544965A',
     serialNumber: '06A1863105-006',
@@ -5144,7 +5144,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/039',
     itemCode: '37544965A',
     serialNumber: '06B2098716-035',
@@ -5158,7 +5158,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/039',
     itemCode: '37544995A',
     serialNumber: '3385956-049',
@@ -5172,7 +5172,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/039',
     itemCode: '37544965A',
     serialNumber: '06M1279277-044',
@@ -5186,7 +5186,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/040',
     itemCode: '37544965A',
     serialNumber: '06D1750174-042',
@@ -5200,7 +5200,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/040',
     itemCode: '37544965A',
     serialNumber: '06K2005167-043',
@@ -5214,7 +5214,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/040',
     itemCode: '37544965AF',
     serialNumber: '06K1758647-047',
@@ -5228,7 +5228,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/041',
     itemCode: '37544965A',
     serialNumber: '06C1261964-030',
@@ -5242,7 +5242,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/041',
     itemCode: '37544995A',
     serialNumber: '06J1638584-019',
@@ -5256,7 +5256,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/042',
     itemCode: '37544965A',
     serialNumber: '06B2098676-047',
@@ -5270,7 +5270,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/042',
     itemCode: '37544965AF',
     serialNumber: '06K1758647-006',
@@ -5284,7 +5284,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/042',
     itemCode: '37544965A',
     serialNumber: '06B2098722-009',
@@ -5298,7 +5298,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/042',
     itemCode: '37544965A',
     serialNumber: '06B2098726-007',
@@ -5312,7 +5312,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/043',
     itemCode: '37544965A',
     serialNumber: '06F1989624-046',
@@ -5326,7 +5326,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/043',
     itemCode: '37544965A',
     serialNumber: '06F1871317-010',
@@ -5340,7 +5340,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/043',
     itemCode: '37544965A',
     serialNumber: '06B2098718-028',
@@ -5354,7 +5354,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/043',
     itemCode: '37544995',
     serialNumber: '06J1638584-028',
@@ -5368,7 +5368,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/044',
     itemCode: '37544965AF',
     serialNumber: '06K1156853-026',
@@ -5382,7 +5382,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/044',
     itemCode: '37544965A',
     serialNumber: '06E2002042-011',
@@ -5396,7 +5396,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/044',
     itemCode: '37544965AF',
     serialNumber: '06C1985908-003',
@@ -5410,7 +5410,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/044',
     itemCode: '37544965AF',
     serialNumber: '06F1388059-049',
@@ -5424,7 +5424,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/044',
     itemCode: '37544990A',
     serialNumber: '06K1525307-029',
@@ -5438,7 +5438,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/045',
     itemCode: '37544965A',
     serialNumber: '06B2098717-008',
@@ -5452,7 +5452,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/045',
     itemCode: '37544965A',
     serialNumber: '06A1863106-010',
@@ -5466,7 +5466,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/045',
     itemCode: '37544965A',
     serialNumber: '06F1989624-025',
@@ -5480,7 +5480,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/045',
     itemCode: '37544965A',
     serialNumber: '06F1989618-001',
@@ -5494,7 +5494,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/045',
     itemCode: '37544965AF',
     serialNumber: '06K1156853-005',
@@ -5508,7 +5508,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/046',
     itemCode: '37544965A',
     serialNumber: '06B1498880-008',
@@ -5522,7 +5522,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/046',
     itemCode: '37544965A',
     serialNumber: '06B2098717-003',
@@ -5536,7 +5536,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/046',
     itemCode: '37544965A',
     serialNumber: '06F1520340-024',
@@ -5550,7 +5550,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/046',
     itemCode: '37544965A',
     serialNumber: '06B2098675-033',
@@ -5564,7 +5564,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/046',
     itemCode: '37544965A',
     serialNumber: '06F1871335-026',
@@ -5578,7 +5578,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/048',
     itemCode: '37544995A',
     serialNumber: '06K1758702-028',
@@ -5592,7 +5592,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/048',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-027',
@@ -5606,7 +5606,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/048',
     itemCode: '37544965A',
     serialNumber: '06B2098717-040',
@@ -5620,7 +5620,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/048',
     itemCode: '37544965A',
     serialNumber: '06F1871334-029',
@@ -5634,7 +5634,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/048',
     itemCode: '37544965A',
     serialNumber: '06B2098727-032',
@@ -5648,7 +5648,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/049',
     itemCode: '37544965A',
     serialNumber: '06B2098676-021',
@@ -5662,7 +5662,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/049',
     itemCode: '37544965A',
     serialNumber: '06B1020199-043',
@@ -5676,7 +5676,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/049',
     itemCode: '37544965AF',
     serialNumber: '06B2098676-050',
@@ -5690,7 +5690,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/049',
     itemCode: '37544965AF',
     serialNumber: '06B2098726-048',
@@ -5704,7 +5704,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/050',
     itemCode: '37544965A',
     serialNumber: '06C1985908-013',
@@ -5718,7 +5718,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/050',
     itemCode: '37544965A',
     serialNumber: '06F1989604-041',
@@ -5732,7 +5732,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/050',
     itemCode: '37544965A',
     serialNumber: '06F1871317-031',
@@ -5746,7 +5746,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/050',
     itemCode: '37544995A',
     serialNumber: '06M1279288-047',
@@ -5760,7 +5760,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/051',
     itemCode: '37544965AF',
     serialNumber: '06F1871333-026',
@@ -5774,7 +5774,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/051',
     itemCode: '37544965AF',
     serialNumber: '06F1871334-041',
@@ -5788,7 +5788,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/051',
     itemCode: '37544965AF',
     serialNumber: '06K1758647-025',
@@ -5802,7 +5802,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/051',
     itemCode: '37544965AF',
     serialNumber: '06B2098675-027',
@@ -5816,7 +5816,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/051',
     itemCode: '37544965AF',
     serialNumber: '06B2098731-039',
@@ -5830,7 +5830,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/051',
     itemCode: '37544965AF',
     serialNumber: '06F1871334-005',
@@ -5844,7 +5844,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965A',
     serialNumber: '06G1630663-004',
@@ -5858,7 +5858,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965A',
     serialNumber: '06F1871335-045',
@@ -5872,7 +5872,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965A',
     serialNumber: '06F1989624-009',
@@ -5886,7 +5886,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965A',
     serialNumber: '06F1871334-011',
@@ -5900,7 +5900,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965A',
     serialNumber: '06B2098732-004',
@@ -5914,7 +5914,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-039',
@@ -5928,7 +5928,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM65/052',
     itemCode: '37544965A',
     serialNumber: '06F1871335-027',
@@ -5942,7 +5942,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/001',
     itemCode: '37544965AF',
     serialNumber: '06K2005167-004',
@@ -5956,7 +5956,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/001',
     itemCode: '37544965A',
     serialNumber: '06E2002042-023',
@@ -5970,7 +5970,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/002',
     itemCode: '37544965A',
     serialNumber: '06B2098731-047',
@@ -5984,7 +5984,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/002',
     itemCode: '37544965A',
     serialNumber: '06K1758646-049',
@@ -5998,7 +5998,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/002',
     itemCode: '37544965A',
     serialNumber: '06K1758645-028',
@@ -6012,7 +6012,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/004',
     itemCode: '37544965A',
     serialNumber: '06E2002045-033',
@@ -6026,7 +6026,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/004',
     itemCode: '37544965A',
     serialNumber: '06A1863105-024',
@@ -6040,7 +6040,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/004',
     itemCode: '37544965A',
     serialNumber: '06B2088675-009',
@@ -6054,7 +6054,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/004',
     itemCode: '37544965A',
     serialNumber: '06F1871333-040',
@@ -6068,7 +6068,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/005',
     itemCode: '37544995A',
     serialNumber: '06E1268209-037',
@@ -6082,7 +6082,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/005',
     itemCode: '37544965A',
     serialNumber: '06E2002042-015',
@@ -6096,7 +6096,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/005',
     itemCode: '37544965A',
     serialNumber: '06F1989624-017',
@@ -6110,7 +6110,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/005',
     itemCode: '37544965A',
     serialNumber: '06K1758646-032',
@@ -6124,7 +6124,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/005',
     itemCode: '37544965A',
     serialNumber: '06F1989604-003',
@@ -6138,7 +6138,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/005',
     itemCode: '37544965A',
     serialNumber: '06B2098708-047',
@@ -6152,7 +6152,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/008',
     itemCode: '37544965A',
     serialNumber: '06F1871333-027',
@@ -6166,7 +6166,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/008',
     itemCode: '37544965AF',
     serialNumber: '06C1264964-020',
@@ -6180,7 +6180,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/008',
     itemCode: '37544965AF',
     serialNumber: '06G1270709-016',
@@ -6194,7 +6194,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/008',
     itemCode: '37544965AF',
     serialNumber: '06B2098718-012',
@@ -6208,7 +6208,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/008',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-050',
@@ -6222,7 +6222,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/008',
     itemCode: '37544965A',
     serialNumber: '06C1985915-003',
@@ -6236,7 +6236,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544965A',
     serialNumber: '06M1526937-016',
@@ -6250,7 +6250,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544965A',
     serialNumber: '06B2098676-038',
@@ -6264,7 +6264,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544965A',
     serialNumber: '06E2002042-014',
@@ -6278,7 +6278,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544965AF',
     serialNumber: '06K1156853-002',
@@ -6292,7 +6292,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544995A',
     serialNumber: '06B1629378-027',
@@ -6306,7 +6306,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544965A',
     serialNumber: '06A1863106-017',
@@ -6320,7 +6320,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/009',
     itemCode: '37544965A',
     serialNumber: '06C1264963-031',
@@ -6334,7 +6334,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/010',
     itemCode: '37544965A',
     serialNumber: '06F1989618-008',
@@ -6348,7 +6348,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/010',
     itemCode: '37544965A',
     serialNumber: '06B2098731-045',
@@ -6362,7 +6362,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/010',
     itemCode: '37544995A',
     serialNumber: '06E1268213-044',
@@ -6376,7 +6376,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/010',
     itemCode: '37544965A',
     serialNumber: '06B2098731-040',
@@ -6390,7 +6390,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/010',
     itemCode: '37544965A',
     serialNumber: '06A1803102-022',
@@ -6404,7 +6404,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/010',
     itemCode: '37544965A',
     serialNumber: '06F1989624-001',
@@ -6418,7 +6418,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/012',
     itemCode: '37544965A',
     serialNumber: 'R-11-10',
@@ -6432,7 +6432,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/012',
     itemCode: '37544965AF',
     serialNumber: '06F1989618-014',
@@ -6446,7 +6446,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/013',
     itemCode: '37544965A',
     serialNumber: '06B2098718-029',
@@ -6460,7 +6460,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/013',
     itemCode: '37544965A',
     serialNumber: '06C1261964-049',
@@ -6474,7 +6474,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965A',
     serialNumber: '06E2002042-019',
@@ -6488,7 +6488,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965AF',
     serialNumber: '06C1383531-025',
@@ -6502,7 +6502,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965AF',
     serialNumber: '06F1871334-026',
@@ -6516,7 +6516,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965AF',
     serialNumber: '06F1871317-040',
@@ -6530,7 +6530,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965AF',
     serialNumber: '06J2140642-003',
@@ -6544,7 +6544,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965AF',
     serialNumber: '06K2005167-042',
@@ -6558,7 +6558,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/014',
     itemCode: '37544965AF',
     serialNumber: '06B2098717-017',
@@ -6572,7 +6572,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544965A',
     serialNumber: '06E2002043-038',
@@ -6586,7 +6586,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544965A',
     serialNumber: '06B2098727-033',
@@ -6600,7 +6600,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544965A',
     serialNumber: '06C1985915-046',
@@ -6614,7 +6614,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544965A',
     serialNumber: '06K1758647-047',
@@ -6628,7 +6628,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544965A',
     serialNumber: '06B2098727-043',
@@ -6642,7 +6642,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544990A',
     serialNumber: '06M1644567-009',
@@ -6656,7 +6656,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/015',
     itemCode: '37544965A',
     serialNumber: '06F1520340-009',
@@ -6670,7 +6670,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/016',
     itemCode: '37544965A',
     serialNumber: '06F1989604-005',
@@ -6684,7 +6684,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/016',
     itemCode: '37544965A',
     serialNumber: '06B1498880-019',
@@ -6698,7 +6698,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/016',
     itemCode: '37544965A',
     serialNumber: '06B2098676-018',
@@ -6712,7 +6712,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/016',
     itemCode: '37544965AF',
     serialNumber: '06B2098727-006',
@@ -6726,7 +6726,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/018',
     itemCode: '37544965AF',
     serialNumber: '06B1629322-031',
@@ -6740,7 +6740,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/018',
     itemCode: '37544965A',
     serialNumber: '06M1279277-042',
@@ -6754,7 +6754,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/018',
     itemCode: '37544965A',
     serialNumber: '06B2098722-006',
@@ -6768,7 +6768,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/018',
     itemCode: '37544965A',
     serialNumber: '06B2098726-021',
@@ -6782,7 +6782,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/018',
     itemCode: '37544965AF',
     serialNumber: '06B2098726-028',
@@ -6796,7 +6796,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/019',
     itemCode: '37544965A',
     serialNumber: '06F1989624-036',
@@ -6810,7 +6810,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/019',
     itemCode: '37544965AF',
     serialNumber: '06B2098716-004',
@@ -6824,7 +6824,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/019',
     itemCode: '37544965AF',
     serialNumber: '06F1871332-001',
@@ -6838,7 +6838,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/019',
     itemCode: '37544965A',
     serialNumber: '06F1388059-019',
@@ -6852,7 +6852,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/019',
     itemCode: '37544965A',
     serialNumber: '06F1871325-039',
@@ -6866,7 +6866,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/021',
     itemCode: '37544965A',
     serialNumber: '06F1871317-043',
@@ -6880,7 +6880,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/021',
     itemCode: '37544965A',
     serialNumber: '06F1989618-005',
@@ -6894,7 +6894,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/021',
     itemCode: '37544965A',
     serialNumber: '06F1871317-014',
@@ -6908,7 +6908,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/021',
     itemCode: '37544965A',
     serialNumber: '06F1871335-026',
@@ -6922,7 +6922,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/023',
     itemCode: '37544965AF',
     serialNumber: '06B2098675-005',
@@ -6936,7 +6936,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/023',
     itemCode: '37544965AF',
     serialNumber: '06F1388059-049',
@@ -6950,7 +6950,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/023',
     itemCode: '37544965A',
     serialNumber: '06A1863101-035',
@@ -6964,7 +6964,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/023',
     itemCode: '37544965AF',
     serialNumber: '06B1629322-024',
@@ -6978,7 +6978,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/024',
     itemCode: '37544965A',
     serialNumber: '06J2253863-008',
@@ -6992,7 +6992,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/024',
     itemCode: '37544965A',
     serialNumber: '06J2253863-009',
@@ -7006,7 +7006,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/025',
     itemCode: '37544965AF',
     serialNumber: '06F1871331-025',
@@ -7020,7 +7020,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/025',
     itemCode: '37544965A',
     serialNumber: '06B2098727-039',
@@ -7034,7 +7034,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/026',
     itemCode: '37544965A',
     serialNumber: '06B2098731-045',
@@ -7048,7 +7048,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/026',
     itemCode: '37544965A',
     serialNumber: '06B2098717-048',
@@ -7062,7 +7062,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/026',
     itemCode: '37544965A',
     serialNumber: '06A1863104-028',
@@ -7076,7 +7076,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/026',
     itemCode: '37544965A',
     serialNumber: '06B2098717-049',
@@ -7090,7 +7090,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/026',
     itemCode: '37544965A',
     serialNumber: '06J2253863036',
@@ -7104,7 +7104,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/026',
     itemCode: '37544965A',
     serialNumber: '06B2098727-029',
@@ -7118,7 +7118,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965AF',
     serialNumber: '06C1264963-028',
@@ -7132,7 +7132,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965A',
     serialNumber: '06J2253863014',
@@ -7146,7 +7146,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965A',
     serialNumber: '06F1871332-023',
@@ -7160,7 +7160,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965AF',
     serialNumber: '06B2098675-001',
@@ -7174,7 +7174,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965AF',
     serialNumber: '06F1388059-015',
@@ -7188,7 +7188,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965AF',
     serialNumber: '06E2248938-022',
@@ -7202,7 +7202,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965AF',
     serialNumber: '06B2098718-024',
@@ -7216,7 +7216,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM66/027',
     itemCode: '37544965A',
     serialNumber: '06E2248936049',
@@ -7230,7 +7230,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM67/003',
     itemCode: '37544965A',
     serialNumber: '06B2098727-027',
@@ -7244,7 +7244,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM67/003',
     itemCode: '37544990A',
     serialNumber: '06A1261346-031',
@@ -7258,7 +7258,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM67/003',
     itemCode: '37544995A',
     serialNumber: '327923-010',
@@ -7272,7 +7272,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM67/003',
     itemCode: '37544965A',
     serialNumber: '06H1152362-003',
@@ -7286,7 +7286,7 @@ export const data = [
     rpa: '',
   },
   {
-    id: nanoid(),
+    _id: nanoid(),
     dmNumber: 'DM67/003',
     itemCode: '37544965A',
     serialNumber: '06B2098726-044',
@@ -7430,7 +7430,7 @@ const menu = [
         icon: LiaToolsSolid,
       },
       // {
-      //   id: nanoid(),
+      //   _id: nanoid(),
       //   title: 'Others Products',
       //   url: '/claim-other-products',
       //   icon: LiaToolboxSolid,
