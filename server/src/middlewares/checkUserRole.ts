@@ -9,7 +9,6 @@ const checkUserRole =
     if (userRole !== role) {
       return res.status(401).send({ message: 'Unauthorized' });
     }
-    console.log('pass....');
     next();
   };
 export default checkUserRole;

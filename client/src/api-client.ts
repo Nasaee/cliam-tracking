@@ -80,3 +80,13 @@ export const getAllUsers = async () => {
     }
   }
 };
+
+export const deleteUser = async (id: string) => {
+  try {
+    await axios.delete(`${API_BASE_URL}/api/v1/admin/user/${id}`, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    throw new Error('User deletion failed');
+  }
+};
