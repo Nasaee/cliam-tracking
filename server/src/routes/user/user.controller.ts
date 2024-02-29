@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-import { createNewUser, getUser } from '../../models/user/user.model';
+import { createNewUser, getUserByEmail } from '../../models/user/user.model';
 import jwt from 'jsonwebtoken';
 import generateJwtToken from '../../utils/generateJwtToken';
 
@@ -14,7 +14,7 @@ export const registerUser = async (req: Request, res: Response) => {
   }
 
   try {
-    let user = await getUser(req.body.email);
+    let user = await getUserByEmail(req.body.email);
     if (user) {
       return res.status(400).json({ message: 'User already exists' });
     }

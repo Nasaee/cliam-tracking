@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
 import generateJwtToken from '../../utils/generateJwtToken';
-import { getUser } from '../../models/user/user.model';
+import { getUserByEmail } from '../../models/user/user.model';
 import bcrypt from 'bcryptjs';
 
 export const loginUser = async (req: Request, res: Response) => {
@@ -14,7 +14,7 @@ export const loginUser = async (req: Request, res: Response) => {
 
   const { email, password } = req.body;
 
-  const user = await getUser(email);
+  const user = await getUserByEmail(email);
 
   if (!user) {
     return res.status(400).json({ message: 'Invalid Credentials' });
@@ -35,6 +35,11 @@ export const loginUser = async (req: Request, res: Response) => {
   });
   res.status(200).send({ message: 'Loged in successfuly' });
 };
+
+export const validateToken = (req: Request, res: Response) => {
+  return res.status(200).send({ user: req.user });
+};
+
 export const logOutUser = (req: Request, res: Response) => {
   res.cookie('auth_token', '', { expires: new Date(0) });
   res.send();

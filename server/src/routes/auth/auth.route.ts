@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { check } from 'express-validator';
-import { loginUser, logOutUser } from './route.controller';
+import { loginUser, logOutUser, validateToken } from './auth.controller';
 import verifyToken from '../../middlewares/verifyToken.middleware';
 
 const authRouter = express.Router();
@@ -14,13 +14,7 @@ authRouter.post('/login', [
   loginUser,
 ]);
 
-authRouter.get(
-  '/validate-token',
-  verifyToken,
-  (req: Request, res: Response) => {
-    return res.status(200).send({ user: req.user });
-  }
-);
+authRouter.get('/validate-token', verifyToken, validateToken);
 
 authRouter.post('/logout', logOutUser);
 

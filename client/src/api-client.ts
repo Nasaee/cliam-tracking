@@ -64,3 +64,19 @@ export const logout = async () => {
     throw new Error('Logout failed');
   }
 };
+
+export const getAllUsers = async () => {
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/api/v1/admin/all-users`,
+      {},
+      { withCredentials: true }
+    );
+
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message);
+    }
+  }
+};

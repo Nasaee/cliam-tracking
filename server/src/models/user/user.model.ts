@@ -1,4 +1,4 @@
-import User from './user.mongo';
+import User, { UserType } from './user.mongo';
 
 export type CreateUserDto = {
   username: string;
@@ -6,14 +6,24 @@ export type CreateUserDto = {
   password: string;
 };
 
-async function createNewUser(userDto: CreateUserDto) {
+export async function createNewUser(userDto: CreateUserDto) {
   const user = new User(userDto);
   await user.save();
   return user;
 }
 
-async function getUser(email: string) {
+export async function getUserByEmail(email: string) {
   return await User.findOne({ email });
 }
 
-export { createNewUser, getUser };
+export async function getAllUsersDB(): Promise<UserType[]> {
+  return await User.find({}, { __v: 0, password: 0 }); // excluede __v and password
+}
+
+export async function deleteUserById(id: string) {
+  await User.findByIdAndDelete(id);
+}
+
+export async function getUserById(id: string) {
+  return await User.findOne({ _id: id });
+}

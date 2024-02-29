@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-export type UserState = {
+export type UserType = {
   userId: string | null;
   username: string | null;
   role: 'admin' | 'editor' | 'user' | 'pending' | null;
 };
 
-const initialState: UserState = {
+const initialState: UserType = {
   userId: null,
   username: null,
   role: null,
@@ -16,7 +16,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setCurrentUser: (state, action: PayloadAction<UserState>) => {
+    setCurrentUser: (state, action: PayloadAction<UserType>) => {
       state.userId = action.payload.userId;
       state.role = action.payload.role;
       state.username = action.payload.username;

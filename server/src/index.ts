@@ -3,7 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import { mongoConnect } from './utils/mongoConnect';
 import cookieParser from 'cookie-parser';
-import v1 from './v1';
+import v1 from './routes/v1';
 
 const PORT = process.env.PORT || 8000;
 

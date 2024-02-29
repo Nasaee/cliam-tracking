@@ -51,7 +51,7 @@ const ShowApplierToAddDbTable = () => {
           </button>
         </div>
       )}
-      <table className='w-full text-sm text-left rtl:text-right text-gray-500 as AddItemData[]'>
+      <table className='w-full text-sm text-left rtl:text-right text-gray-500'>
         <thead className='text-xs text-white uppercase bg-[#2a3447a6]'>
           <tr>
             <th scope='col' className='px-4 py-4'>

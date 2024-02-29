@@ -18,13 +18,13 @@ import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import * as apiClient from './api-client';
-import { useQuery } from 'react-query';
 import Loading from './pages/Loading';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/rootReducer';
 import { setCurrentUser } from './store/user/userSlice';
 import PendingApproval from './pages/PendingApproval ';
+import { useQuery } from '@tanstack/react-query';
 
 function App() {
   const dispatch = useDispatch();
@@ -100,6 +100,10 @@ function App() {
         {
           path: '/add-other-products',
           element: <AddClaimOtherProducts />,
+        },
+        {
+          path: '*',
+          element: <Navigate to='/' />,
         },
       ],
     },

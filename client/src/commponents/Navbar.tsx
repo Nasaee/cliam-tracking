@@ -3,11 +3,11 @@ import { CiLogout } from 'react-icons/ci';
 import { FaUserCircle } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/rootReducer';
-import { useMutation, useQueryClient } from 'react-query';
 import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { resetUser } from '../store/user/userSlice';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 const Navbar = () => {
   const queryClient = useQueryClient();
@@ -15,7 +15,7 @@ const Navbar = () => {
   const mutation = useMutation({
     mutationFn: apiClient.logout,
     onSuccess: async () => {
-      await queryClient.invalidateQueries('validateToken');
+      await queryClient.invalidateQueries({ queryKey: ['validateToken'] });
       dispatch(resetUser());
 
       toast.success('Logged out successfully');

@@ -4,9 +4,9 @@ import { Link, Navigate } from 'react-router-dom';
 import { ZodType, z } from 'zod';
 import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
-import { useMutation, useQueryClient } from 'react-query';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/rootReducer';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 export type RegisterFormData = {
   username: string;
@@ -43,7 +43,7 @@ const Register = () => {
       // 1. toast success
       toast.success('Register succeeded!');
       reset();
-      await queryClient.invalidateQueries('validateToken');
+      await queryClient.invalidateQueries({ queryKey: ['validateToken'] });
     },
     onError: (error: Error) => {
       toast.error(error.message);
@@ -156,7 +156,7 @@ const Register = () => {
               <div>
                 <button
                   type='submit'
-                  disabled={mutation.isLoading}
+                  disabled={mutation.isPending}
                   className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
                 >
                   Create an account
