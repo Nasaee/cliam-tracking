@@ -21,7 +21,7 @@ export type ApplierType = {
   proformaInv: string;
   receiveDocs: string;
   received: boolean;
-  repairable: boolean | undefined;
+  repairable: 'fixed' | 'broken' | 'pending';
   additionInfo: string;
   lastEditor: string;
   rpa: string;
@@ -38,7 +38,7 @@ const applierSchema = new mongoose.Schema<ApplierType>({
   proformaInv: { type: String },
   receiveDocs: { type: String },
   received: { type: Boolean, default: false },
-  repairable: { type: Boolean || undefined, default: undefined },
+  repairable: { type: String, default: 'pending' },
   additionInfo: { type: String },
   lastEditor: { type: String },
   rpa: { type: String },

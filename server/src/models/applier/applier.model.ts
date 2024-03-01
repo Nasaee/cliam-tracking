@@ -47,7 +47,7 @@ export async function saveApplier(item: ApplierType) {
   }
 }
 
-export async function getAllApplier() {
+export async function getAllApplierDB() {
   return await Applier.find({}, { __v: 0 }); // exclude __v
 }
 
@@ -65,7 +65,6 @@ export function loadApplierData() {
             `dmNumber: ${dmNumber}, serialNumber: ${serialNumber} already exists`
           );
         }
-        console.log(data);
 
         saveApplier(data);
       })
@@ -74,7 +73,7 @@ export function loadApplierData() {
         reject(error);
       })
       .on('end', async () => {
-        const countApplierFound = (await getAllApplier()).length;
+        const countApplierFound = (await getAllApplierDB()).length;
         console.log(`${countApplierFound} items found!`);
         resolve('');
       });

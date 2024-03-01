@@ -23,7 +23,7 @@ app.use('/api/v1', v1);
 
 async function startServer() {
   await mongoConnect();
-  await loadApplierData();
+  // await loadApplierData(); // load only once on first time
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
