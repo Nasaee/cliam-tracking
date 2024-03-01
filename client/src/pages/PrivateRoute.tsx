@@ -6,9 +6,7 @@ type Props = {
   passCondition: boolean;
 };
 const PrivateRoute = ({ children, redirectPath, passCondition }: Props) => {
-  // TODO: handle authentication if user is admin
-
-  if (redirectPath && !passCondition) {
+  if (redirectPath && passCondition) {
     redirect(redirectPath);
   }
 

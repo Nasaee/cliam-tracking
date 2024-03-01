@@ -1,6 +1,5 @@
 import express, { Request, Response } from 'express';
-import { deleteUser, getAllUsers } from './admin.controller';
-import { deleteUserById, getUserById } from '../../models/user/user.model';
+import { deleteUser, getAllUsers, updateRole } from './admin.controller';
 
 const adminRouter = express.Router();
 
@@ -8,5 +7,7 @@ const adminRouter = express.Router();
 adminRouter.post('/all-users', getAllUsers);
 
 adminRouter.delete('/user/:id', deleteUser);
+
+adminRouter.patch('/user/:id', updateRole);
 
 export default adminRouter;

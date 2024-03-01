@@ -24,6 +24,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from './store/rootReducer';
 import { setCurrentUser } from './store/user/userSlice';
 import PendingApproval from './pages/PendingApproval ';
+import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 function App() {
@@ -34,9 +35,11 @@ function App() {
     retry: false,
   });
 
-  if (isSuccess && data.user) {
-    dispatch(setCurrentUser(data.user));
-  }
+  useEffect(() => {
+    if (isSuccess && data.user) {
+      dispatch(setCurrentUser(data.user));
+    }
+  }, [data, dispatch, isSuccess]);
 
   const { userId, role } = useSelector((state: RootState) => state.user);
 

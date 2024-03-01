@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import * as apiClinet from '../api-client';
+import * as apiClient from '../api-client';
 import Loading from './Loading';
 import { UserType } from '../store/user/userSlice';
 import { FaRegEdit } from 'react-icons/fa';
@@ -28,16 +28,33 @@ const AdminPermission = () => {
 
   const { data: users, isPending } = useQuery({
     queryKey: ['getAllUsers'],
-    queryFn: apiClinet.getAllUsers,
+    queryFn: apiClient.getAllUsers,
   });
 
   const mutation = useMutation({
-    mutationFn: apiClinet.deleteUser,
+    mutationFn: apiClient.deleteUser,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['getAllUsers'] });
       toast.success('User deleted successfully');
     },
     onError: (error: Error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const updateRoleMutation = useMutation({
+    mutationFn: (params: { id: string; newUserRole: apiClient.Role }) =>
+      apiClient.updateUserRole(params.id, params.newUserRole),
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ['getAllUsers'],
+      });
+      queryClient.invalidateQueries({
+        queryKey: ['validateToken'],
+      });
+      toast.success('User update successfully');
+    },
+    onError: (error) => {
       toast.error(error.message);
     },
   });
@@ -74,8 +91,14 @@ const AdminPermission = () => {
       setOpenUpdateRoleForm(false);
       return;
     }
-    // TODO update user to DB
-    console.log(newUpdatedUser);
+
+    if (newUpdatedUser.role !== null) {
+      updateRoleMutation.mutate({
+        id: newUpdatedUser._id,
+        newUserRole: newUpdatedUser.role,
+      });
+    }
+
     setOpenUpdateRoleForm(false);
   };
 
@@ -138,7 +161,7 @@ const AdminPermission = () => {
       </table>
       {/* Update role form */}
       {openUpdateRoleForm && (
-        <div className='absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.33)] flex items-center justify-center'>
+        <div className='absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.33)] flex items-start justify-center'>
           <div className='max-w-[500px] bg-white text-black p-10 rounded-lg shadow-md'>
             <p className='capitalize font-bold mb-4'>Change user role for :</p>
             <h3 className='text-blue-600 text-lg'>{editUserRole?.email}</h3>

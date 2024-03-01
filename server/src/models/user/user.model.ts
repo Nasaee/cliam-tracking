@@ -27,3 +27,7 @@ export async function deleteUserById(id: string) {
 export async function getUserById(id: string) {
   return await User.findOne({ _id: id });
 }
+
+export async function updateUserRole(id: string, newRole: UserType['role']) {
+  await User.findByIdAndUpdate(id, { role: newRole });
+}

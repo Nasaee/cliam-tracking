@@ -2,6 +2,8 @@ import axios from 'axios';
 import { RegisterFormData } from './pages/Register';
 import { LoginFormData } from './pages/Login';
 
+export type Role = 'admin' | 'editor' | 'user' | 'pending';
+
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 export const register = async (formData: RegisterFormData) => {
@@ -87,6 +89,22 @@ export const deleteUser = async (id: string) => {
       withCredentials: true,
     });
   } catch (error) {
-    throw new Error('User deletion failed');
+    throw new Error('User delete failed');
+  }
+};
+
+export const updateUserRole = async (id: string, newUserRole: Role) => {
+  try {
+    await axios.patch(
+      `${API_BASE_URL}/api/v1/admin/user/${id}`,
+      { newUserRole },
+      {
+        withCredentials: true,
+      }
+    );
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'Update user failed');
+    }
   }
 };
