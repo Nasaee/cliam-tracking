@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { mongoConnect } from './utils/mongoConnect';
 import cookieParser from 'cookie-parser';
 import v1 from './routes/v1';
+import { loadApplierData } from './models/applier/applier.model';
 
 const PORT = process.env.PORT || 8000;
 
@@ -22,6 +23,7 @@ app.use('/api/v1', v1);
 
 async function startServer() {
   await mongoConnect();
+  await loadApplierData();
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
