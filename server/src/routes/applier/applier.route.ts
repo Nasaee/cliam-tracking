@@ -3,8 +3,8 @@ import { getAllApplier } from './applier.controller';
 import verifyToken from '../../middlewares/verifyToken.middleware';
 import checkUserRole from '../../middlewares/checkUserRole';
 import { getAllApplierDB } from '../../models/applier/applier.model';
-import compaireReceiveStatus from '../../utils/compaireReceiveStatus';
-import groupSendOutByYear from '../../utils/compaireReceiveStatus';
+import compaireReceiveStatus from '../../utils/groupSendOutByYear';
+import groupSendOutByYear from '../../utils/groupSendOutByYear';
 
 const applierRouter = express.Router();
 
