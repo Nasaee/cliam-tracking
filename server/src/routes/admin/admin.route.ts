@@ -4,7 +4,7 @@ import { deleteUser, getAllUsers, updateRole } from './admin.controller';
 const adminRouter = express.Router();
 
 // /api/v1/admin/...
-adminRouter.post('/all-users', getAllUsers);
+adminRouter.get('/all-users', getAllUsers);
 
 adminRouter.delete('/user/:id', deleteUser);
 

@@ -69,11 +69,9 @@ export const logout = async () => {
 
 export const getAllUsers = async () => {
   try {
-    const response = await axios.post(
-      `${API_BASE_URL}/api/v1/admin/all-users`,
-      {},
-      { withCredentials: true }
-    );
+    const response = await axios.get(`${API_BASE_URL}/api/v1/admin/all-users`, {
+      withCredentials: true,
+    });
 
     return response.data;
   } catch (error) {
@@ -105,6 +103,34 @@ export const updateUserRole = async (id: string, newUserRole: Role) => {
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error(error.response?.data.message || 'Update user failed');
+    }
+  }
+};
+
+export const getAllApplier = async () => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/api/v1/applier`, {
+      withCredentials: true,
+    });
+
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'Somthing went wrog');
+    }
+  }
+};
+
+export const analyticsSendOutItemsByYear = async () => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/api/v1/applier/analytics/group-send-items-by-year`,
+      { withCredentials: true }
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'Somthing went wrog');
     }
   }
 };

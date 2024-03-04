@@ -9,10 +9,30 @@ import {
   YAxis,
 } from 'recharts';
 import { nanoid } from 'nanoid';
-import { sendOutItemsAmount } from '../data';
+import { useQuery } from '@tanstack/react-query';
+import * as apiClient from '../api-client';
+
+type Group = {
+  544965: number;
+  544990: number;
+  544995: number;
+  year: number;
+};
+
+type GroupItemByYear = Group[];
 
 const BarChartBox = () => {
+  const { data: sendOutItemsAmount, isLoading } = useQuery<GroupItemByYear>({
+    queryKey: ['getAmontsendOutItemByYear'],
+    queryFn: apiClient.analyticsSendOutItemsByYear,
+  });
   const COLORS = ['#94d82d', '#9775fa', '#fcc419'];
+
+  if (isLoading) {
+    console.log('loading');
+  }
+
+  console.log(sendOutItemsAmount);
 
   return (
     <div className='p-5'>
@@ -51,28 +71,28 @@ const BarChartBox = () => {
         </BarChart>
       </ResponsiveContainer>
       <div className='options | flex justify-between flex-wrap gap-4 text-sm mt-4'>
-        {sendOutItemsAmount.map((item) => (
+        {sendOutItemsAmount?.map((item) => (
           <div className='option | flex flex-col gap-2' key={nanoid()}>
             <div className='title | flex items-center gap-2'>
               <span>{item.year}</span>
             </div>
             <span className='flex items-center justify-between gap-3'>
               <span
-                className='dot | block w-[10px] h-[10px] text-center'
+                className='dot | block w-[10px] h-[10px] text-center rounded-full'
                 style={{ background: COLORS[0] }}
               ></span>
               <span className='text-right'>{`${item[544965]} EA`}</span>
             </span>
             <span className='flex items-center justify-between gap-3'>
               <span
-                className='dot | block w-[10px] h-[10px] text-center'
+                className='dot | block w-[10px] h-[10px] text-center rounded-full'
                 style={{ background: COLORS[1] }}
               ></span>
               <span className='text-right'>{`${item[544995]} EA`}</span>
             </span>
             <span className='flex items-center justify-between gap-3'>
               <span
-                className='dot | block w-[10px] h-[10px] text-center'
+                className='dot | block w-[10px] h-[10px] text-center rounded-full'
                 style={{ background: COLORS[2] }}
               ></span>
               <span className='text-right'>{`${item[544990]} EA`}</span>

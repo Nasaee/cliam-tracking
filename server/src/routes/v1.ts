@@ -12,6 +12,11 @@ const apiV1 = express.Router();
 apiV1.use('/auth', authRouter);
 apiV1.use('/users', usersRouter);
 apiV1.use('/admin', verifyToken, checkUserRole('admin'), adminRouter);
-apiV1.use('/applier', applierRouter);
+apiV1.use(
+  '/applier',
+  verifyToken,
+  checkUserRole('admin', 'editor', 'user'),
+  applierRouter
+);
 
 export default apiV1;

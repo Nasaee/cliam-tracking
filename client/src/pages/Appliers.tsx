@@ -1,20 +1,48 @@
 import { GridColDef } from '@mui/x-data-grid';
 import DataTable from '../commponents/DataTable';
-import { data } from '../data';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import * as apiClient from '../api-client';
+import Loading from '../commponents/Loading';
+import { IoMdCheckmark } from 'react-icons/io';
+import { RxCross2 } from 'react-icons/rx';
+
+type ApplierCode =
+  | '544965'
+  | '544965A'
+  | '544965AF'
+  | '544965D'
+  | '544990'
+  | '544990A'
+  | '544990AF'
+  | '544990D'
+  | '544995'
+  | '544995A'
+  | '544995AF'
+  | '544995D';
+
+type ApplierData = {
+  _id: string;
+  dmNumber: string;
+  itemCode: ApplierCode;
+  serialNumber: string;
+  getDifSerial: string;
+  proformaInv: string;
+  receiveDocs: string;
+  repairable: string;
+  received: true;
+  additionInfo: string;
+  lastEditor: string;
+  rpa: string;
+};
 
 const Appliers = () => {
-  const columns: GridColDef[] = [
-    {
-      field: '_id',
-      headerName: 'No.',
-      width: 90,
-      valueFormatter(params) {
-        // TODO: fix this to sequence number or remove column
+  const { data: applierData = [], isLoading } = useQuery<ApplierData[]>({
+    queryKey: ['getAllApplier'],
+    queryFn: apiClient.getAllApplier,
+  });
 
-        return params.value;
-      },
-    },
+  const columns: GridColDef[] = [
     {
       field: 'dmNumber',
       headerName: 'DM No.',
@@ -31,7 +59,7 @@ const Appliers = () => {
       sortable: true,
     },
     {
-      field: 'getDifSerail',
+      field: 'getDifSerial',
       headerName: 'Diff SN.',
       description: 'Received items difference serial number from sendout items',
       sortable: true,
@@ -54,14 +82,47 @@ const Appliers = () => {
     {
       field: 'received',
       headerName: 'Received',
-      sortable: false,
-      type: 'boolean',
+      sortable: true,
+      renderCell: ({ row }: { row: ApplierData }) => {
+        const { received } = row;
+        let value;
+        if (received) {
+          value = <IoMdCheckmark className='text-lg text-green-600' />;
+        } else {
+          value = <RxCross2 className='text-lg text-red-400' />;
+        }
+
+        return (
+          <div className='flex justify-center items-center mx-auto'>
+            {value}
+          </div>
+        );
+      },
     },
     {
       field: 'repairable',
-      headerName: 'fixed',
-      sortable: false,
-      type: 'boolean',
+      headerName: 'Repair Status',
+      sortable: true,
+      renderCell: (params) => {
+        const { repairable } = params.row;
+        let value = (
+          <span className='capitalize text-xs tracking-wide text-gray-500'>
+            {`${repairable}...`}
+          </span>
+        );
+        if (repairable === 'fixed') {
+          value = <IoMdCheckmark className='text-lg text-green-600' />;
+        }
+        if (repairable === 'broken') {
+          value = <RxCross2 className='text-lg text-red-400' />;
+        }
+
+        return (
+          <div className='flex justify-center items-center mx-auto'>
+            {value}
+          </div>
+        );
+      },
     },
     {
       field: 'additionInfo',
@@ -69,6 +130,15 @@ const Appliers = () => {
       sortable: false,
     },
   ];
+
+  if (isLoading) {
+    return (
+      <div className='w-full h-full bg-white'>
+        <Loading />
+      </div>
+    );
+  }
+
   return (
     <section>
       <div className='flex gap-4 items-center mb-4'>
@@ -81,7 +151,12 @@ const Appliers = () => {
           Add Items
         </Link>
       </div>
-      <DataTable columns={columns} rows={[...data].reverse()} />
+      <div className='mb-3'>
+        <span>Total: </span>
+        <span>{`(${applierData?.length} Items)`}</span>
+      </div>
+
+      <DataTable columns={columns} rows={[...applierData].reverse()} />
     </section>
   );
 };

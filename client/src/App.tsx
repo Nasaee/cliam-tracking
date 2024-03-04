@@ -18,7 +18,7 @@ import { Toaster } from 'react-hot-toast';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import * as apiClient from './api-client';
-import Loading from './pages/Loading';
+import Loading from './commponents/Loading';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from './store/rootReducer';

@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import * as apiClient from '../api-client';
-import Loading from './Loading';
+import Loading from '../commponents/Loading';
 import { UserType } from '../store/user/userSlice';
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBin5Line } from 'react-icons/ri';

@@ -48,7 +48,7 @@ export async function saveApplier(item: ApplierType) {
 }
 
 export async function getAllApplierDB() {
-  return await Applier.find({}, { __v: 0 }); // exclude __v
+  return await Applier.find({}, { __v: 0 }).sort({ dmNumber: 1 }); // exclude __v
 }
 
 export function loadApplierData() {
