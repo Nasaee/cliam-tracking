@@ -2,6 +2,8 @@ import Applier, { ApplierType } from './applier.mongo';
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse';
+import { resolve } from 'path/posix';
+import { rejects } from 'assert';
 
 export async function findApplier(dmNumber: string, serialNumber: string) {
   return await Applier.findOne({ dmNumber, serialNumber });
@@ -49,6 +51,27 @@ export async function saveApplier(item: ApplierType) {
 
 export async function getAllApplierDB() {
   return await Applier.find({}, { __v: 0 }).sort({ dmNumber: 1 }); // exclude __v
+}
+
+export async function saveApplierItem(newItemsArray: ApplierType[]) {
+  try {
+    // Use Promise.all() to wait for all updates to complete
+    await Promise.all(
+      newItemsArray.map(async (newItem) => {
+        await Applier.updateOne(
+          {
+            dmNumber: newItem.dmNumber,
+            serialNumber: newItem.serialNumber,
+          },
+          { ...newItem },
+          { upsert: true }
+        );
+      })
+    );
+    return;
+  } catch (error) {
+    throw error; // Reject with the error
+  }
 }
 
 export function loadApplierData() {

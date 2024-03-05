@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import {
+  addApplier,
   getAllApplier,
   getAllApplierGroupByReceiveStatus,
 } from './applier.controller';
@@ -11,6 +12,8 @@ const applierRouter = express.Router();
 // /api/v1/applier/...
 
 applierRouter.get('/', getAllApplier);
+
+applierRouter.post('/', addApplier);
 
 applierRouter.get(
   '/analytics/group-send-items-by-year',

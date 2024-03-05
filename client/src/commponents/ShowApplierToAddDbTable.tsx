@@ -3,6 +3,7 @@ import {
   ItemData,
   deleteApplierItem,
   editApplierItem,
+  reset,
 } from '../store/addApplier/addApplierSlice';
 import { RootState } from '../store/rootReducer';
 import { useState } from 'react';
@@ -10,13 +11,28 @@ import { useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 import EditableRow from './EditableRow';
 import ReadOnlyRow from './ReadOnlyRow';
+import * as apiClient from '../api-client';
+import { useMutation } from '@tanstack/react-query';
+import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
 
 const ShowApplierToAddDbTable = () => {
-  const itemsToAddDB = useSelector(
-    (state: RootState) => state.applierToAddDB as ItemData[]
-  );
-
   const dispatch = useDispatch();
+
+  // const queryClient = useQueryClient();
+  const mutation = useMutation({
+    mutationKey: ['addAppliers'],
+    mutationFn: apiClient.addAppliersToDB,
+    onSuccess: () => {
+      toast.success('Add item succeeded');
+    },
+    onError: (error) => {
+      toast.error(error.message);
+    },
+  });
+
+  const itemsToAddDB = useSelector(
+    (state: RootState) => state.applierToAddDB as ApplierType[]
+  );
 
   const [rowIdToEdit, setRowIdToEdit] = useState<string | null>(null);
 
@@ -33,10 +49,8 @@ const ShowApplierToAddDbTable = () => {
 
   const handleUpdateDataToDb = (itemsDataArray: ItemData[]) => {
     console.log(itemsDataArray);
-
-    // use react query mutation to handle async function
-    // show toast when succeed or failier
-    // clear item to add DB in store
+    mutation.mutate(itemsDataArray as ApplierType[]);
+    dispatch(reset());
   };
 
   return (
@@ -78,7 +92,7 @@ const ShowApplierToAddDbTable = () => {
           </tr>
         </thead>
         <tbody>
-          {itemsToAddDB.map((item: ItemData, index) => {
+          {itemsToAddDB.map((item: ApplierType, index) => {
             return (
               <tr
                 key={item.serialNumber}

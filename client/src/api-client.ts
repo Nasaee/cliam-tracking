@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { RegisterFormData } from './pages/Register';
 import { LoginFormData } from './pages/Login';
+import { ApplierType } from '../../server/src/models/applier/applier.mongo';
 
 export type Role = 'admin' | 'editor' | 'user' | 'pending';
 
@@ -142,5 +143,16 @@ export const analyticsReceive = async () => {
     return response.data;
   } catch (error) {
     throw new Error('fetching data failed');
+  }
+};
+
+export const addAppliersToDB = async (items: ApplierType[]) => {
+  try {
+    await axios.post(`${API_BASE_URL}/api/v1/applier`, items, {
+      withCredentials: true,
+    });
+    return;
+  } catch (error) {
+    throw new Error('Add item failed');
   }
 };

@@ -18,7 +18,7 @@ const AddApplierForm = () => {
       dmNumber: data.dmNumber, // Keep dmNumber unchanged
       itemCode: '',
       serialNumber: '',
-      proformaInv: '',
+      proformaInv: data.proformaInv,
       additionInfo: '',
     });
   });
@@ -56,6 +56,34 @@ const AddApplierForm = () => {
 
       <div>
         <div className='grid gap-6 mb-6 md:grid-cols-2'>
+          {/* Proforma Inv. */}
+          <div>
+            <label
+              htmlFor='proformaInv'
+              className='block mb-2 text-sm font-medium text-gray-500 '
+            >
+              Proforma Inv.
+            </label>
+            <input
+              type='text'
+              id='proformaInv'
+              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+              placeholder='Proforma invoice...'
+              autoComplete='off'
+              {...register('proformaInv', {
+                required: 'This field is required',
+                validate: (value) =>
+                  value.startsWith('IM') ||
+                  'Proforma Inv. must start with "IM"',
+              })}
+              onInput={(e) =>
+                (e.currentTarget.value = e.currentTarget.value.toUpperCase())
+              }
+            />
+            {errors.proformaInv && (
+              <span className='text-red-500'>{errors.proformaInv.message}</span>
+            )}
+          </div>
           {/* Item Code */}
           <div>
             <label
@@ -114,26 +142,6 @@ const AddApplierForm = () => {
               {...register('serialNumber', {
                 required: 'This field is required',
               })}
-              onInput={(e) =>
-                (e.currentTarget.value = e.currentTarget.value.toUpperCase())
-              }
-            />
-          </div>
-          {/* Proforma Inv. */}
-          <div>
-            <label
-              htmlFor='proformaInv'
-              className='block mb-2 text-sm font-medium text-gray-500 '
-            >
-              Proforma Inv.
-            </label>
-            <input
-              type='text'
-              id='proformaInv'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
-              placeholder='Proforma invoice...'
-              autoComplete='off'
-              {...register('proformaInv')}
               onInput={(e) =>
                 (e.currentTarget.value = e.currentTarget.value.toUpperCase())
               }
