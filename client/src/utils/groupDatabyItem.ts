@@ -1,15 +1,15 @@
-import { ReceiveStatus } from '../data';
+import { GroupDataByReceiveStatus } from '../../../server/src/utils/compaireReceiveStatus';
 
-interface GroupedResult {
+type GroupedResult = {
   [key: string]: {
     [name: string]: {
       name: string;
       totalAmount: number;
     };
   };
-}
+};
 
-const groupDataByItem = (data: ReceiveStatus[]): GroupedResult => {
+const groupDataByItem = (data: GroupDataByReceiveStatus[]) => {
   const result: GroupedResult = {
     '544965': {
       unreceive: {

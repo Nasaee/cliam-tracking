@@ -129,8 +129,18 @@ export const analyticsSendOutItemsByYear = async () => {
     );
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data.message || 'Somthing went wrog');
-    }
+    throw new Error('fetching data failed');
+  }
+};
+
+export const analyticsReceive = async () => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/api/v1/applier/analytics/group-data-by-receive-status`,
+      { withCredentials: true }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error('fetching data failed');
   }
 };

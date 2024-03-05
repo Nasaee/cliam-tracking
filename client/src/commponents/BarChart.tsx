@@ -11,6 +11,7 @@ import {
 import { nanoid } from 'nanoid';
 import { useQuery } from '@tanstack/react-query';
 import * as apiClient from '../api-client';
+import Loading from './Loading';
 
 type Group = {
   544965: number;
@@ -29,10 +30,12 @@ const BarChartBox = () => {
   const COLORS = ['#94d82d', '#9775fa', '#fcc419'];
 
   if (isLoading) {
-    console.log('loading');
+    return (
+      <div className='w-full h-full bg-white'>
+        <Loading />
+      </div>
+    );
   }
-
-  console.log(sendOutItemsAmount);
 
   return (
     <div className='p-5'>

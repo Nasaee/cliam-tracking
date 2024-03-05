@@ -1,10 +1,5 @@
 import { ApplierType } from '../models/applier/applier.mongo';
-
-enum ITEM_CODE {
-  green = '544965',
-  gold = '544990',
-  violet = '544995',
-}
+import { ITEM_CODE } from './config';
 
 type ResultObj = { [key: string]: { year: number; [key: string]: number } };
 

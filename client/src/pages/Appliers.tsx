@@ -6,38 +6,10 @@ import * as apiClient from '../api-client';
 import Loading from '../commponents/Loading';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
-
-type ApplierCode =
-  | '544965'
-  | '544965A'
-  | '544965AF'
-  | '544965D'
-  | '544990'
-  | '544990A'
-  | '544990AF'
-  | '544990D'
-  | '544995'
-  | '544995A'
-  | '544995AF'
-  | '544995D';
-
-type ApplierData = {
-  _id: string;
-  dmNumber: string;
-  itemCode: ApplierCode;
-  serialNumber: string;
-  getDifSerial: string;
-  proformaInv: string;
-  receiveDocs: string;
-  repairable: string;
-  received: true;
-  additionInfo: string;
-  lastEditor: string;
-  rpa: string;
-};
+import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
 
 const Appliers = () => {
-  const { data: applierData = [], isLoading } = useQuery<ApplierData[]>({
+  const { data: applierData = [], isLoading } = useQuery<ApplierType[]>({
     queryKey: ['getAllApplier'],
     queryFn: apiClient.getAllApplier,
   });
@@ -83,7 +55,7 @@ const Appliers = () => {
       field: 'received',
       headerName: 'Received',
       sortable: true,
-      renderCell: ({ row }: { row: ApplierData }) => {
+      renderCell: ({ row }: { row: ApplierType }) => {
         const { received } = row;
         let value;
         if (received) {

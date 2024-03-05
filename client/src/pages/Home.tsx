@@ -1,15 +1,36 @@
+import { useQuery } from '@tanstack/react-query';
 import BarChartBox from '../commponents/BarChart';
 import PieChart from '../commponents/PieChart';
-// import UnreceivePieChart from '../commponents/UnreceivePieChart';
-import { receiveStatus } from '../data';
 import groupDataByItem from '../utils/groupDatabyItem';
+import * as apiClient from '../api-client';
+import Loading from '../commponents/Loading';
+import { GroupDataByReceiveStatus } from '../../../server/src/utils/compaireReceiveStatus';
 
 const colorsForReceiveStatus = ['#e64980', '#3bc9db', '#0b7285'];
 const colorsGreen = ['#2b8a3e', '#a9e34b', '#5c940d'];
 const colorsGold = ['#fff3bf', '#e67700', '#fcc419'];
 const colorsViolet = ['#b197fc', '#9c36b5', '#845ef7'];
+
 const Home = () => {
-  const allApplierItems = groupDataByItem(receiveStatus);
+  const { data: applierData, isLoading } = useQuery<GroupDataByReceiveStatus[]>(
+    {
+      queryKey: ['fetchReciveApplierStatus'],
+      queryFn: apiClient.analyticsReceive,
+    }
+  );
+
+  if (isLoading) {
+    return (
+      <div className='w-full h-full bg-white'>
+        <Loading />
+      </div>
+    );
+  }
+
+  let allApplierItems;
+  if (applierData) {
+    allApplierItems = groupDataByItem(applierData);
+  }
 
   return (
     <section className='w-full'>
@@ -22,32 +43,28 @@ const Home = () => {
           <PieChart
             titel='Receive Status'
             colors={colorsForReceiveStatus}
-            data={receiveStatus}
+            data={applierData ?? []}
           />
         </div>
-        {/* uncomment if need to show */}
-        {/* <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
-          <UnreceivePieChart />
-        </div> */}
         <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
           <PieChart
             titel='544965'
             colors={colorsGreen}
-            data={Object.values(allApplierItems[544965])}
+            data={Object.values(allApplierItems?.[544965] ?? [])}
           />
         </div>
         <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
           <PieChart
             titel='544990'
             colors={colorsGold}
-            data={Object.values(allApplierItems[544990])}
+            data={Object.values(allApplierItems?.[544990] ?? [])}
           />
         </div>
         <div className='row-span-2 border-2 border-[#384256] rounded-lg'>
           <PieChart
             titel='544995'
             colors={colorsViolet}
-            data={Object.values(allApplierItems[544995])}
+            data={Object.values(allApplierItems?.[544995] ?? [])}
           />
         </div>
       </div>

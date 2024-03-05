@@ -1,9 +1,9 @@
 import express, { Request, Response } from 'express';
-import { getAllApplier } from './applier.controller';
-import verifyToken from '../../middlewares/verifyToken.middleware';
-import checkUserRole from '../../middlewares/checkUserRole';
+import {
+  getAllApplier,
+  getAllApplierGroupByReceiveStatus,
+} from './applier.controller';
 import { getAllApplierDB } from '../../models/applier/applier.model';
-import compaireReceiveStatus from '../../utils/groupSendOutByYear';
 import groupSendOutByYear from '../../utils/groupSendOutByYear';
 
 const applierRouter = express.Router();
@@ -29,6 +29,11 @@ applierRouter.get(
       return res.status(500).send({ message: 'Something went wrong' });
     }
   }
+);
+
+applierRouter.get(
+  '/analytics/group-data-by-receive-status',
+  getAllApplierGroupByReceiveStatus
 );
 
 export default applierRouter;
