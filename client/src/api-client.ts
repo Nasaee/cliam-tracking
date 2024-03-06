@@ -122,6 +122,16 @@ export const getAllApplier = async () => {
   }
 };
 
+export const deleteApplierById = async (id: string) => {
+  try {
+    await axios.delete(`${API_BASE_URL}/api/v1/applier/${id}`, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    throw new Error('Applier delete failed');
+  }
+};
+
 export const analyticsSendOutItemsByYear = async () => {
   try {
     const response = await axios.get(
@@ -148,10 +158,10 @@ export const analyticsReceive = async () => {
 
 export const addAppliersToDB = async (items: ApplierType[]) => {
   try {
-    await axios.post(`${API_BASE_URL}/api/v1/applier`, items, {
+    const response = await axios.post(`${API_BASE_URL}/api/v1/applier`, items, {
       withCredentials: true,
     });
-    return;
+    return response.data;
   } catch (error) {
     throw new Error('Add item failed');
   }

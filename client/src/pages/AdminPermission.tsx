@@ -1,4 +1,3 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import * as apiClient from '../api-client';
 import Loading from '../commponents/Loading';
 import { UserType } from '../store/user/userSlice';
@@ -7,6 +6,7 @@ import { RiDeleteBin5Line } from 'react-icons/ri';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import { userRole } from '../config/config';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 
 export type UserResponseType = {
   _id: string;
@@ -26,7 +26,7 @@ const AdminPermission = () => {
 
   const queryClient = useQueryClient();
 
-  const { data: users, isPending } = useQuery({
+  const { data: users, isLoading } = useQuery({
     queryKey: ['getAllUsers'],
     queryFn: apiClient.getAllUsers,
   });
@@ -54,12 +54,12 @@ const AdminPermission = () => {
       });
       toast.success('User update successfully');
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast.error(error.message);
     },
   });
 
-  if (isPending) {
+  if (isLoading) {
     return <Loading />;
   }
   const handleDelete = (id: string) => {

@@ -1,12 +1,12 @@
 import { GridColDef } from '@mui/x-data-grid';
 import DataTable from '../commponents/DataTable';
 import { Link } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
 import * as apiClient from '../api-client';
 import Loading from '../commponents/Loading';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
 import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
+import { useQuery } from 'react-query';
 
 const Appliers = () => {
   const { data: applierData = [], isLoading } = useQuery<ApplierType[]>({
@@ -115,7 +115,6 @@ const Appliers = () => {
     <section>
       <div className='flex gap-4 items-center mb-4'>
         <h1>Appliers</h1>
-        {/* // TODO: Add path to add page */}
         <Link
           to='/add-appliers'
           className='bg-white text-black py-1 px-2 text-xs rounded-[8px]'

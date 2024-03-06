@@ -9,9 +9,9 @@ import {
   YAxis,
 } from 'recharts';
 import { nanoid } from 'nanoid';
-import { useQuery } from '@tanstack/react-query';
 import * as apiClient from '../api-client';
 import Loading from './Loading';
+import { useQuery } from 'react-query';
 
 type Group = {
   544965: number;

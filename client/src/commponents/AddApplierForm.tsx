@@ -2,9 +2,12 @@ import { TextField } from '@mui/material';
 import { ItemData, addApplierItem } from '../store/addApplier/addApplierSlice';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useQueryClient } from 'react-query';
 
 const AddApplierForm = () => {
   const dispatch = useDispatch();
+
+  const queryClient = useQueryClient();
   const {
     register,
     handleSubmit,
@@ -14,6 +17,13 @@ const AddApplierForm = () => {
 
   const onSubmit = handleSubmit((data: ItemData) => {
     dispatch(addApplierItem(data));
+    queryClient.invalidateQueries({
+      queryKey: [
+        'getAllAppliers',
+        'fetchReciveApplierStatus',
+        'getAmontsendOutItemByYear',
+      ],
+    });
     reset({
       dmNumber: data.dmNumber, // Keep dmNumber unchanged
       itemCode: '',
@@ -166,13 +176,21 @@ const AddApplierForm = () => {
           />
         </div>
       </div>
-
-      <button
-        type='submit'
-        className='text-white bg-indigo-600 hover:bg-indigo-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
-      >
-        Add
-      </button>
+      <div className='flex flex-col gap-1'>
+        <button
+          type='submit'
+          className='text-white bg-indigo-600 hover:bg-indigo-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  mb-[2px] focus:outline-none'
+        >
+          Add
+        </button>
+        <button
+          type='button'
+          onClick={() => reset()}
+          className='text-white bg-indigo-400 hover:bg-indigo-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none'
+        >
+          Clear
+        </button>
+      </div>
     </form>
   );
 };

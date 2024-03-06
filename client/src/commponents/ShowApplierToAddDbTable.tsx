@@ -12,8 +12,8 @@ import toast from 'react-hot-toast';
 import EditableRow from './EditableRow';
 import ReadOnlyRow from './ReadOnlyRow';
 import * as apiClient from '../api-client';
-import { useMutation } from '@tanstack/react-query';
 import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
+import { useMutation } from 'react-query';
 
 const ShowApplierToAddDbTable = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const ShowApplierToAddDbTable = () => {
     onSuccess: () => {
       toast.success('Add item succeeded');
     },
-    onError: (error) => {
+    onError: (error: Error) => {
       toast.error(error.message);
     },
   });

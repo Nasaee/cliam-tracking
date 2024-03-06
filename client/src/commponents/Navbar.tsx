@@ -7,11 +7,12 @@ import * as apiClient from '../api-client';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { resetUser } from '../store/user/userSlice';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from 'react-query';
 
 const Navbar = () => {
-  const queryClient = useQueryClient();
   const dispatch = useDispatch();
+
+  const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: apiClient.logout,
     onSuccess: async () => {
@@ -31,7 +32,7 @@ const Navbar = () => {
   return (
     <nav className='w-full flex justify-between items-center px-[20px] py-[10px]'>
       <div className='logo | '>
-        <img src='../../public/logo.png' alt='' className='w-16' />
+        <img src='/logo.png' alt='' className='w-16' />
       </div>
       <div className='menu | flex items-center justify-center gap-4'>
         <button className='md:hidden bg-transparent border-none p-0 outline-none'>

@@ -25,10 +25,11 @@ import { RootState } from './store/rootReducer';
 import { setCurrentUser } from './store/user/userSlice';
 import PendingApproval from './pages/PendingApproval ';
 import { useEffect } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 
 function App() {
   const dispatch = useDispatch();
+
   const { data, isLoading, isSuccess } = useQuery({
     queryKey: ['validateToken'],
     queryFn: apiClient.validateToken,

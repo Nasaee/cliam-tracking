@@ -21,6 +21,9 @@ app.use(
 
 app.use('/api/v1', v1);
 
+// TODO: catch all routes to index.html in frontend
+// app.use('*') // catch all routes
+
 async function startServer() {
   await mongoConnect();
   // await loadApplierData(); // load only once on first time

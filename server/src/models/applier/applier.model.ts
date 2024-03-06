@@ -74,6 +74,10 @@ export async function saveApplierItem(newItemsArray: ApplierType[]) {
   }
 }
 
+export async function deleteApplierById(id: string) {
+  return await Applier.deleteOne({ _id: id });
+}
+
 export function loadApplierData() {
   return new Promise((resolve, reject) => {
     fs.createReadStream(
