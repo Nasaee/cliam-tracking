@@ -33,7 +33,7 @@ const EditableRow = ({
           name='dmNumber'
           value={editFormData.dmNumber}
           onChange={handleInputChange}
-          className='px-2 py-1.5 border w-full'
+          className='px-2 py-1.5 border w-full bg-white'
           autoComplete='off'
         />
       </th>
@@ -43,7 +43,7 @@ const EditableRow = ({
           name='itemCode'
           value={editFormData.itemCode}
           onChange={handleInputChange}
-          className='px-2 py-1.5 border w-full'
+          className='px-2 py-1.5 border w-full bg-white'
           autoComplete='off'
         />
       </td>
@@ -53,7 +53,7 @@ const EditableRow = ({
           name='serialNumber'
           value={editFormData.serialNumber}
           onChange={handleInputChange}
-          className='px-2 py-1.5 border w-full'
+          className='px-2 py-1.5 border w-full bg-white'
           autoComplete='off'
         />
       </td>
@@ -63,7 +63,7 @@ const EditableRow = ({
           name='proformaInv'
           value={editFormData.proformaInv}
           onChange={handleInputChange}
-          className='px-2 py-1.5 border w-full'
+          className='px-2 py-1.5 border w-full bg-white'
           autoComplete='off'
         />
       </td>
@@ -73,7 +73,7 @@ const EditableRow = ({
           name='additionInfo'
           value={editFormData.additionInfo}
           onChange={handleInputChange}
-          className='px-2 py-1.5 border w-full'
+          className='px-2 py-1.5 border w-full bg-white'
           autoComplete='off'
         />
       </td>

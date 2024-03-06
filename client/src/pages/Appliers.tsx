@@ -127,7 +127,11 @@ const Appliers = () => {
         <span>{`(${applierData?.length} Items)`}</span>
       </div>
 
-      <DataTable columns={columns} rows={[...applierData].reverse()} />
+      <DataTable
+        columns={columns}
+        rows={[...applierData].reverse()}
+        category='applier'
+      />
     </section>
   );
 };

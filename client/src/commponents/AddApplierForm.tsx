@@ -37,16 +37,43 @@ const AddApplierForm = () => {
       className='add-items | flex flex-col gap-6 w-[300px]   border-r px-5'
       onSubmit={onSubmit}
     >
+      {/* Proforma Inv. */}
       <div>
         <label
-          htmlFor='itemCode'
+          htmlFor='proformaInv'
+          className='block mb-2 text-sm font-medium text-gray-500 '
+        >
+          Proforma Inv.
+        </label>
+        <input
+          type='text'
+          id='proformaInv'
+          className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+          placeholder='Proforma invoice...'
+          autoComplete='off'
+          {...register('proformaInv', {
+            required: 'This field is required',
+            validate: (value) =>
+              value.startsWith('IM') || 'Proforma Inv. must start with "IM"',
+          })}
+          onInput={(e) =>
+            (e.currentTarget.value = e.currentTarget.value.toUpperCase())
+          }
+        />
+        {errors.proformaInv && (
+          <span className='text-red-500'>{errors.proformaInv.message}</span>
+        )}
+      </div>
+      <div>
+        <label
+          htmlFor='dmNumber'
           className='block mb-2 text-sm font-medium text-gray-500'
         >
           Dm Number
         </label>
         <input
           type='text'
-          id='itemCode'
+          id='dmNumber'
           autoComplete='off'
           className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 uppercase'
           placeholder='DM...'
@@ -66,34 +93,6 @@ const AddApplierForm = () => {
 
       <div>
         <div className='grid gap-6 mb-6 md:grid-cols-2'>
-          {/* Proforma Inv. */}
-          <div>
-            <label
-              htmlFor='proformaInv'
-              className='block mb-2 text-sm font-medium text-gray-500 '
-            >
-              Proforma Inv.
-            </label>
-            <input
-              type='text'
-              id='proformaInv'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
-              placeholder='Proforma invoice...'
-              autoComplete='off'
-              {...register('proformaInv', {
-                required: 'This field is required',
-                validate: (value) =>
-                  value.startsWith('IM') ||
-                  'Proforma Inv. must start with "IM"',
-              })}
-              onInput={(e) =>
-                (e.currentTarget.value = e.currentTarget.value.toUpperCase())
-              }
-            />
-            {errors.proformaInv && (
-              <span className='text-red-500'>{errors.proformaInv.message}</span>
-            )}
-          </div>
           {/* Item Code */}
           <div>
             <label
@@ -156,6 +155,11 @@ const AddApplierForm = () => {
                 (e.currentTarget.value = e.currentTarget.value.toUpperCase())
               }
             />
+            {errors.serialNumber && (
+              <span className='text-red-500'>
+                {errors.serialNumber.message}
+              </span>
+            )}
           </div>
         </div>
         {/* More Details */}

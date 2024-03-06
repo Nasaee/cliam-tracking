@@ -15,4 +15,5 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-}
+  module: ['commonjs', 'es2020', 'node'],
+};

@@ -6,13 +6,18 @@ import toast from 'react-hot-toast';
 import { useMutation, useQueryClient } from 'react-query';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaRegEdit } from 'react-icons/fa';
+import UpdateApplierDB from './UpdateApplierDB';
+import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
+import { useState } from 'react';
+import { log } from 'console';
 
 type TableProps = {
   columns: GridColDef[];
   rows: object[];
+  category: 'applier' | 'otherProducts';
 };
 
-export default function DataTable({ columns, rows }: TableProps) {
+export default function DataTable({ columns, rows, category }: TableProps) {
   const queryClient = useQueryClient();
 
   const { mutate, isLoading } = useMutation({
@@ -39,6 +44,11 @@ export default function DataTable({ columns, rows }: TableProps) {
     }
   };
 
+  const handleOpenModal = () => {
+    const model = document.getElementById('my_modal_3') as HTMLDialogElement;
+    model?.showModal();
+  };
+
   const actionColumn: GridColDef = {
     field: 'action',
     headerName: 'Action',
@@ -47,12 +57,12 @@ export default function DataTable({ columns, rows }: TableProps) {
     renderCell: ({ row }) => {
       return (
         <div className='flex gap-2 text-lg'>
-          {/* // TODO: add action pass id to database to edit */}
           <button
             type='button'
             disabled={isLoading}
             onClick={() => {
-              console.log(row._id);
+              console.log(row);
+              handleOpenModal();
             }}
           >
             <FaRegEdit className='text-[#51cf66]' />
@@ -89,6 +99,10 @@ export default function DataTable({ columns, rows }: TableProps) {
           disableRowSelectionOnClick
         />
       </Box>
+      {/* Update Applier Form */}
+      {category === 'applier' && <UpdateApplierDB />}
+      {/* Update Other Products Form */}
+      {category === 'applier' && <div>ohter products</div>}
     </Wrapper>
   );
 }
