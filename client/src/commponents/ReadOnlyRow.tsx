@@ -16,6 +16,7 @@ const ReadOnlyRow = ({
   itemCode,
   serialNumber,
   proformaInv,
+  rpa,
   additionInfo,
   handleDelete,
   handleEditRow,
@@ -32,6 +33,7 @@ const ReadOnlyRow = ({
       <td className='px-4 py-3'>{itemCode}</td>
       <td className='px-4 py-3'>{serialNumber}</td>
       <td className='px-4 py-3'>{proformaInv}</td>
+      <td className='px-4 py-3'>{rpa}</td>
       <td className='px-4 py-3'>{additionInfo}</td>
       <td className='flex justify-center gap-2 px-4 py-3'>
         <button type='button'>

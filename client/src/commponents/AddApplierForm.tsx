@@ -29,6 +29,7 @@ const AddApplierForm = () => {
       itemCode: '',
       serialNumber: '',
       proformaInv: data.proformaInv,
+      rpa: data.rpa,
       additionInfo: '',
     });
   });
@@ -64,6 +65,7 @@ const AddApplierForm = () => {
           <span className='text-red-500'>{errors.proformaInv.message}</span>
         )}
       </div>
+
       <div>
         <label
           htmlFor='dmNumber'
@@ -161,6 +163,29 @@ const AddApplierForm = () => {
               </span>
             )}
           </div>
+        </div>
+        {/* RPA */}
+        <div>
+          <label
+            htmlFor='proformaInv'
+            className='block mb-2 text-sm font-medium text-gray-500 '
+          >
+            RPA
+          </label>
+          <input
+            type='text'
+            id='proformaInv'
+            className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+            placeholder='Proforma invoice...'
+            autoComplete='off'
+            {...register('rpa')}
+            onInput={(e) =>
+              (e.currentTarget.value = e.currentTarget.value.toUpperCase())
+            }
+          />
+          {errors.rpa && (
+            <span className='text-red-500'>{errors.rpa.message}</span>
+          )}
         </div>
         {/* More Details */}
         <div>

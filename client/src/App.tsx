@@ -126,7 +126,9 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <Toaster />
+      <div className='z-1000'>
+        <Toaster />
+      </div>
     </>
   );
 }

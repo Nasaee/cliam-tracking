@@ -84,6 +84,9 @@ const ShowApplierToAddDbTable = () => {
               Proforma Inv.
             </th>
             <th scope='col' className='px-4 py-4'>
+              RPA
+            </th>
+            <th scope='col' className='px-4 py-4'>
               More Details
             </th>
             <th scope='col' className='px-4 py-4'>

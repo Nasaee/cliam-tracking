@@ -70,6 +70,16 @@ const EditableRow = ({
       <td className='px-2 py-1.5'>
         <input
           type='text'
+          name='rpa'
+          value={editFormData.rpa}
+          onChange={handleInputChange}
+          className='px-2 py-1.5 border w-full bg-white'
+          autoComplete='off'
+        />
+      </td>
+      <td className='px-2 py-1.5'>
+        <input
+          type='text'
           name='additionInfo'
           value={editFormData.additionInfo}
           onChange={handleInputChange}

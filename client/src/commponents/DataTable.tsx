@@ -7,9 +7,8 @@ import { useMutation, useQueryClient } from 'react-query';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaRegEdit } from 'react-icons/fa';
 import UpdateApplierDB from './UpdateApplierDB';
-import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
 import { useState } from 'react';
-import { log } from 'console';
+import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
 
 type TableProps = {
   columns: GridColDef[];
@@ -18,6 +17,8 @@ type TableProps = {
 };
 
 export default function DataTable({ columns, rows, category }: TableProps) {
+  const [dataToEdit, setDataToEdit] = useState<ApplierType | null>(null);
+
   const queryClient = useQueryClient();
 
   const { mutate, isLoading } = useMutation({
@@ -61,7 +62,7 @@ export default function DataTable({ columns, rows, category }: TableProps) {
             type='button'
             disabled={isLoading}
             onClick={() => {
-              console.log(row);
+              setDataToEdit(row);
               handleOpenModal();
             }}
           >
@@ -100,7 +101,9 @@ export default function DataTable({ columns, rows, category }: TableProps) {
         />
       </Box>
       {/* Update Applier Form */}
-      {category === 'applier' && <UpdateApplierDB />}
+      {category === 'applier' && dataToEdit && (
+        <UpdateApplierDB dataToEdit={dataToEdit} />
+      )}
       {/* Update Other Products Form */}
       {category === 'applier' && <div>ohter products</div>}
     </Wrapper>

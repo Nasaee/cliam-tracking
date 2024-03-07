@@ -2,8 +2,6 @@ import Applier, { ApplierType } from './applier.mongo';
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse';
-import { resolve } from 'path/posix';
-import { rejects } from 'assert';
 
 export async function findApplier(dmNumber: string, serialNumber: string) {
   return await Applier.findOne({ dmNumber, serialNumber });
@@ -49,6 +47,10 @@ export async function saveApplier(item: ApplierType) {
   }
 }
 
+export async function findApplierById(id: string) {
+  return await Applier.findOne({ _id: id });
+}
+
 export async function getAllApplierDB() {
   return await Applier.find({}, { __v: 0 }).sort({ dmNumber: 1 }); // exclude __v
 }
@@ -76,6 +78,22 @@ export async function saveApplierItem(newItemsArray: ApplierType[]) {
 
 export async function deleteApplierById(id: string) {
   return await Applier.deleteOne({ _id: id });
+}
+
+export async function updateApplierDB(
+  updatedData: ApplierType,
+  userId: string
+) {
+  const dataToUpdate = {
+    ...updatedData,
+    received: updatedData.receiveDocs ? true : false,
+    lastEditor: userId,
+  };
+  return await Applier.findOneAndUpdate(
+    { _id: updatedData._id },
+    dataToUpdate,
+    { new: true }
+  );
 }
 
 export function loadApplierData() {

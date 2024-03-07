@@ -132,6 +132,21 @@ export const deleteApplierById = async (id: string) => {
   }
 };
 
+export const updateApplierToDb = async (updatedItem: ApplierType) => {
+  try {
+    const response = await axios.patch(
+      `${API_BASE_URL}/api/v1/applier/update`,
+      updatedItem,
+      {
+        withCredentials: true,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error('Applier update failed');
+  }
+};
+
 export const analyticsSendOutItemsByYear = async () => {
   try {
     const response = await axios.get(

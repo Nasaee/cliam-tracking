@@ -6,6 +6,7 @@ export type ItemData = {
   itemCode: string;
   serialNumber: string;
   proformaInv: string;
+  rpa: string;
   additionInfo: string;
 };
 

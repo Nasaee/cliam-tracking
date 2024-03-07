@@ -5,8 +5,10 @@ import {
   getAllApplier,
   getAllApplierGroupByReceiveStatus,
   getGroupDataByReceiveStatus,
+  updateApplier,
 } from './applier.controller';
 import checkUserRole from '../../middlewares/checkUserRole';
+import { check } from 'express-validator';
 
 const applierRouter = express.Router();
 
@@ -16,7 +18,25 @@ applierRouter.get('/', getAllApplier);
 
 applierRouter.post('/', checkUserRole('admin', 'editor'), addApplier);
 
-applierRouter.delete('/:id', deleteApplier);
+applierRouter.delete('/:id', checkUserRole('admin', 'editor'), deleteApplier);
+
+applierRouter.patch(
+  '/update',
+  checkUserRole('admin', 'editor'),
+  [
+    check('_id', 'id is required').notEmpty().withMessage('Id cannot be empty'),
+    check('dmNumber', 'dmNumber is required')
+      .notEmpty()
+      .withMessage('Id cannot be empty'),
+    check('itemCode', 'itemCode is required')
+      .notEmpty()
+      .withMessage('itemCode cannot be empty'),
+    check('proformaInv', 'proformaInv is required')
+      .notEmpty()
+      .withMessage('proformaInv cannot be empty'),
+  ],
+  updateApplier
+);
 
 applierRouter.get(
   '/analytics/group-send-items-by-year',
