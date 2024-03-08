@@ -1,10 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import 'dotenv/config';
 import { mongoConnect } from './utils/mongoConnect';
 import cookieParser from 'cookie-parser';
 import v1 from './routes/v1';
-import { loadApplierData } from './models/applier/applier.model';
+import path from 'path';
+// import { loadApplierData } from './models/applier/applier.model';
 
 const PORT = process.env.PORT || 8000;
 
@@ -19,10 +20,13 @@ app.use(
   })
 );
 
+app.use(express.static(path.join(__dirname, '../../client/dist')));
+
 app.use('/api/v1', v1);
 
-// TODO: catch all routes to index.html in frontend
-// app.use('*') // catch all routes
+app.use('*', (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
 
 async function startServer() {
   await mongoConnect();
