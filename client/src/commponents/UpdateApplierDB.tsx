@@ -1,5 +1,4 @@
 import { TextField } from '@mui/material';
-import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import hasEqualValues from '../utils/compaireObject';
@@ -7,6 +6,7 @@ import toast from 'react-hot-toast';
 import { useMutation, useQueryClient } from 'react-query';
 import * as apiClient from '../api-client';
 import Loading from './Loading';
+import { ApplierType } from '../../../server/src/shares/types';
 
 type Props = {
   dataToEdit: ApplierType;
