@@ -10,8 +10,8 @@ mongoose.connection.on('error', (err) => {
 });
 
 async function mongoConnect() {
-  if (process.env.MONGO_URl && typeof process.env.MONGO_URl === 'string') {
-    await mongoose.connect(process.env.MONGO_URl as string);
+  if (process.env.MONGO_URL && typeof process.env.MONGO_URL === 'string') {
+    await mongoose.connect(process.env.MONGO_URL as string);
     console.log('Connected to MongoDB');
   } else {
     console.log('MONGO_URl is not defined');

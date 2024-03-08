@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className='logo | '>
         <img src='/logo.png' alt='' className='w-16' />
       </div>
-      <div className='menu | flex items-center justify-center gap-4'>
+      <div className=' flex items-center justify-center gap-4'>
         <button className='md:hidden bg-transparent border-none p-0 outline-none'>
           <CiGrid41 className='text-xl' />
         </button>
