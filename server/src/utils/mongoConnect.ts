@@ -10,7 +10,13 @@ mongoose.connection.on('error', (err) => {
 });
 
 async function mongoConnect() {
-  await mongoose.connect(process.env.MONGO_URl as string);
+  if (process.env.MONGO_URl && typeof process.env.MONGO_URl === 'string') {
+    return await mongoose.connect(process.env.MONGO_URl as string);
+  } else {
+    console.log('MONGO_URl is not defined');
+  }
+
+  return;
 }
 
 async function mongoDisconnect() {
