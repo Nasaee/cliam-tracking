@@ -7,7 +7,7 @@ import v1 from './routes/v1';
 import path from 'path';
 // import { loadApplierData } from './models/applier/applier.model';
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 
 const app = express();
 app.use(cookieParser());
