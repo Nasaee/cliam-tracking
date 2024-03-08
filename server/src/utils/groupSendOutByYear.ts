@@ -1,4 +1,4 @@
-import { ApplierType } from '../models/applier/applier.mongo';
+import { ApplierType } from '../shares/types';
 import { ITEM_CODE } from './config';
 
 type ResultObj = { [key: string]: { year: number; [key: string]: number } };

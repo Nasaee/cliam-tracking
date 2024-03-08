@@ -1,4 +1,5 @@
-import User, { UserType } from './user.mongo';
+import { UserType } from '../../shares/types';
+import User from './user.mongo';
 
 export type CreateUserDto = {
   username: string;

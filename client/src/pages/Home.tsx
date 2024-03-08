@@ -3,8 +3,8 @@ import PieChart from '../commponents/PieChart';
 import groupDataByItem from '../utils/groupDatabyItem';
 import * as apiClient from '../api-client';
 import Loading from '../commponents/Loading';
-import { GroupDataByReceiveStatus } from '../../../server/src/utils/compaireReceiveStatus';
 import { useQuery } from 'react-query';
+import { GroupDataByReceiveStatus } from '../../../server/src/shares/types';
 
 const colorsForReceiveStatus = ['#e64980', '#3bc9db', '#0b7285'];
 const colorsGreen = ['#2b8a3e', '#a9e34b', '#5c940d'];

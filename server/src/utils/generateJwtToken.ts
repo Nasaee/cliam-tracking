@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { UserType } from '../models/user/user.mongo';
+import { UserType } from '../shares/types';
 
 const generateJwtToken = (user: UserType) => {
   return jwt.sign(

@@ -1,4 +1,4 @@
-import { GroupDataByReceiveStatus } from '../../../server/src/utils/compaireReceiveStatus';
+import { GroupDataByReceiveStatus } from '../../../server/src/shares/types';
 
 type GroupedResult = {
   [key: string]: {

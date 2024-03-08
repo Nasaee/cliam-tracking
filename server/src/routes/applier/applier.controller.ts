@@ -7,9 +7,9 @@ import {
   updateApplierDB,
 } from '../../models/applier/applier.model';
 import groupDataByReceiveStatus from '../../utils/compaireReceiveStatus';
-import { ApplierType } from '../../models/applier/applier.mongo';
 import groupSendOutByYear from '../../utils/groupSendOutByYear';
 import { validationResult } from 'express-validator';
+import { ApplierType } from '../../shares/types';
 
 export const getAllApplier = async (_req: Request, res: Response) => {
   try {

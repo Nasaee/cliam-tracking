@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { RegisterFormData } from './pages/Register';
 import { LoginFormData } from './pages/Login';
-import { ApplierType } from '../../server/src/models/applier/applier.mongo';
-
+import { ApplierType } from '../../server/src/shares/types';
 export type Role = 'admin' | 'editor' | 'user' | 'pending';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';

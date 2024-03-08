@@ -8,7 +8,7 @@ import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaRegEdit } from 'react-icons/fa';
 import UpdateApplierDB from './UpdateApplierDB';
 import { useState } from 'react';
-import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
+import { ApplierType } from '../../../server/src/shares/types';
 
 type TableProps = {
   columns: GridColDef[];

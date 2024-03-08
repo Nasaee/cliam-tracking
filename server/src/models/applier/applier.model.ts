@@ -1,7 +1,8 @@
-import Applier, { ApplierType } from './applier.mongo';
+import Applier from './applier.mongo';
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse';
+import { ApplierType } from '../../shares/types';
 
 export async function findApplier(dmNumber: string, serialNumber: string) {
   return await Applier.findOne({ dmNumber, serialNumber });

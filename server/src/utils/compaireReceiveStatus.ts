@@ -1,13 +1,5 @@
-import { ApplierType } from '../models/applier/applier.mongo';
+import { ApplierType, GroupDataByReceiveStatus } from '../shares/types';
 import { ITEM_CODE } from './config';
-
-export type GroupDataByReceiveStatus = {
-  name: string;
-  '544965': number;
-  '544990': number;
-  '544995': number;
-  totalAmount: number;
-};
 
 const groupDataByReceiveStatus = (
   data: ApplierType[]

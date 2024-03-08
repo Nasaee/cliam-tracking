@@ -12,8 +12,8 @@ import toast from 'react-hot-toast';
 import EditableRow from './EditableRow';
 import ReadOnlyRow from './ReadOnlyRow';
 import * as apiClient from '../api-client';
-import { ApplierType } from '../../../server/src/models/applier/applier.mongo';
 import { useMutation } from 'react-query';
+import { ApplierType } from '../../../server/src/shares/types';
 
 const ShowApplierToAddDbTable = () => {
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { UserType } from '../models/user/user.mongo';
+import { UserType } from '../shares/types';
 
 type userRole = UserType['role'];
 
