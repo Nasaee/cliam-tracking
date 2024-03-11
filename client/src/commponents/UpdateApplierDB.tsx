@@ -277,13 +277,10 @@ const UpdateApplierDB = ({ dataToEdit }: Props) => {
                     >
                       RepairStatus
                     </label>
-                    <input
-                      type='text'
-                      id='serialNumber'
-                      defaultValue={dataToEdit?.receiveDocs}
+
+                    <select
+                      id='repairable'
                       className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
-                      placeholder='serial number...'
-                      autoComplete='off'
                       {...register('repairable', {
                         validate: (value) => {
                           return (
@@ -292,7 +289,11 @@ const UpdateApplierDB = ({ dataToEdit }: Props) => {
                           );
                         },
                       })}
-                    />
+                    >
+                      {['fixed', 'broken', 'pending'].map((status) => (
+                        <option value={status}>{status}</option>
+                      ))}
+                    </select>
                     {errors.repairable && (
                       <span className='text-red-500'>
                         {errors.repairable.message}

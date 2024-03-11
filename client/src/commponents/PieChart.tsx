@@ -11,7 +11,10 @@ const PieChartBox = ({ titel, data, colors }: PieChartBoxProps) => {
 
   return (
     <div className='p-5'>
-      <h1 className='mb-5'>{titel}</h1>
+      <div className='flex justify-between'>
+        <h1 className='mb-5'>{titel}</h1>
+        <span>Total: {totalValue}</span>
+      </div>
       <ResponsiveContainer width='99%' height={200}>
         <PieChart width={600} height={600}>
           <Pie
