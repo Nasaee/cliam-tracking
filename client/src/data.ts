@@ -1,7 +1,8 @@
 import { nanoid } from 'nanoid';
-import { LiaToolsSolid } from 'react-icons/lia';
+import { CiBoxes } from 'react-icons/ci';
+import { LiaBoxSolid, LiaToolsSolid } from 'react-icons/lia';
+import { PiToolboxLight } from 'react-icons/pi';
 import { SlHome } from 'react-icons/sl';
-import { TfiDropboxAlt } from 'react-icons/tfi';
 
 const menu = [
   {
@@ -26,12 +27,24 @@ const menu = [
         url: '/claim-hemolok-applier',
         icon: LiaToolsSolid,
       },
+      {
+        id: nanoid(),
+        title: 'OtherProducts',
+        url: '/claim-other-products',
+        icon: PiToolboxLight,
+      },
 
       {
         id: nanoid(),
         title: 'Add applier',
         url: '/add-appliers',
-        icon: TfiDropboxAlt,
+        icon: LiaBoxSolid,
+      },
+      {
+        id: nanoid(),
+        title: 'Add other Products',
+        url: '/add-other-products',
+        icon: CiBoxes,
       },
     ],
   },

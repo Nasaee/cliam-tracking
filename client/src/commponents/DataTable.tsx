@@ -1,9 +1,6 @@
 import Box from '@mui/material/Box';
 import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 import styled from 'styled-components';
-import * as apiClient from '../api-client';
-import toast from 'react-hot-toast';
-import { useMutation, useQueryClient } from 'react-query';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaRegEdit } from 'react-icons/fa';
 import UpdateApplierDB from './UpdateApplierDB';
@@ -14,36 +11,18 @@ type TableProps = {
   columns: GridColDef[];
   rows: object[];
   category: 'applier' | 'otherProducts';
+  handleDeleteItem: (id: string) => void;
+  isLoading: boolean;
 };
 
-export default function DataTable({ columns, rows, category }: TableProps) {
+export default function DataTable({
+  columns,
+  rows,
+  category,
+  isLoading,
+  handleDeleteItem,
+}: TableProps) {
   const [dataToEdit, setDataToEdit] = useState<ApplierType | null>(null);
-
-  const queryClient = useQueryClient();
-
-  const { mutate, isLoading } = useMutation({
-    mutationFn: apiClient.deleteApplierById,
-    mutationKey: ['deleteApplier'],
-    onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: [
-          'getAllAppliers',
-          'fetchReciveApplierStatus',
-          'getAmontsendOutItemByYear',
-        ],
-      });
-      toast.success('applier deleted successfully');
-    },
-
-    onError: () => {
-      toast.error('applier delete failed');
-    },
-  });
-  const handleDeleteApplier = (id: string) => {
-    if (window.confirm('Are you sure you want to delete this applier?')) {
-      mutate(id);
-    }
-  };
 
   const handleOpenModal = () => {
     const model = document.getElementById('my_modal_3') as HTMLDialogElement;
@@ -72,7 +51,7 @@ export default function DataTable({ columns, rows, category }: TableProps) {
           <button
             type='button'
             disabled={isLoading}
-            onClick={() => handleDeleteApplier(row._id)}
+            onClick={() => handleDeleteItem(row._id)}
           >
             <RiDeleteBin5Line className='text-[#fa5252] cursor-pointer' />
           </button>

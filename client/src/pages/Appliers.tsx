@@ -5,13 +5,35 @@ import * as apiClient from '../api-client';
 import Loading from '../commponents/Loading';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
-import { useQuery } from 'react-query';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { ApplierType } from '../../../server/src/shares/types';
+import toast from 'react-hot-toast';
 
 const Appliers = () => {
   const { data: applierData = [], isLoading } = useQuery<ApplierType[]>({
     queryKey: ['getAllApplier'],
     queryFn: apiClient.getAllApplier,
+  });
+
+  const queryClient = useQueryClient();
+
+  const { mutate, isLoading: isDeleteLoading } = useMutation({
+    mutationFn: apiClient.deleteApplierById,
+    mutationKey: ['deleteApplier'],
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: [
+          'getAllAppliers',
+          'fetchReciveApplierStatus',
+          'getAmontsendOutItemByYear',
+        ],
+      });
+      toast.success('applier deleted successfully');
+    },
+
+    onError: () => {
+      toast.error('applier delete failed');
+    },
   });
 
   const columns: GridColDef[] = [
@@ -103,6 +125,12 @@ const Appliers = () => {
     },
   ];
 
+  const handleDeleteItem = (id: string) => {
+    if (window.confirm('Are you sure you want to delete this applier?')) {
+      mutate(id);
+    }
+  };
+
   if (isLoading) {
     return (
       <div className='w-full h-full bg-white'>
@@ -131,6 +159,8 @@ const Appliers = () => {
         columns={columns}
         rows={[...applierData].reverse()}
         category='applier'
+        handleDeleteItem={handleDeleteItem}
+        isLoading={isDeleteLoading}
       />
     </section>
   );

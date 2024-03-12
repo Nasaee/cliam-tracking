@@ -113,7 +113,7 @@ export const getAllApplier = async () => {
       withCredentials: true,
     });
 
-    return response.data;
+    return response?.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error(error.response?.data.message || 'Somthing went wrog');

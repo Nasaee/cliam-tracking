@@ -40,3 +40,19 @@ export type GroupDataByReceiveStatus = {
   '544995': number;
   totalAmount: number;
 };
+
+export type OtherProductsType = {
+  dmNumber: string;
+  itemCode: string;
+  quantity: number;
+  serialNumber: string;
+  getDifSerial: string;
+  proformaInv: string;
+  receiveDocs: string;
+  received: boolean;
+  repairable: 'fixed' | 'broken' | 'pending';
+  additionInfo: string;
+  lastEditor: string;
+  rpa: string;
+  '': string;
+};

@@ -158,7 +158,6 @@ const UpdateApplierDB = ({ dataToEdit }: Props) => {
                         required: 'This field is required',
                         validate: (value) =>
                           [
-                            '',
                             '544965',
                             '544965A',
                             '544965AF',
