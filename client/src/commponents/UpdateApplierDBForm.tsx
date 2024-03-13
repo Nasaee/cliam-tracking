@@ -12,7 +12,7 @@ type Props = {
   dataToEdit: ApplierType;
 };
 
-const UpdateApplierDB = ({ dataToEdit }: Props) => {
+const UpdateApplierDBForm = ({ dataToEdit }: Props) => {
   const queryClient = useQueryClient();
   const { mutate, isLoading } = useMutation({
     mutationKey: 'updateApplier',
@@ -58,7 +58,7 @@ const UpdateApplierDB = ({ dataToEdit }: Props) => {
 
   return (
     <div>
-      <dialog id='my_modal_3' className='modal '>
+      <dialog id='applierModal' className='modal '>
         <div className='modal-box bg-white text-black'>
           <form method='dialog'>
             {/* close */}
@@ -290,7 +290,9 @@ const UpdateApplierDB = ({ dataToEdit }: Props) => {
                       })}
                     >
                       {['fixed', 'broken', 'pending'].map((status) => (
-                        <option value={status}>{status}</option>
+                        <option key={status} value={status}>
+                          {status}
+                        </option>
                       ))}
                     </select>
                     {errors.repairable && (
@@ -334,4 +336,4 @@ const UpdateApplierDB = ({ dataToEdit }: Props) => {
     </div>
   );
 };
-export default UpdateApplierDB;
+export default UpdateApplierDBForm;

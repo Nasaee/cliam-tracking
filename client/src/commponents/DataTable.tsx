@@ -3,32 +3,22 @@ import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
 import styled from 'styled-components';
 import { RiDeleteBin5Line } from 'react-icons/ri';
 import { FaRegEdit } from 'react-icons/fa';
-import UpdateApplierDB from './UpdateApplierDB';
-import { useState } from 'react';
-import { ApplierType } from '../../../server/src/shares/types';
 
 type TableProps = {
   columns: GridColDef[];
   rows: object[];
-  category: 'applier' | 'otherProducts';
   handleDeleteItem: (id: string) => void;
   isLoading: boolean;
+  setEditData: (data: any) => void;
 };
 
 export default function DataTable({
   columns,
   rows,
-  category,
   isLoading,
   handleDeleteItem,
+  setEditData,
 }: TableProps) {
-  const [dataToEdit, setDataToEdit] = useState<ApplierType | null>(null);
-
-  const handleOpenModal = () => {
-    const model = document.getElementById('my_modal_3') as HTMLDialogElement;
-    model?.showModal();
-  };
-
   const actionColumn: GridColDef = {
     field: 'action',
     headerName: 'Action',
@@ -41,8 +31,7 @@ export default function DataTable({
             type='button'
             disabled={isLoading}
             onClick={() => {
-              setDataToEdit(row);
-              handleOpenModal();
+              setEditData(row);
             }}
           >
             <FaRegEdit className='text-[#51cf66]' />
@@ -79,12 +68,6 @@ export default function DataTable({
           disableRowSelectionOnClick
         />
       </Box>
-      {/* Update Applier Form */}
-      {category === 'applier' && dataToEdit && (
-        <UpdateApplierDB dataToEdit={dataToEdit} />
-      )}
-      {/* Update Other Products Form */}
-      {category === 'applier' && <div>ohter products</div>}
     </Wrapper>
   );
 }

@@ -5,8 +5,12 @@ import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import DataTable from '../commponents/DataTable';
+import { useState } from 'react';
+import UpdateOtherProductDBForm from '../commponents/UpdateOtherProductDBForm';
 
 const ClaimOtherProducts = () => {
+  const [dataToEdit, setDataToEdit] = useState<OtherProductsType | null>(null);
+
   const columns: GridColDef[] = [
     {
       field: 'dmNumber',
@@ -102,6 +106,21 @@ const ClaimOtherProducts = () => {
       sortable: false,
     },
   ];
+
+  const handleOpenModal = () => {
+    const model = document.getElementById(
+      'otherProductModal'
+    ) as HTMLDialogElement;
+    model?.showModal();
+  };
+
+  const setEditData = (data: OtherProductsType) => {
+    setDataToEdit(data);
+    handleOpenModal();
+  };
+
+  console.log(dataToEdit);
+
   return (
     <section>
       <div className='flex gap-4 items-center mb-4'>
@@ -117,11 +136,16 @@ const ClaimOtherProducts = () => {
         <span>Total: </span>
         <span>{`(${otherProducts?.length} Items)`}</span>
       </div>
-      {/* <DataTable
+      <DataTable
         columns={columns}
         rows={[...otherProducts].reverse()}
-        category='otherProducts'
-      /> */}
+        isLoading={false}
+        handleDeleteItem={() => {}}
+        setEditData={setEditData}
+      />
+
+      {/* Update Other Products Form */}
+      {dataToEdit && <UpdateOtherProductDBForm dataToEdit={dataToEdit} />}
     </section>
   );
 };

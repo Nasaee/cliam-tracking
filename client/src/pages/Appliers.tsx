@@ -8,8 +8,12 @@ import { RxCross2 } from 'react-icons/rx';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { ApplierType } from '../../../server/src/shares/types';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
+import UpdateApplierDBForm from '../commponents/UpdateApplierDBForm';
 
 const Appliers = () => {
+  const [dataToEdit, setDataToEdit] = useState<ApplierType | null>(null);
+
   const { data: applierData = [], isLoading } = useQuery<ApplierType[]>({
     queryKey: ['getAllApplier'],
     queryFn: apiClient.getAllApplier,
@@ -131,6 +135,18 @@ const Appliers = () => {
     }
   };
 
+  const handleOpenModal = () => {
+    const model = document.getElementById('applierModal') as HTMLDialogElement;
+    model?.showModal();
+  };
+
+  const setEditData = (data: ApplierType) => {
+    setDataToEdit(data);
+    handleOpenModal();
+  };
+
+  console.log(dataToEdit);
+
   if (isLoading) {
     return (
       <div className='w-full h-full bg-white'>
@@ -158,10 +174,13 @@ const Appliers = () => {
       <DataTable
         columns={columns}
         rows={[...applierData].reverse()}
-        category='applier'
         handleDeleteItem={handleDeleteItem}
         isLoading={isDeleteLoading}
+        setEditData={setEditData}
       />
+
+      {/* Update Applier Form */}
+      {dataToEdit && <UpdateApplierDBForm dataToEdit={dataToEdit} />}
     </section>
   );
 };

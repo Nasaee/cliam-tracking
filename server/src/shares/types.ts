@@ -42,6 +42,7 @@ export type GroupDataByReceiveStatus = {
 };
 
 export type OtherProductsType = {
+  _id: string;
   dmNumber: string;
   itemCode: string;
   quantity: number;
@@ -52,7 +53,5 @@ export type OtherProductsType = {
   received: boolean;
   repairable: 'fixed' | 'broken' | 'pending';
   additionInfo: string;
-  lastEditor: string;
   rpa: string;
-  '': string;
 };

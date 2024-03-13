@@ -5,6 +5,7 @@ import { mongoConnect } from './utils/mongoConnect';
 import cookieParser from 'cookie-parser';
 import v1 from './routes/v1';
 import path from 'path';
+
 // import { loadApplierData } from './models/applier/applier.model';
 
 const PORT = process.env.PORT || 8000;
