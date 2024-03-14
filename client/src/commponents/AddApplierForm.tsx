@@ -1,29 +1,24 @@
 import { TextField } from '@mui/material';
-import { ItemData, addApplierItem } from '../store/addApplier/addApplierSlice';
+import {
+  AddApplierData,
+  addApplierItem,
+} from '../store/addApplier/addApplierSlice';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useQueryClient } from 'react-query';
 
 const AddApplierForm = () => {
   const dispatch = useDispatch();
 
-  const queryClient = useQueryClient();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ItemData>();
+  } = useForm<AddApplierData>();
 
-  const onSubmit = handleSubmit((data: ItemData) => {
+  const onSubmit = handleSubmit((data: AddApplierData) => {
     dispatch(addApplierItem(data));
-    queryClient.invalidateQueries({
-      queryKey: [
-        'getAllAppliers',
-        'fetchReciveApplierStatus',
-        'getAmontsendOutItemByYear',
-      ],
-    });
+
     reset({
       dmNumber: data.dmNumber, // Keep dmNumber unchanged
       itemCode: '',

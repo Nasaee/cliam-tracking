@@ -1,19 +1,27 @@
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBin5Line } from 'react-icons/ri';
-import { ItemData } from '../store/addApplier/addApplierSlice';
 
-type AdditionalProps = {
+export type AdditionalProps = {
   index: number;
-  handleDelete: (id: string) => void;
-  handleEditRow: React.Dispatch<React.SetStateAction<string | null>>;
+  dmNumber: string;
+  itemCode: string;
+  quantity?: number;
+  serialNumber: string;
+  proformaInv: string;
+  rpa: string;
+  additionInfo: string;
 };
 
-type Props = ItemData & AdditionalProps;
+type Props = {
+  handleDelete: (id: string) => void;
+  handleEditRow: React.Dispatch<React.SetStateAction<string | null>>;
+} & AdditionalProps;
 
 const ReadOnlyRow = ({
   index,
   dmNumber,
   itemCode,
+  quantity,
   serialNumber,
   proformaInv,
   rpa,
@@ -31,6 +39,7 @@ const ReadOnlyRow = ({
         {dmNumber}
       </th>
       <td className='px-4 py-3'>{itemCode}</td>
+      {quantity && <td className='px-4 py-3'>{quantity}</td>}
       <td className='px-4 py-3'>{serialNumber}</td>
       <td className='px-4 py-3'>{proformaInv}</td>
       <td className='px-4 py-3'>{rpa}</td>

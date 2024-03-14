@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { ImCancelCircle } from 'react-icons/im';
 import { IoIosSave } from 'react-icons/io';
-import { ItemData } from '../store/addApplier/addApplierSlice';
+import { AddApplierData } from '../store/addApplier/addApplierSlice';
+import { AdditionalProps } from './ReadOnlyRow';
 
 type Props = {
-  dataToEdit: ItemData;
   index: number;
+  dataToEdit: AddApplierData & { quantity?: number };
   handleCancel: () => void;
-  handleSaveEditedData: (formData: ItemData) => void;
+  handleSaveEditedData: (formData: any) => void;
 };
 
 const EditableRow = ({
@@ -16,7 +17,9 @@ const EditableRow = ({
   handleCancel,
   handleSaveEditedData,
 }: Props) => {
-  const [editFormData, setEditFormData] = useState<ItemData>(dataToEdit);
+  const [editFormData, setEditFormData] = useState<AdditionalProps>(
+    dataToEdit as AdditionalProps
+  );
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -47,6 +50,19 @@ const EditableRow = ({
           autoComplete='off'
         />
       </td>
+      {editFormData.quantity && (
+        <td className='px-2 py-1.5'>
+          <input
+            type='text'
+            name='quantity'
+            min={1}
+            value={editFormData.quantity}
+            onChange={handleInputChange}
+            className='px-2 py-1.5 border w-full bg-white'
+            autoComplete='off'
+          />
+        </td>
+      )}
       <td className='px-2 py-1.5'>
         <input
           type='text'

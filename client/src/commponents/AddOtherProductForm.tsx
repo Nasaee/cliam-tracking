@@ -1,8 +1,14 @@
 import { TextField } from '@mui/material';
 import { OtherProductsType } from '../../../server/src/shares/types';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import {
+  AddOtherProductsType,
+  addOterProduct,
+} from '../store/addOtherProducts/addOtherProducts';
 
 const AddOtherProductForm = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -10,8 +16,24 @@ const AddOtherProductForm = () => {
     formState: { errors },
   } = useForm<OtherProductsType>();
 
+  const onSubmit = handleSubmit((item: AddOtherProductsType) => {
+    dispatch(addOterProduct(item));
+    reset({
+      dmNumber: item.dmNumber, // Keep dmNumber unchanged
+      itemCode: '',
+      quantity: 0,
+      serialNumber: '',
+      proformaInv: item.proformaInv,
+      rpa: item.rpa,
+      additionInfo: '',
+    });
+  });
+
   return (
-    <form className='add-items | flex flex-col gap-6 w-[300px]   border-r px-5'>
+    <form
+      onSubmit={onSubmit}
+      className='add-items | flex flex-col gap-6 w-[300px] border-r px-5'
+    >
       {/* Proforma Inv. */}
       <div>
         <label
@@ -102,7 +124,7 @@ const AddOtherProductForm = () => {
               id='quantity'
               autoComplete='off'
               className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
-              placeholder='Enter item code...'
+              placeholder='Enter Amount...'
               {...register('quantity', {
                 required: 'This field is required',
               })}

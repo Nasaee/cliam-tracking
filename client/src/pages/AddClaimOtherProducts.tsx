@@ -1,4 +1,5 @@
 import AddOtherProductForm from '../commponents/AddOtherProductForm';
+import ShowOtherProductsToAddDbTable from '../commponents/ShowOtherProductsToAddDbTable';
 
 const AddClaimOtherProducts = () => {
   return (
@@ -9,7 +10,7 @@ const AddClaimOtherProducts = () => {
       <div className='flex min-h-screen'>
         <AddOtherProductForm />
         <div className='flex-1 px-6 shadow-md sm:rounded-lg overflow-auto'>
-          <div>table</div>
+          <ShowOtherProductsToAddDbTable />
         </div>
       </div>
     </section>

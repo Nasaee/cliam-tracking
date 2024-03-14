@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
 
-export type ItemData = {
+export type AddApplierData = {
   dmNumber: string;
   itemCode: string;
   serialNumber: string;
@@ -10,16 +10,21 @@ export type ItemData = {
   additionInfo: string;
 };
 
-const initialState: ItemData[] = [];
+const initialState: AddApplierData[] = [];
 
 const addAppllierSlice = createSlice({
   name: 'addApplier',
   initialState,
   reducers: {
-    addApplierItem: (state, action: PayloadAction<ItemData>) => {
+    addApplierItem: (state, action: PayloadAction<AddApplierData>) => {
       const item = action.payload;
-      if (!item.dmNumber || !item.itemCode || !item.serialNumber) {
-        toast.error('DM, Item, Serial Number cannot be empty');
+      if (
+        !item.dmNumber ||
+        !item.itemCode ||
+        !item.serialNumber ||
+        !item.proformaInv
+      ) {
+        toast.error('DM, Item, Serial, Proforma Inv. cannot be empty');
         return;
       }
       state.push(action.payload);
@@ -32,7 +37,7 @@ const addAppllierSlice = createSlice({
       state.splice(index, 1);
     },
 
-    editApplierItem: (state, action: PayloadAction<ItemData>) => {
+    editApplierItem: (state, action: PayloadAction<AddApplierData>) => {
       const index = state.findIndex(
         (state) => state.serialNumber === action.payload.serialNumber
       );

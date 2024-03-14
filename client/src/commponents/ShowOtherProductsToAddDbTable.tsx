@@ -1,56 +1,32 @@
-import { useDispatch } from 'react-redux';
-import {
-  AddApplierData,
-  deleteApplierItem,
-  editApplierItem,
-  reset,
-} from '../store/addApplier/addApplierSlice';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/rootReducer';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import toast from 'react-hot-toast';
+import {
+  AddOtherProductsType,
+  deleteOtherProductItem,
+  editOtherProductItem,
+} from '../store/addOtherProducts/addOtherProducts';
 import EditableRow from './EditableRow';
 import ReadOnlyRow from './ReadOnlyRow';
-import * as apiClient from '../api-client';
-import { useMutation } from 'react-query';
-import { ApplierType } from '../../../server/src/shares/types';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
-const ShowApplierToAddDbTable = () => {
+const ShowOtherProductsToAddDbTable = () => {
+  const [rowIdToEdit, setRowIdToEdit] = useState<string | null>(null);
   const dispatch = useDispatch();
 
-  // const queryClient = useQueryClient();
-  const mutation = useMutation({
-    mutationKey: ['addAppliers'],
-    mutationFn: apiClient.addAppliersToDB,
-    onSuccess: () => {
-      toast.success('Add item succeeded');
-    },
-    onError: (error: Error) => {
-      toast.error(error.message);
-    },
-  });
-
   const itemsToAddDB = useSelector(
-    (state: RootState) => state.applierToAddDB as ApplierType[]
+    (state: RootState) => state.otherProductsToAddDB
   );
 
-  const [rowIdToEdit, setRowIdToEdit] = useState<string | null>(null);
-
   const handleDeleteItem = (id: string) => {
-    dispatch(deleteApplierItem({ id }));
+    dispatch(deleteOtherProductItem({ id }));
     toast.success('Remove succeeded');
   };
 
-  const handleSaveEditedData = (formData: AddApplierData) => {
-    dispatch(editApplierItem(formData));
+  const handleSaveEditedData = (formData: AddOtherProductsType) => {
+    dispatch(editOtherProductItem(formData));
     setRowIdToEdit(null);
     toast.success('Add item succeeded');
-  };
-
-  const handleUpdateDataToDb = (itemsDataArray: AddApplierData[]) => {
-    console.log(itemsDataArray);
-    mutation.mutate(itemsDataArray as ApplierType[]);
-    dispatch(reset());
   };
 
   return (
@@ -59,7 +35,9 @@ const ShowApplierToAddDbTable = () => {
         <div className='flex items-center justify-end mb-2'>
           <button
             className='text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
-            onClick={() => handleUpdateDataToDb(itemsToAddDB)}
+            onClick={() => {
+              console.log('handle add data to db');
+            }}
           >
             Update Cliam
           </button>
@@ -76,6 +54,9 @@ const ShowApplierToAddDbTable = () => {
             </th>
             <th scope='col' className='px-4 py-4'>
               Items
+            </th>
+            <th scope='col' className='px-4 py-4'>
+              Qty.
             </th>
             <th scope='col' className='px-4 py-4'>
               Serial
@@ -95,7 +76,7 @@ const ShowApplierToAddDbTable = () => {
           </tr>
         </thead>
         <tbody>
-          {itemsToAddDB.map((item: ApplierType, index) => {
+          {itemsToAddDB.map((item: AddOtherProductsType, index) => {
             return (
               <tr
                 key={item.serialNumber}
@@ -124,4 +105,4 @@ const ShowApplierToAddDbTable = () => {
     </>
   );
 };
-export default ShowApplierToAddDbTable;
+export default ShowOtherProductsToAddDbTable;
