@@ -24,7 +24,7 @@ export const addApplier = async (req: Request, res: Response) => {
   const newItems = req.body as ApplierType[];
   try {
     await saveApplierItem(newItems);
-    res.status(200).send({ message: 'Add item succeeded' });
+    res.status(201).send({ message: 'Add item succeeded' });
   } catch (error) {
     console.log(error);
     res.status(500).send('Somthing went wrong');

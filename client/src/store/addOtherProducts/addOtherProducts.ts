@@ -7,7 +7,21 @@ export type AddOtherProductsType = Omit<
   '_id' | 'getDifSerial' | 'receiveDocs' | 'received' | 'repairable'
 >;
 
-const initialState: AddOtherProductsType[] = [];
+// !temporary
+const mockData: AddOtherProductsType[] = [
+  {
+    dmNumber: '123',
+    itemCode: '456',
+    quantity: 1,
+    serialNumber: '',
+    proformaInv: '789',
+    additionInfo: '',
+    rpa: '',
+  },
+];
+
+const initialState: AddOtherProductsType[] = mockData;
+// const initialState: AddOtherProductsType[] = [];
 
 const addOtherProducts = createSlice({
   name: 'addOtherProducts',

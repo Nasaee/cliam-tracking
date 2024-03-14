@@ -42,7 +42,7 @@ export type GroupDataByReceiveStatus = {
 };
 
 export type OtherProductsType = {
-  _id: string;
+  _id?: string;
   dmNumber: string;
   itemCode: string;
   quantity: number;

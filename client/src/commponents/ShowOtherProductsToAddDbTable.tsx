@@ -4,15 +4,29 @@ import {
   AddOtherProductsType,
   deleteOtherProductItem,
   editOtherProductItem,
+  reset,
 } from '../store/addOtherProducts/addOtherProducts';
 import EditableRow from './EditableRow';
 import ReadOnlyRow from './ReadOnlyRow';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { useMutation } from 'react-query';
+import * as apiClient from '../api-client';
+import { OtherProductsType } from '../../../server/src/shares/types';
 
 const ShowOtherProductsToAddDbTable = () => {
   const [rowIdToEdit, setRowIdToEdit] = useState<string | null>(null);
   const dispatch = useDispatch();
+
+  const mutation = useMutation({
+    mutationKey: 'addOtherProducts',
+    mutationFn: apiClient.addOtherProductsToDB,
+    onSuccess: (data) => {
+      console.log(data);
+
+      toast.success('Add item succeeded');
+    },
+  });
 
   const itemsToAddDB = useSelector(
     (state: RootState) => state.otherProductsToAddDB
@@ -29,15 +43,21 @@ const ShowOtherProductsToAddDbTable = () => {
     toast.success('Add item succeeded');
   };
 
+  const handleUpdateDataToDb = (itemsDataArray: OtherProductsType[]) => {
+    console.log(itemsDataArray);
+    mutation.mutate(itemsDataArray as OtherProductsType[]);
+    dispatch(reset());
+  };
+
   return (
     <>
       {itemsToAddDB.length > 0 && (
         <div className='flex items-center justify-end mb-2'>
           <button
             className='text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none'
-            onClick={() => {
-              console.log('handle add data to db');
-            }}
+            onClick={() =>
+              handleUpdateDataToDb(itemsToAddDB as OtherProductsType[])
+            }
           >
             Update Cliam
           </button>

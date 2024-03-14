@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { RegisterFormData } from './pages/Register';
 import { LoginFormData } from './pages/Login';
-import { ApplierType } from '../../server/src/shares/types';
+import { ApplierType, OtherProductsType } from '../../server/src/shares/types';
 export type Role = 'admin' | 'editor' | 'user' | 'pending';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
@@ -175,6 +175,21 @@ export const addAppliersToDB = async (items: ApplierType[]) => {
     const response = await axios.post(`${API_BASE_URL}/api/v1/applier`, items, {
       withCredentials: true,
     });
+    return response.data;
+  } catch (error) {
+    throw new Error('Add item failed');
+  }
+};
+
+export const addOtherProductsToDB = async (items: OtherProductsType[]) => {
+  try {
+    const response = await axios.post(
+      `${API_BASE_URL}/api/v1/other-products`,
+      items,
+      {
+        withCredentials: true,
+      }
+    );
     return response.data;
   } catch (error) {
     throw new Error('Add item failed');
