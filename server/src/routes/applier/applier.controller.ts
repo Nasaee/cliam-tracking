@@ -10,6 +10,10 @@ import groupDataByReceiveStatus from '../../utils/compaireReceiveStatus';
 import groupSendOutByYear from '../../utils/groupSendOutByYear';
 import { validationResult } from 'express-validator';
 import { ApplierType } from '../../shares/types';
+import {
+  deleteOtherProductById,
+  findOtherProductById,
+} from '../../models/otherProducts/otherProducts.model';
 
 export const getAllApplier = async (_req: Request, res: Response) => {
   try {
@@ -96,5 +100,19 @@ export const getAllApplierGroupByReceiveStatus = async (
     res.status(200).json(groupData);
   } catch (error) {
     res.status(500).json({ message: 'Something went wrong' });
+  }
+};
+
+export const deleteOtherProduct = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const product = findOtherProductById(id);
+
+  if (!product) return res.status(400).send({ message: 'Item not found' });
+  try {
+    await deleteOtherProductById(id);
+    return res.status(200).send({ message: 'Item has been deleted' });
+  } catch (error) {
+    return res.status(500).send({ message: 'something went wrong' });
   }
 };

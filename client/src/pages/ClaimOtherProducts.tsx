@@ -1,5 +1,4 @@
 import { GridColDef } from '@mui/x-data-grid';
-import { otherProducts } from '../otherProducts';
 import { OtherProductsType } from '../../../server/src/shares/types';
 import { IoMdCheckmark } from 'react-icons/io';
 import { RxCross2 } from 'react-icons/rx';
@@ -7,9 +6,16 @@ import { Link } from 'react-router-dom';
 import DataTable from '../commponents/DataTable';
 import { useState } from 'react';
 import UpdateOtherProductDBForm from '../commponents/UpdateOtherProductDBForm';
+import { useQuery } from 'react-query';
+import * as apiClient from '../api-client';
 
 const ClaimOtherProducts = () => {
   const [dataToEdit, setDataToEdit] = useState<OtherProductsType | null>(null);
+
+  const { data: otherProducts, isLoading } = useQuery({
+    queryKey: ['fetchOtherProducts'],
+    queryFn: apiClient.getOtherProducts,
+  });
 
   const columns: GridColDef[] = [
     {
@@ -138,8 +144,8 @@ const ClaimOtherProducts = () => {
       </div>
       <DataTable
         columns={columns}
-        rows={[...otherProducts].reverse()}
-        isLoading={false}
+        rows={otherProducts || []}
+        isLoading={isLoading}
         handleDeleteItem={() => {}}
         setEditData={setEditData}
       />

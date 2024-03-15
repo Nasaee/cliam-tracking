@@ -66,7 +66,7 @@ export async function saveApplierItem(newItemsArray: ApplierType[]) {
             dmNumber: newItem.dmNumber,
             serialNumber: newItem.serialNumber,
           },
-          { ...newItem },
+          newItem,
           { upsert: true }
         );
       })

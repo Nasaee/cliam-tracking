@@ -195,3 +195,14 @@ export const addOtherProductsToDB = async (items: OtherProductsType[]) => {
     throw new Error('Add item failed');
   }
 };
+
+export const getOtherProducts = async (): Promise<OtherProductsType[]> => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/api/v1/other-products`, {
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error('fetching data failed');
+  }
+};

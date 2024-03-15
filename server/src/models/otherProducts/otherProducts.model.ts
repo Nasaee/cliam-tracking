@@ -1,32 +1,33 @@
-import { promises } from 'dns';
-import { OtherProductsType } from '../../shares/types';
 import OtherProducts from './otherProducts.mongo';
+import { OtherProductsType } from '../../shares/types';
 
-export async function addProductDB(newItemsArray: OtherProductsType[]) {
+export async function saveOtherProducts(newItemsArray: OtherProductsType[]) {
   try {
-    const newItems = await Promise.all(
+    await Promise.all(
       newItemsArray.map(async (newItem) => {
-        const item: OtherProductsType = {
-          dmNumber: newItem.dmNumber,
-          itemCode: newItem.itemCode,
-          quantity: newItem.quantity,
-          serialNumber: newItem.serialNumber || '',
-          proformaInv: newItem.proformaInv || '',
-          additionInfo: newItem.additionInfo || '',
-          rpa: newItem.rpa || '',
-          getDifSerial: newItem.getDifSerial || '',
-          receiveDocs: newItem.receiveDocs || '',
-          received: newItem.received || false,
-          repairable: newItem.repairable || false,
-        };
-        const newProduct = await OtherProducts.create(item);
-        newProduct.save();
-        return newItem;
+        await OtherProducts.updateOne(
+          {
+            dmNumber: newItem.dmNumber,
+            itemCode: newItem.itemCode,
+          },
+          newItem,
+          { upsert: true }
+        );
       })
     );
-    return newItems;
   } catch (error) {
-    console.error(error);
     throw error;
   }
+}
+
+export async function findOtherProductById(id: string) {
+  return await OtherProducts.findOne({ _id: id });
+}
+
+export async function getAllOtherProductDB() {
+  return await OtherProducts.find({}, { __v: 0 }).sort({ dmNumber: -1 });
+}
+
+export async function deleteOtherProductById(id: string) {
+  return await OtherProducts.deleteOne({ _id: id });
 }
