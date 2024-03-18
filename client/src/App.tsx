@@ -67,7 +67,9 @@ function App() {
                 <Outlet />
               </div>
             </div>
-            <Footer />
+            <div className='border-t border-slate-600 py-8'>
+              <Footer />
+            </div>
           </>
         )}
       </main>

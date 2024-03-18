@@ -35,8 +35,8 @@ const Home = () => {
   return (
     <section className='w-full'>
       <h1 className='mb-5 tracking-wider uppercase'>Applier</h1>
-      <div className='grid grid-cols-2 gap-5 grid-rows-[180px,minmax(180px,1fr)] '>
-        <div className='border-2 col-span-2 row-span-2 border-[#384256] rounded-lg'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-5 grid-rows-[180px,minmax(180px,1fr)] '>
+        <div className='border-2 md:col-span-2 row-span-2 border-[#384256] rounded-lg'>
           <BarChartBox />
         </div>
         <div className='row-span-2 border-2 border-[#384256] rounded-lg'>

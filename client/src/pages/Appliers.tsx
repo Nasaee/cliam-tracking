@@ -145,8 +145,6 @@ const Appliers = () => {
     handleOpenModal();
   };
 
-  console.log(dataToEdit);
-
   if (isLoading) {
     return (
       <div className='w-full h-full bg-white'>

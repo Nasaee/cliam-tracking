@@ -7,7 +7,7 @@ const AddClaimOtherProducts = () => {
       <h1 className='mb-5 tracking-wider uppercase px-7'>
         Add Claim Other Product
       </h1>
-      <div className='flex min-h-screen'>
+      <div className='flex flex-col items-center md:flex-row md:items-start min-h-screen overflow-auto'>
         <AddOtherProductForm />
         <div className='flex-1 px-6 shadow-md sm:rounded-lg overflow-auto'>
           <ShowOtherProductsToAddDbTable />
