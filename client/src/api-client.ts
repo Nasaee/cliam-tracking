@@ -177,7 +177,9 @@ export const addAppliersToDB = async (items: ApplierType[]) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error('Add item failed');
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'add item failed');
+    }
   }
 };
 
@@ -192,7 +194,9 @@ export const addOtherProductsToDB = async (items: OtherProductsType[]) => {
     );
     return response.data;
   } catch (error) {
-    throw new Error('Add item failed');
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'add item failed');
+    }
   }
 };
 
@@ -204,5 +208,17 @@ export const getOtherProducts = async (): Promise<OtherProductsType[]> => {
     return response.data;
   } catch (error) {
     throw new Error('fetching data failed');
+  }
+};
+
+export const deleteOtherProductById = async (id: string) => {
+  try {
+    await axios.delete(`${API_BASE_URL}/api/v1/other-products/${id}`, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.message || 'delete item failed');
+    }
   }
 };

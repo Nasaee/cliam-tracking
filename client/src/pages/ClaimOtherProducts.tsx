@@ -6,15 +6,26 @@ import { Link } from 'react-router-dom';
 import DataTable from '../commponents/DataTable';
 import { useState } from 'react';
 import UpdateOtherProductDBForm from '../commponents/UpdateOtherProductDBForm';
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import * as apiClient from '../api-client';
+import toast from 'react-hot-toast';
 
 const ClaimOtherProducts = () => {
   const [dataToEdit, setDataToEdit] = useState<OtherProductsType | null>(null);
 
-  const { data: otherProducts, isLoading } = useQuery({
+  const { data: otherProducts } = useQuery({
     queryKey: ['fetchOtherProducts'],
     queryFn: apiClient.getOtherProducts,
+  });
+
+  const { mutate, isLoading: isDeleting } = useMutation({
+    mutationFn: apiClient.deleteOtherProductById,
+    onSuccess: () => {
+      toast.success('Deleted successfully');
+    },
+    onError: (error: Error) => {
+      toast.error(error.message);
+    },
   });
 
   const columns: GridColDef[] = [
@@ -125,7 +136,11 @@ const ClaimOtherProducts = () => {
     handleOpenModal();
   };
 
-  console.log(dataToEdit);
+  const handleDeleteItem = (id: string) => {
+    if (window.confirm('Are you sure you want to delete this Item?')) {
+      mutate(id);
+    }
+  };
 
   return (
     <section>
@@ -145,8 +160,8 @@ const ClaimOtherProducts = () => {
       <DataTable
         columns={columns}
         rows={otherProducts || []}
-        isLoading={isLoading}
-        handleDeleteItem={() => {}}
+        isLoading={isDeleting}
+        handleDeleteItem={handleDeleteItem}
         setEditData={setEditData}
       />
 
