@@ -222,3 +222,20 @@ export const deleteOtherProductById = async (id: string) => {
     }
   }
 };
+
+export const updateOtherProductToDb = async (
+  updatedItem: OtherProductsType
+): Promise<OtherProductsType> => {
+  try {
+    const response = await axios.patch(
+      `${API_BASE_URL}/api/v1/other-products/update`,
+      updatedItem,
+      {
+        withCredentials: true,
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw new Error('Other product update failed');
+  }
+};

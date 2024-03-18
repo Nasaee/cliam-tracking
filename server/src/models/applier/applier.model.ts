@@ -85,11 +85,12 @@ export async function updateApplierDB(
   updatedData: ApplierType,
   userId: string
 ) {
-  const dataToUpdate = {
-    ...updatedData,
-    received: updatedData.receiveDocs ? true : false,
-    lastEditor: userId,
-  };
+  const dataToUpdate = { ...updatedData, lastEditor: userId };
+  if (updatedData.receiveDocs) {
+    dataToUpdate.received = true;
+  } else {
+    dataToUpdate.received = false;
+  }
   return await Applier.findOneAndUpdate(
     { _id: updatedData._id },
     dataToUpdate,

@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from 'react-query';
 import * as apiClient from '../api-client';
 import Loading from './Loading';
 import { ApplierType } from '../../../server/src/shares/types';
+import { applierItemsCode, repairStatus } from '../data';
 
 type Props = {
   dataToEdit: ApplierType;
@@ -40,8 +41,6 @@ const UpdateApplierDBForm = ({ dataToEdit }: Props) => {
   } = useForm<ApplierType>();
 
   const onSubmit = handleSubmit((updatedData: ApplierType) => {
-    console.log(updatedData);
-
     const isChanged = !hasEqualValues(dataToEdit, updatedData);
     if (!isChanged) {
       toast.error('No changes made');
@@ -147,36 +146,24 @@ const UpdateApplierDBForm = ({ dataToEdit }: Props) => {
                     >
                       Item Code
                     </label>
-                    <input
-                      type='text'
+                    <select
                       id='itemCode'
-                      defaultValue={dataToEdit?.itemCode}
-                      autoComplete='off'
-                      className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
-                      placeholder='Enter item code...'
+                      className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
                       {...register('itemCode', {
-                        required: 'This field is required',
-                        validate: (value) =>
-                          [
-                            '544965',
-                            '544965A',
-                            '544965AF',
-                            '544965D',
-                            '544990',
-                            '544990A',
-                            '544990AF',
-                            '544990D',
-                            '544995',
-                            '544995A',
-                            '544995AF',
-                            '544995D',
-                          ].includes(value) || 'Invalid item code',
+                        validate: (value) => {
+                          return (
+                            applierItemsCode.includes(value) ||
+                            'item does not exist'
+                          );
+                        },
                       })}
-                      onInput={(e) =>
-                        (e.currentTarget.value =
-                          e.currentTarget.value.toUpperCase())
-                      }
-                    />
+                    >
+                      {applierItemsCode.map((status) => (
+                        <option key={status} value={status}>
+                          {status}
+                        </option>
+                      ))}
+                    </select>
                     {errors.itemCode && (
                       <span className='text-red-500'>
                         {errors.itemCode.message}
@@ -283,13 +270,13 @@ const UpdateApplierDBForm = ({ dataToEdit }: Props) => {
                       {...register('repairable', {
                         validate: (value) => {
                           return (
-                            ['fixed', 'broken', 'pending'].includes(value) ||
+                            repairStatus.includes(value) ||
                             'repair status must be fixed, broken or pending'
                           );
                         },
                       })}
                     >
-                      {['fixed', 'broken', 'pending'].map((status) => (
+                      {repairStatus.map((status) => (
                         <option key={status} value={status}>
                           {status}
                         </option>
@@ -299,6 +286,30 @@ const UpdateApplierDBForm = ({ dataToEdit }: Props) => {
                       <span className='text-red-500'>
                         {errors.repairable.message}
                       </span>
+                    )}
+                  </div>
+                  {/* RPA */}
+                  <div>
+                    <label
+                      htmlFor='proformaInv'
+                      className='block mb-2 text-sm font-medium text-gray-500 '
+                    >
+                      RPA
+                    </label>
+                    <input
+                      type='text'
+                      id='proformaInv'
+                      className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
+                      placeholder='Proforma invoice...'
+                      autoComplete='off'
+                      {...register('rpa')}
+                      onInput={(e) =>
+                        (e.currentTarget.value =
+                          e.currentTarget.value.toUpperCase())
+                      }
+                    />
+                    {errors.rpa && (
+                      <span className='text-red-500'>{errors.rpa.message}</span>
                     )}
                   </div>
                 </div>

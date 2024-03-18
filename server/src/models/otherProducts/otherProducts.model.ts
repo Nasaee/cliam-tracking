@@ -31,3 +31,15 @@ export async function getAllOtherProductDB() {
 export async function deleteOtherProductById(id: string) {
   return await OtherProducts.deleteOne({ _id: id });
 }
+
+export async function updateOtherProductItem(item: OtherProductsType) {
+  const updatedData = { ...item };
+  if (updatedData.receiveDocs) {
+    updatedData.received = true;
+  } else {
+    updatedData.received = false;
+  }
+  return await OtherProducts.findOneAndUpdate({ _id: item._id }, updatedData, {
+    new: true,
+  });
+}

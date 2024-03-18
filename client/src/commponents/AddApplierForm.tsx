@@ -127,6 +127,35 @@ const AddApplierForm = () => {
                 (e.currentTarget.value = e.currentTarget.value.toUpperCase())
               }
             />
+            {/* <input
+              type='text'
+              id='itemCode'
+              autoComplete='off'
+              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
+              placeholder='Enter item code...'
+              {...register('itemCode', {
+                required: 'This field is required',
+                validate: (value) =>
+                  [
+                    '',
+                    '544965',
+                    '544965A',
+                    '544965AF',
+                    '544965D',
+                    '544990',
+                    '544990A',
+                    '544990AF',
+                    '544990D',
+                    '544995',
+                    '544995A',
+                    '544995AF',
+                    '544995D',
+                  ].includes(value) || 'Invalid item code',
+              })}
+              onInput={(e) =>
+                (e.currentTarget.value = e.currentTarget.value.toUpperCase())
+              }
+            /> */}
             {errors.itemCode && (
               <span className='text-red-500'>{errors.itemCode.message}</span>
             )}

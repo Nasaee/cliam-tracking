@@ -8,7 +8,7 @@ import {
   updateApplier,
 } from './applier.controller';
 import checkUserRole from '../../middlewares/checkUserRole';
-import { check } from 'express-validator';
+import { check, param } from 'express-validator';
 
 const applierRouter = express.Router();
 
@@ -18,7 +18,12 @@ applierRouter.get('/', getAllApplier);
 
 applierRouter.post('/', checkUserRole('admin', 'editor'), addApplier);
 
-applierRouter.delete('/:id', checkUserRole('admin', 'editor'), deleteApplier);
+applierRouter.delete(
+  '/:id',
+  checkUserRole('admin', 'editor'),
+  [param('id').notEmpty().withMessage('Item ID is required')],
+  deleteApplier
+);
 
 applierRouter.patch(
   '/update',

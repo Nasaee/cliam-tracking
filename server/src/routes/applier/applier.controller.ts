@@ -104,9 +104,13 @@ export const getAllApplierGroupByReceiveStatus = async (
 };
 
 export const deleteOtherProduct = async (req: Request, res: Response) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
   const { id } = req.params;
 
-  const product = findOtherProductById(id);
+  const product = findApplierById(id);
 
   if (!product) return res.status(400).send({ message: 'Item not found' });
   try {
