@@ -37,6 +37,7 @@ Welcome to Claim Tracking - Application for tracking the status of medical devic
 - **Tailwind**: A utility-first CSS framework for rapidly building custom user interfaces.
 - **render**: A cloud hosting platform.
 - **Vite**: A build tool for modern web development.
+- **MUI DataGrid**: A data grid component for React.
 - **DaisyUI**: A UI library for Tailwind CSS.
 
 ### Create a bug report
