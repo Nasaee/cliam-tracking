@@ -193,9 +193,7 @@ const UpdateOtherProductDBForm = ({ dataToEdit }: Props) => {
                       className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5'
                       placeholder='serial number...'
                       autoComplete='off'
-                      {...register('serialNumber', {
-                        required: 'This field is required',
-                      })}
+                      {...register('serialNumber')}
                       onInput={(e) =>
                         (e.currentTarget.value =
                           e.currentTarget.value.toUpperCase())
