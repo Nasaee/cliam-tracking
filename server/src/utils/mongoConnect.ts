@@ -14,7 +14,7 @@ async function mongoConnect() {
     await mongoose.connect(process.env.MONGO_URL as string);
     console.log('Connected to MongoDB');
   } else {
-    console.log('MONGO_URl is not defined');
+    console.log('MONGO_URL is not defined');
   }
 
   return;
