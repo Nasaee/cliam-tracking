@@ -21,7 +21,7 @@ const AddOtherProductForm = () => {
     reset({
       dmNumber: item.dmNumber, // Keep dmNumber unchanged
       itemCode: '',
-      quantity: 0,
+      quantity: 1,
       serialNumber: '',
       proformaInv: item.proformaInv,
       rpa: item.rpa,
@@ -122,15 +122,18 @@ const AddOtherProductForm = () => {
             <input
               type='number'
               id='quantity'
+              min={1}
               autoComplete='off'
               className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5'
               placeholder='Enter Amount...'
               {...register('quantity', {
                 required: 'This field is required',
+                validate: (value) =>
+                  value > 0 || 'Quantity must be greater than 0',
               })}
             />
-            {errors.itemCode && (
-              <span className='text-red-500'>{errors.itemCode.message}</span>
+            {errors.quantity && (
+              <span className='text-red-500'>{errors.quantity.message}</span>
             )}
           </div>
           {/* Serial Number */}

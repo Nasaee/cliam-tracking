@@ -4,7 +4,7 @@ import { OtherProductsType } from '../../shares/types';
 const otherProductsSchema = new mongoose.Schema<OtherProductsType>({
   dmNumber: { type: String, required: true },
   itemCode: { type: String, required: true },
-  quantity: { type: Number, required: true },
+  quantity: { type: Number, required: true, default: 1 },
   serialNumber: { type: String, default: '' },
   getDifSerial: { type: String, default: '' },
   proformaInv: { type: String, required: true },
