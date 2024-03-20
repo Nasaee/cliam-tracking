@@ -15,7 +15,7 @@ const PieChartBox = ({ titel, data, colors }: PieChartBoxProps) => {
         <h1 className='mb-5'>{titel}</h1>
         <span>Total: {totalValue}</span>
       </div>
-      <ResponsiveContainer width='99%' height={200}>
+      <ResponsiveContainer width='99%' height={300}>
         <PieChart width={600} height={600}>
           <Pie
             dataKey='totalAmount'
