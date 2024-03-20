@@ -7,6 +7,8 @@ import toast from 'react-hot-toast';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/rootReducer';
 import { useMutation, useQueryClient } from 'react-query';
+import { MdOutlineContentCopy } from 'react-icons/md';
+import { testEmail, testPassword } from '../data';
 
 export type LoginFormData = {
   email: string;
@@ -58,6 +60,41 @@ const Login = () => {
         <h2 className='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
           Sign in to your account
         </h2>
+      </div>
+
+      <div className='flex flex-col items-center'>
+        <div className=' text-black mt-10 text-sm font-Lexend space-y-3 bg-gray-300 py-6 px-12 rounded-md'>
+          <div className='flex gap-2'>
+            <p className='p-1'>Test email:</p>
+            <p className='flex gap-3 py-1 pl-4 pr-3 bg-gray-200 border border-slate-300 rounded-md'>
+              <span>{testEmail}</span>
+              <button
+                className='text-gray-500 hover:text-indigo-600'
+                onClick={() => {
+                  navigator.clipboard.writeText(testEmail);
+                  toast.success('Copied to clipboard');
+                }}
+              >
+                <MdOutlineContentCopy />
+              </button>
+            </p>
+          </div>
+          <div className='flex gap-2'>
+            <p className='p-1'>Password:</p>
+            <p className='flex gap-3 py-1 pl-4 pr-3 bg-gray-200 border border-slate-300 rounded-md'>
+              <span>{testPassword}</span>
+              <button
+                className='text-gray-500 hover:text-indigo-600'
+                onClick={() => {
+                  navigator.clipboard.writeText(testPassword);
+                  toast.success('Copied to clipboard');
+                }}
+              >
+                <MdOutlineContentCopy />
+              </button>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>

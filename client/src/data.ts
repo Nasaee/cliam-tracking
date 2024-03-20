@@ -66,3 +66,6 @@ export const applierItemsCode = [
   '544995AF',
   '544995D',
 ];
+
+export const testEmail = 'test@test.com';
+export const testPassword = '123456';
